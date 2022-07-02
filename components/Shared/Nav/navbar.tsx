@@ -74,7 +74,7 @@ const NavBar: FC<NavBarProps> = () => {
     <div className='sticky top-0 bg-black z-50 py-5  w-11/12 md:w-[90%] m-auto'>
       <div className='flex justify-between items-center w-full h-full'>
         <div>
-          <Image src={My_Logo} />
+          <Image alt='website_logo' src={My_Logo} />
         </div>
         <div className='md:hidden'>
           <ToggleButton />

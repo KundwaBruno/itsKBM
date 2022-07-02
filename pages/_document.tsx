@@ -8,7 +8,6 @@ class MyDocument extends Document {
           <meta name='author' content='Kundwa Bruno M.'></meta>
           <meta charSet='UTF-8' />
           <link rel='shortcut icon' href='/assets/icons/kbmLogo.png' />
-          <script src='https://code.iconify.design/2/2.0.4/iconify.min.js'></script>
           <link
             rel='stylesheet'
             href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css'

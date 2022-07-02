@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "React";
+import { FC, ReactNode } from "react";
 import { motion } from "framer-motion";
 
 interface ButtonProps {

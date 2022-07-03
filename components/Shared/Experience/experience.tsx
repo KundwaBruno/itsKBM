@@ -45,6 +45,7 @@ const Experience: FC<ExperienceProps> = ({
             <a
               href={companyLink}
               target='_blank'
+              rel='noreferrer'
               className=' text-lg  font-bold'
             >
               {company}

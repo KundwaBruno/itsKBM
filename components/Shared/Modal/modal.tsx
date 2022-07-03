@@ -1,5 +1,5 @@
 import { FC, ReactNode, useRef } from "react";
-import useOutsideClick from "../../lib/hooks/useOutsideClick";
+import useOutsideClick from "../../../lib/hooks/useOutsideClick";
 import { motion } from "framer-motion";
 
 interface ModalProps {

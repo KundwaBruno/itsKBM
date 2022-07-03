@@ -28,7 +28,7 @@ const NavBar: FC<NavBarProps> = () => {
       <div
         className={`${
           isNavOpen ? "left-0" : "-left-[100vw]"
-        } absolute top-0 bg-black z-50 h-screen w-[60vw] shadow-md shadow-white flex items-center justify-center transition-all duration-400`}
+        } fixed top-0 bg-black z-50 h-screen w-[60vw] shadow-md  border border-y-black border-l-black border-r-secondary flex items-center justify-center transition-all duration-400`}
       >
         <div className='text-white'>
           {NavLinks.map((link, index) => {
@@ -38,7 +38,10 @@ const NavBar: FC<NavBarProps> = () => {
                   key={link.name}
                   className='text-center text-lg font-bold mb-3'
                 >
-                  <Link href={link.route}>{`${link.label}`}</Link>
+                  <Link
+                    href={link.route}
+                    onClick={toggleNavOpen}
+                  >{`${link.label}`}</Link>
                 </div>
               </div>
             );
@@ -71,7 +74,7 @@ const NavBar: FC<NavBarProps> = () => {
   };
 
   return (
-    <div className='sticky top-0 bg-black z-50 py-5  w-11/12 md:w-[90%] m-auto'>
+    <div className='py-5 z-50  w-11/12 md:w-[90%] m-auto'>
       <div className='flex justify-between items-center w-full h-full'>
         <div>
           <Image alt='website_logo' src={My_Logo} />

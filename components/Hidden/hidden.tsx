@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import { FaInfoCircle } from "react-icons/fa";
 
 interface HiddenProps {}
@@ -11,25 +10,35 @@ const Hidden: FC<HiddenProps> = () => {
         <div>
           <FaInfoCircle className='text-gray-400' />
         </div>
-        <div>Tips.</div>
+        <div className='text-[#A76436]'>Tips.</div>
       </div>
-      <div className='flex flex-col gap-7'>
-        <div className='relative h-[150px] w-full m-auto rounded-lg'>
+      <div className='flex flex-col gap-7 text-sm'>
+        <div className='text-gray-500 w-[80%] m-auto'>
+          1. Click on the rounded image icon on the to view a better quality of
+          my profile image.
+        </div>
+        {/* <div className='relative h-[100px] w-full m-auto rounded-lg'>
           <Image
-            src='/assets/images/tips.png'
+            src='/assets/images/tip1.png'
             objectFit='contain'
             layout='fill'
             alt='Tip screenshot'
             className='rounded-lg'
           />
-        </div>
-        <div className='text-gray-500 w-[80%] m-auto'>
-          1. Click on the image icon to view a better quality of my profile.
-        </div>
+        </div> */}
         <div className='text-gray-500 w-[80%] m-auto'>
           2. Click on the transitioning texts to view a full list of my
-          techstacks and other informations.
+          techstacks and other relevant informations.
         </div>
+        {/* <div className='relative h-[100px] w-full m-auto rounded-lg'>
+          <Image
+            src='/assets/images/tip2.png'
+            objectFit='contain'
+            layout='fill'
+            alt='Tip screenshot'
+            className='rounded-lg'
+          />
+        </div> */}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import { motion } from "framer-motion";
 import Icon from "../Icon";
+import { useRouter } from "next/router";
 
 interface CollapsableProps {
   children: ReactNode;
@@ -15,6 +16,8 @@ const Collapsable: FC<CollapsableProps> = ({
   isCollapsed,
   onClose,
 }) => {
+  const router = useRouter();
+
   return (
     <div role='button' className='relative' onClick={onClose}>
       {isCollapsed && (
@@ -37,6 +40,7 @@ const Collapsable: FC<CollapsableProps> = ({
           {items.map((item, index) => {
             return (
               <motion.li
+                onClick={() => router.replace(item.data)}
                 key={index}
                 variants={{
                   hidden: { y: 20, opacity: 0 },

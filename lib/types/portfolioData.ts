@@ -2,7 +2,10 @@ type PortfolioDta = {
   name__abbr: string;
   full__name: string;
   salutation: string;
+
   passion: string;
+  looking__into: string;
+  status: string;
   profile__image: string;
   copyright: string;
   current__status: string;
@@ -20,8 +23,8 @@ type PortfolioDta = {
   experience: {
     company: string;
     position: string;
-    from: string;
-    to: string;
+    companyLink: string;
+    timeFrame: string;
     length: string;
     location: string;
     description: string[];

@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Fragment } from "react";
-import HomePage from "../components/Home";
+import ExperiencePage from "../components/Experience";
 
-const Home: NextPage = () => {
+const Experience: NextPage = () => {
   return (
     <Fragment>
       <Head>
@@ -17,13 +17,10 @@ const Home: NextPage = () => {
           content='<b>Kundwa Bruno M.</b> is a software engineer who specializes in building digital experiences and solving problems on the web.'
         />
         <meta property='og:url' content='https://itskbm.com/' />
-        <title>Kundwa Bruno</title>
       </Head>
-      <div>
-        <HomePage />
-      </div>
+      <ExperiencePage />
     </Fragment>
   );
 };
 
-export default Home;
+export default Experience;

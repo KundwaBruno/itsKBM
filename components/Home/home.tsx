@@ -4,13 +4,17 @@ import PageWrapper from "../Shared/PageWrapper";
 import PageData from "../../lib/portfolioData";
 import TextTransition, { presets } from "react-text-transition";
 import Button from "../Shared/Button";
-import Modal from "../Modal";
+import Modal from "../Shared/Modal";
+import Stacks from "../Stacks";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface LandingPageProps {}
 
 const LandingPage: FC<LandingPageProps> = () => {
   const [index, setIndex] = useState(0);
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
+  const [isStacksOpen, setIsStacksOpen] = useState<boolean>(false);
 
   const toggleShowProfile = () => {
     setIsProfileOpen(!isProfileOpen);
@@ -18,6 +22,14 @@ const LandingPage: FC<LandingPageProps> = () => {
 
   const closeShowProfile = () => {
     setIsProfileOpen(false);
+  };
+
+  const toggleShowStacks = () => {
+    setIsStacksOpen(!isStacksOpen);
+  };
+
+  const closeShowStacks = () => {
+    setIsStacksOpen(false);
   };
 
   useEffect(() => {
@@ -29,24 +41,45 @@ const LandingPage: FC<LandingPageProps> = () => {
     <PageWrapper>
       <Modal isOpen={isProfileOpen} handleClose={closeShowProfile}>
         <Image
-          src='/assets/images/profileLg.jpg'
+          src='https://res.cloudinary.com/dxyu6elli/image/upload/v1656864299/profileLg-min_y3jtkr.jpg'
           width={300}
           height={400}
           alt='bruno_profile'
-          className='filter grayscale rounded-lg'
+          className='rounded-lg'
           priority
         />
       </Modal>
-      <div className='flex flex-col gap-3'>
-        <div className='text-gray-400 text-md'>
-          <span className='text-2xl mr-2'>&#128075;&#127998;</span>
+      <Modal isOpen={isStacksOpen} handleClose={closeShowStacks}>
+        <Stacks />
+      </Modal>
+      <motion.div
+        variants={{
+          show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              ease: "easeInOut",
+              duration: 0.3,
+            },
+          },
+          hide: {
+            y: 10,
+            opacity: 0.5,
+          },
+        }}
+        animate='show'
+        initial='hide'
+        className='flex flex-col gap-3'
+      >
+        <div className='text-gray-400 text-xs md:text-md'>
+          <span className='text-xs md:text-2xl mr-2'>&#128075;&#127998;</span>
           {PageData.salutation}
         </div>
-        <div className='text-[45px] md:text-[60px] leading-[50px] font-extrabold text-white'>
+        <div className='text-[43px] md:text-[60px] leading-[50px] font-extrabold text-white'>
           {PageData.full__name}.
         </div>
-        <div className='text-[45px] md:text-[60px] leading-[50px] font-extrabold text-gray-500'>
-          {PageData.passion}
+        <div className='text-[43px] md:text-[60px] leading-[40px] font-extrabold text-gray-500'>
+          {PageData.passion}.
         </div>
 
         <div className='flex items-center gap-4 my-5'>
@@ -56,11 +89,11 @@ const LandingPage: FC<LandingPageProps> = () => {
               alt='Portfolio image'
               objectFit='cover'
               layout='fill'
-              className='rounded-lg cursor-pointer'
+              className='rounded-full cursor-pointer'
               onClick={toggleShowProfile}
             />
           </div>
-          <div>
+          <div className='cursor-pointer' onClick={toggleShowStacks}>
             <TextTransition springConfig={presets.gentle}>
               <span className='text-gray-400'>
                 {
@@ -72,10 +105,14 @@ const LandingPage: FC<LandingPageProps> = () => {
           </div>
         </div>
         <div className='flex items-center gap-4'>
-          <Button>Say hello!</Button>
-          <Button>My Resume</Button>
+          <Link href='mailto:kundwabruno@gmail.com' target='_blank'>
+            <Button>Say hello!</Button>
+          </Link>
+          <Link href='resume.pdf' target='_blank'>
+            <Button>My Resume</Button>
+          </Link>
         </div>
-      </div>
+      </motion.div>
     </PageWrapper>
   );
 };

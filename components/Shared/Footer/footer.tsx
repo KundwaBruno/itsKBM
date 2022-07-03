@@ -4,10 +4,12 @@ import {
   IdentificationIcon,
   InformationCircleIcon,
 } from "@heroicons/react/solid";
+import { IoIosArrowBack } from "react-icons/io";
 import PersonalData from "../../../lib/portfolioData";
 import useOutSideClick from "../../../lib/hooks/useOutsideClick";
 import Hidden from "../../Hidden";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 interface FooterProps {}
 
@@ -16,6 +18,9 @@ const Footer: FC<FooterProps> = () => {
   const [showHidden, setShowHidden] = useState<boolean>(false);
   const mediasRef = useRef<any>();
   const infoRef = useRef<any>();
+
+  const router = useRouter();
+  const path = router.pathname;
 
   useOutSideClick(mediasRef, () => setIsCollapsed(false));
   useOutSideClick(infoRef, () => setShowHidden(false));
@@ -26,8 +31,12 @@ const Footer: FC<FooterProps> = () => {
   };
 
   const toggleShowHidden = () => {
-    setShowHidden(!showHidden);
-    setIsCollapsed(false);
+    if (path === "/") {
+      setShowHidden(!showHidden);
+      setIsCollapsed(false);
+    } else {
+      router.back();
+    }
   };
 
   return (
@@ -45,7 +54,11 @@ const Footer: FC<FooterProps> = () => {
           )}
 
           <div className='border w-[40px] h-[40px] rounded-full flex items-center justify-center active:bg-[#393939] cursor-pointer'>
-            <InformationCircleIcon width={20} className='text-gray-400' />
+            {path === "/" ? (
+              <InformationCircleIcon width={20} className='text-gray-400' />
+            ) : (
+              <IoIosArrowBack className='text-gray-400' />
+            )}
           </div>
         </div>
       </div>

@@ -1,15 +1,18 @@
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { My_Logo } from "../../../lib/images";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import NavLinks from "./links";
-import { motion } from "framer-motion";
+import useOnClickOutside from "../../../lib/hooks/useOutsideClick";
 
 interface NavBarProps {}
 
 const NavBar: FC<NavBarProps> = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  const navRef = useRef<any>();
+
+  useOnClickOutside(navRef, () => setIsNavOpen(false));
 
   const ToggleButton = () => {
     return (
@@ -26,9 +29,10 @@ const NavBar: FC<NavBarProps> = () => {
   const Mobile = () => {
     return (
       <div
-        className={`${
-          isNavOpen ? "left-0" : "-left-[100vw]"
-        } fixed top-0 bg-black z-50 h-screen w-[60vw] shadow-md  border border-y-black border-l-black border-r-secondary flex items-center justify-center transition-all duration-400`}
+        ref={navRef}
+        className={`fixed top-0 ${
+          isNavOpen ? "left-0" : "-left-full"
+        }  bg-black z-50 h-screen w-[60vw] shadow-md  border border-y-black border-l-black border-r-secondary flex items-center justify-center transition-all duration-500`}
       >
         <div className='text-white'>
           {NavLinks.map((link, index) => {
@@ -38,10 +42,7 @@ const NavBar: FC<NavBarProps> = () => {
                   key={link.name}
                   className='text-center text-lg font-bold mb-3'
                 >
-                  <Link
-                    href={link.route}
-                    onClick={toggleNavOpen}
-                  >{`${link.label}`}</Link>
+                  <Link href={link.route}>{`${link.label}`}</Link>
                 </div>
               </div>
             );
@@ -58,10 +59,13 @@ const NavBar: FC<NavBarProps> = () => {
           return (
             <div
               key={link.name}
-              className='text-white text-center text-sm font-normal mb-3'
+              className='text-white text-center text-sm font-normal mb-3 flex items-center'
             >
               <span className='text-[#a96637] mr-3'>{index + 1}.</span>
               <Link href={link.route}>{`${link.label}`}</Link>
+              {link.isNew && (
+                <div className='inline-block bg-yellow-500 w-[7px] h-[7px] rounded-full ml-2'></div>
+              )}
             </div>
           );
         })}

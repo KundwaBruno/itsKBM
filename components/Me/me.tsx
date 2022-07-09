@@ -27,7 +27,7 @@ const About: FC<AboutProps> = () => {
         initial='hide'
         className='flex flex-col gap-10 '
       >
-        <div className='text-white font-bold text-4xl'>1. Biography</div>
+        <div className='text-white font-bold text-4xl'>2. Biography 📚</div>
         <div
           className='text-gray-500 md:w-[600px]'
           dangerouslySetInnerHTML={{ __html: Data.about.bio }}

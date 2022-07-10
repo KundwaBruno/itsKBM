@@ -106,10 +106,20 @@ const LandingPage: FC<LandingPageProps> = () => {
         </div>
         <div className='flex items-center gap-4'>
           <Link href='mailto:kundwabruno@gmail.com' target='_blank'>
-            <Button>Say hello!</Button>
+            <motion.div
+              whileTap={{ scale: 0.9 }}
+              className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed text-center p-4 text-sm min-w-[120px] rounded-lg cursor-pointer`}
+            >
+              Say hello!
+            </motion.div>
           </Link>
           <Link href='resume.pdf' target='_blank'>
-            <Button>My Resume</Button>
+            <motion.div
+              whileTap={{ scale: 0.9 }}
+              className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed p-4 text-center text-sm min-w-[120px] rounded-lg cursor-pointer`}
+            >
+              My Resume
+            </motion.div>
           </Link>
         </div>
       </motion.div>

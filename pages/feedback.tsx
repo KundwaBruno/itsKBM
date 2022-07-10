@@ -17,7 +17,7 @@ const Feedback: NextPage = () => {
           content='<b>Kundwa Bruno M.</b> is a software engineer who specializes in building digital experiences and solving problems on the web.'
         />
         <meta property='og:url' content='https://itskbm.com/' />
-        <title>Coming soon</title>
+        <title>Feeback</title>
       </Head>
       <FeedbackPage />
     </Fragment>

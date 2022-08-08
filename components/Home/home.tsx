@@ -113,7 +113,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               Say hello!
             </motion.div>
           </Link>
-          <Link href='resume.pdf' target='_blank'>
+          <Link href='MY_RESUME.pdf' target='_blank'>
             <motion.div
               whileTap={{ scale: 0.9 }}
               className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed p-4 text-center text-sm min-w-[120px] rounded-lg cursor-pointer`}

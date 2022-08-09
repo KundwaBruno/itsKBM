@@ -4,7 +4,7 @@ const portfolioData: PortfolioData = {
   name__abbr: "KBM",
   full__name: "Kundwa Bruno",
   salutation: "Hello there, I'm",
-  passion: "Fullstack web developer",
+  passion: "Software developer",
   profile__image: "/assets/images/profile.png",
   current__status: "Open to offers",
   looking__into: "Blockchain development with solidity",
@@ -18,7 +18,7 @@ const portfolioData: PortfolioData = {
     },
 
     {
-      title: "Frontend Developer",
+      title: "Applications Developer",
       icon: "fas fa-code",
     },
     {
@@ -38,7 +38,7 @@ const portfolioData: PortfolioData = {
       icon: "fab fa-node",
     },
     {
-      title: "MySQL",
+      title: "Express",
       icon: "fab fa-mysql",
     },
     {

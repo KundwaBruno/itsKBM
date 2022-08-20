@@ -14,8 +14,8 @@ const Hidden: FC<HiddenProps> = () => {
       </div>
       <div className='flex flex-col gap-7 text-sm'>
         <div className='text-gray-500 w-[80%] m-auto'>
-          1. Click on the rounded image icon on the to view a better quality of
-          my profile image.
+          1. Click on the rounded image icon on the home page to view a better
+          quality of my profile image.
         </div>
         {/* <div className='relative h-[100px] w-full m-auto rounded-lg'>
           <Image

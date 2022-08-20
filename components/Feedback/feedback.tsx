@@ -79,12 +79,11 @@ const Feedback: FC<FeedbackProps> = () => {
     <PageWrapper>
       <div className='flex flex-col w-[600px]'>
         <div className='text-white font-bold text-4xl my-6 flex items-center gap-3'>
-          <span>4. Feedback 🚀</span>{" "}
-          {!isNotNew && (
-            <span className='text-xs px-2 font-normal text-yellow-500 border rounded-full'>
-              New
-            </span>
-          )}
+          <span>4. Feedback 🚀</span> {/* {!isNotNew && ( */}
+          <span className='text-xs px-2 font-normal text-yellow-500 border rounded-full'>
+            New
+          </span>
+          {/* )} */}
         </div>
         <div className='text-gray-400 mb-10 text-sm border-b pb-12'>
           Welcome to my feedback section, Feel free to provide complete

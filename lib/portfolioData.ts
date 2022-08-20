@@ -7,10 +7,21 @@ const portfolioData: PortfolioData = {
   passion: "Software developer",
   profile__image: "/assets/images/profile.png",
   current__status: "Open to offers",
-  looking__into: "Blockchain development with solidity",
+  looking__into:
+    "Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.",
   status: "Open to offers",
   resume__link: "https://itskbm.com/resume.pdf",
   copyright: "Built with courage by KBM",
+  recent_technologies: [
+    "Javascript",
+    "Gatsby Js",
+    "React Js",
+    "NextJs",
+    "Ant Design",
+    "TailwindCss",
+    "Typescript",
+    "NodeJs",
+  ],
   tech_stacks: [
     {
       title: "Web developer",
@@ -100,6 +111,19 @@ const portfolioData: PortfolioData = {
 
   experience: [
     {
+      company: "Montech Studios",
+      companyLink: "https://www.montech.io/",
+      position: "Frontend developer",
+      timeFrame: "Jan 2022 - Present",
+      length: "6 months",
+      location: "United States",
+      description: [
+        "Work with blockchain developers to build crypto coins based wallet apps using React native",
+        "Work with the design team to implement and accomplish client’s project requirements.",
+        "Build web3 based applications with integration of modern technologies like Metamask.",
+      ],
+    },
+    {
       company: "Awesomity Lab",
       companyLink: "https://awesomity.rw/",
       position: "Frontend developer",
@@ -107,9 +131,9 @@ const portfolioData: PortfolioData = {
       length: "6 months",
       location: "Germany",
       description: [
-        "Write modern, performant, maintainable code for a diverse array of client and internal projects",
         "Work with a variety of different languages, frameworks, platforms, and content management systems such as JavaScript, TypeScript, React, NextJs, Ant Design, AWS, Sockets.",
         "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+        "Integrated mobile money payment on the client side with collaboration of the backend team.",
       ],
     },
     {

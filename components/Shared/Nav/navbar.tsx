@@ -1,18 +1,30 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { My_Logo } from "../../../lib/images";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import NavLinks from "./links";
 import useOnClickOutside from "../../../lib/hooks/useOutsideClick";
+import useScrollOffset from "../../../lib/hooks/useScrollOfset";
 
 interface NavBarProps {}
 
 const NavBar: FC<NavBarProps> = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
   const navRef = useRef<any>();
 
   useOnClickOutside(navRef, () => setIsNavOpen(false));
+
+  const scrollOffSet = useScrollOffset();
+
+  useMemo(() => {
+    if (scrollOffSet > 70) {
+      setIsWebBarScrolled(true);
+    } else {
+      setIsWebBarScrolled(false);
+    }
+  }, [scrollOffSet]);
 
   const ToggleButton = () => {
     return (
@@ -78,7 +90,11 @@ const NavBar: FC<NavBarProps> = () => {
   };
 
   return (
-    <div className='py-5 z-50  w-11/12 md:w-[90%] m-auto'>
+    <div
+      className={`py-5 z-50  w-11/12 md:w-[90%] m-auto sticky top-0 transition-all duration-500 ${
+        isWebBarScrolled && "backdrop-blur-md"
+      }`}
+    >
       <div className='flex justify-between items-center w-full h-full'>
         <div>
           <Image alt='website_logo' src={My_Logo} />

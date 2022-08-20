@@ -11,6 +11,7 @@ type PortfolioDta = {
   current__status: string;
   resume__link: string;
   tech_stacks: { title: string; icon: string }[];
+  recent_technologies: string[];
   about: {
     bio: string;
     contact: {

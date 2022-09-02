@@ -19,7 +19,7 @@ const NavigationLinks: NavigationLink[] = [
   {
     name: "Feedback",
     label: "Feedback",
-    isNew: true,
+    isNew: false,
     route: "/feedback",
   },
 ];

@@ -127,7 +127,7 @@ const portfolioData: PortfolioData = {
       company: "Awesomity Lab",
       companyLink: "https://awesomity.rw/",
       position: "Frontend developer",
-      timeFrame: "Oct 2021 - Present",
+      timeFrame: "Sep 2021 - Present",
       length: "6 months",
       location: "Germany",
       description: [
@@ -141,7 +141,7 @@ const portfolioData: PortfolioData = {
       companyLink:
         "https://www.linkedin.com/company/tech-enfold/?trk=ppro_cprof&originalSubdomain=rw",
       position: "Fullstack developer",
-      timeFrame: "Jun 2021 - Nov 2021",
+      timeFrame: "Jun 2021 - Jan 2022",
       length: "6 months",
       location: "Germany",
       description: [
@@ -156,8 +156,8 @@ const portfolioData: PortfolioData = {
       company: "Andela Rwanda",
       companyLink: "https://andela.com/",
       position: "Developer Apprentice",
-      timeFrame: "Feb 2021 - Oct 2021",
-      length: "9 months",
+      timeFrame: "Jan 2021 - Jan 2022",
+      length: "1 Year 1 mo",
       location: "Kigali-Rwanda",
       description: [
         "Worked on my personal web portfolio with the help of Andela managers and team leads ( Technology used: HTML,SASS,Javascript ( Vanilla Javascript )",

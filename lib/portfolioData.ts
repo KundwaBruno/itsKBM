@@ -110,19 +110,19 @@ const portfolioData: PortfolioData = {
   },
 
   experience: [
-    // {
-    //   company: "Montech Studios",
-    //   companyLink: "https://www.montech.io/",
-    //   position: "Frontend developer",
-    //   timeFrame: "Jan 2022 - Present",
-    //   length: "6 months",
-    //   location: "United States",
-    //   description: [
-    //     "Work with blockchain developers to build crypto coins based wallet apps using React native",
-    //     "Work with the design team to implement and accomplish client’s project requirements.",
-    //     "Build web3 based applications with integration of modern technologies like Metamask.",
-    //   ],
-    // },
+    {
+      company: "Montech Studios",
+      companyLink: "https://www.montech.io/",
+      position: "Frontend developer",
+      timeFrame: "Jan 2022 - Present",
+      length: "6 months",
+      location: "United States",
+      description: [
+        "Work with blockchain developers to build crypto coins based wallet apps using React native",
+        "Work with the design team to implement and accomplish client’s project requirements.",
+        "Build web3 based applications with integration of modern technologies like Metamask.",
+      ],
+    },
     {
       company: "Awesomity Lab",
       companyLink: "https://awesomity.rw/",

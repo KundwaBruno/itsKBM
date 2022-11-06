@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useMemo, useRef, useState } from "react";
+import React, { FC, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { My_Logo } from "../../../lib/images";
@@ -6,6 +6,7 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import NavLinks from "./links";
 import useOnClickOutside from "../../../lib/hooks/useOutsideClick";
 import useScrollOffset from "../../../lib/hooks/useScrollOfset";
+import { useRouter } from "next/router";
 
 interface NavBarProps {}
 
@@ -13,6 +14,8 @@ const NavBar: FC<NavBarProps> = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
   const navRef = useRef<any>();
+
+  const router = useRouter();
 
   useOnClickOutside(navRef, () => setIsNavOpen(false));
 
@@ -28,11 +31,11 @@ const NavBar: FC<NavBarProps> = () => {
 
   const ToggleButton = () => {
     return (
-      <button onClick={toggleNavOpen} className='outline-none w-full'>
+      <button onClick={toggleNavOpen} className="outline-none w-full">
         {isNavOpen ? (
-          <HiX color='white' className='text-3xl' />
+          <HiX color="white" className="text-3xl" />
         ) : (
-          <HiMenuAlt3 color='white' className='text-3xl' />
+          <HiMenuAlt3 color="white" className="text-3xl" />
         )}
       </button>
     );
@@ -46,13 +49,13 @@ const NavBar: FC<NavBarProps> = () => {
           isNavOpen ? "left-0" : "-left-full"
         }  bg-black z-50 h-screen w-[60vw] shadow-md  border border-y-black border-l-black border-r-secondary flex items-center justify-center transition-all duration-500`}
       >
-        <div className='text-white'>
+        <div className="text-white">
           {NavLinks.map((link, index) => {
             return (
-              <div key={index} className='mb-10'>
+              <div key={index} className="mb-10">
                 <div
                   key={link.name}
-                  className='text-center text-lg font-bold mb-3'
+                  className="text-center text-lg font-bold mb-3"
                 >
                   <Link href={link.route}>{`${link.label}`}</Link>
                 </div>
@@ -66,17 +69,17 @@ const NavBar: FC<NavBarProps> = () => {
 
   const Web = () => {
     return (
-      <div className='hidden md:flex items-center gap-14'>
+      <div className="hidden md:flex items-center gap-14">
         {NavLinks.map((link, index) => {
           return (
             <div
               key={link.name}
-              className='text-white text-center text-sm font-normal mb-3 flex items-center'
+              className="text-white text-center text-sm font-normal mb-3 flex items-center"
             >
-              <span className='text-[#a96637] mr-3'>{index + 1}.</span>
+              <span className="text-[#a96637] mr-3">{index + 1}.</span>
               <Link href={link.route}>{`${link.label}`}</Link>
               {link.isNew && (
-                <div className='inline-block bg-yellow-500 w-[7px] h-[7px] rounded-full ml-2'></div>
+                <div className="inline-block bg-yellow-500 w-[7px] h-[7px] rounded-full ml-2"></div>
               )}
             </div>
           );
@@ -91,15 +94,22 @@ const NavBar: FC<NavBarProps> = () => {
 
   return (
     <div
-      className={`py-5 z-50  w-11/12 md:w-[90%] m-auto sticky top-0 transition-all duration-500 ${
-        isWebBarScrolled && "backdrop-blur-md"
+      className={`py-2 z-50   sticky top-0 transition-all duration-500 w-full ${
+        isWebBarScrolled && "backdrop-blur-md border-b-[0.5px]"
       }`}
     >
-      <div className='flex justify-between items-center w-full h-full'>
-        <div>
-          <Image alt='website_logo' src={My_Logo} />
+      <div className="flex justify-between items-center h-full w-11/12 md:w-[90%] m-auto">
+        <div className="w-[80px] h-[80px] relative">
+          <Image
+            alt="website_logo"
+            src={My_Logo}
+            onClick={() => router.push("/")}
+            className="cursor-pointer"
+            objectFit="contain"
+            layout="fill"
+          />
         </div>
-        <div className='md:hidden'>
+        <div className="md:hidden">
           <ToggleButton />
         </div>
         <Mobile />

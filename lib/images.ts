@@ -1,1 +1,1 @@
-export const My_Logo = require("../public/assets/icons/kbmLogo.png");
+export const My_Logo = require("../public/logo.svg");

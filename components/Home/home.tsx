@@ -41,18 +41,18 @@ const LandingPage: FC<LandingPageProps> = () => {
     <PageWrapper>
       <Modal isOpen={isProfileOpen} handleClose={closeShowProfile}>
         <Image
-          src='https://res.cloudinary.com/dxyu6elli/image/upload/v1656864299/profileLg-min_y3jtkr.jpg'
+          src="https://res.cloudinary.com/dxyu6elli/image/upload/v1656864299/profileLg-min_y3jtkr.jpg"
           width={300}
           height={400}
-          alt='bruno_profile'
-          className='rounded-lg'
+          alt="bruno_profile"
+          className="rounded-lg"
           priority
         />
       </Modal>
       <Modal isOpen={isStacksOpen} handleClose={closeShowStacks}>
         <Stacks />
       </Modal>
-      <div className='flex justify-center items-center '>
+      <div className="flex justify-center items-center ">
         <motion.div
           variants={{
             show: {
@@ -68,35 +68,35 @@ const LandingPage: FC<LandingPageProps> = () => {
               opacity: 0.5,
             },
           }}
-          animate='show'
-          initial='hide'
-          className='flex flex-col gap-3'
+          animate="show"
+          initial="hide"
+          className="flex flex-col gap-3"
         >
-          <div className='text-gray-400 text-xs md:text-md'>
-            <span className='text-xs md:text-2xl mr-2'>&#128075;&#127998;</span>
+          <div className="text-gray-400 text-xs md:text-md">
+            <span className="text-xs md:text-2xl mr-2">&#128075;&#127998;</span>
             {PageData.salutation}
           </div>
-          <div className='text-[43px] md:text-[60px] leading-[50px] font-extrabold text-white'>
+          <div className="text-[43px] md:text-[60px] leading-[50px] font-extrabold my-3 text-white">
             {PageData.full__name}.
           </div>
-          <div className='text-[43px] md:text-[60px] leading-[40px] font-extrabold text-gray-500'>
+          <div className="text-[43px] md:text-[60px] leading-[40px] font-extrabold text-gray-500">
             {PageData.passion}.
           </div>
 
-          <div className='flex items-center gap-4 my-5'>
-            <div className='w-[40px] h-[40px] relative'>
+          <div className="flex items-center gap-4 my-5">
+            <div className="w-[40px] h-[40px] relative">
               <Image
                 src={PageData.profile__image}
-                alt='Portfolio image'
-                objectFit='cover'
-                layout='fill'
-                className='rounded-full cursor-pointer'
+                alt="Portfolio image"
+                objectFit="cover"
+                layout="fill"
+                className="rounded-full cursor-pointer"
                 onClick={toggleShowProfile}
               />
             </div>
-            <div className='cursor-pointer' onClick={toggleShowStacks}>
+            <div className="cursor-pointer" onClick={toggleShowStacks}>
               <TextTransition springConfig={presets.gentle}>
-                <span className='text-gray-400'>
+                <span className="text-gray-400">
                   {
                     PageData.tech_stacks[index % PageData.tech_stacks.length]
                       .title
@@ -105,8 +105,8 @@ const LandingPage: FC<LandingPageProps> = () => {
               </TextTransition>
             </div>
           </div>
-          <div className='flex items-center gap-4'>
-            <Link href='mailto:kundwabruno@gmail.com' target='_blank'>
+          <div className="flex items-center gap-4">
+            <Link href="mailto:kundwabruno@gmail.com" target="_blank">
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed text-center p-4 text-sm min-w-[120px] rounded-lg cursor-pointer`}
@@ -114,7 +114,7 @@ const LandingPage: FC<LandingPageProps> = () => {
                 Say hello!
               </motion.div>
             </Link>
-            <Link href='resume.pdf' target='_blank'>
+            <Link href="resume.pdf" target="_blank">
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed p-4 text-center text-sm min-w-[120px] rounded-lg cursor-pointer`}

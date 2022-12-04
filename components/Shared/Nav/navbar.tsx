@@ -94,7 +94,7 @@ const NavBar: FC<NavBarProps> = () => {
 
   return (
     <div
-      className={`py-2 z-50   sticky top-0 transition-all duration-500 w-full ${
+      className={`z-50 sticky top-0 transition-all duration-500 w-full ${
         isWebBarScrolled && "backdrop-blur-md border-b-[0.5px]"
       }`}
     >

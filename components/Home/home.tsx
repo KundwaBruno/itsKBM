@@ -52,7 +52,7 @@ const LandingPage: FC<LandingPageProps> = () => {
       <Modal isOpen={isStacksOpen} handleClose={closeShowStacks}>
         <Stacks />
       </Modal>
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center w-full items-center ">
         <motion.div
           variants={{
             show: {
@@ -72,18 +72,18 @@ const LandingPage: FC<LandingPageProps> = () => {
           initial="hide"
           className="flex flex-col gap-3"
         >
-          <div className="text-gray-400 text-xs md:text-md">
+          <div className="text-gray-400 text-center md:text-justify text-xs md:text-md">
             <span className="text-xs md:text-2xl mr-2">&#128075;&#127998;</span>
             {PageData.salutation}
           </div>
-          <div className="text-[43px] md:text-[60px] leading-[50px] font-extrabold my-3 text-white">
+          <div className="text-[43px] md:text-[60px] text-center md:text-justify font-extrabold my-0 text-white">
             {PageData.full__name}.
           </div>
-          <div className="text-[43px] md:text-[60px] leading-[40px] font-extrabold text-gray-500">
+          <div className="text-[24px] md:text-[60px] text-center md:text-justify leading-[40px] font-extrabold text-gray-500">
             {PageData.passion}.
           </div>
 
-          <div className="flex items-center gap-4 my-5">
+          <div className="flex items-center justify-center md:justify-start gap-4 my-5">
             <div className="w-[40px] h-[40px] relative">
               <Image
                 src={PageData.profile__image}
@@ -105,7 +105,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               </TextTransition>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center md:justify-start gap-4">
             <Link href="mailto:kundwabruno@gmail.com" target="_blank">
               <motion.div
                 whileTap={{ scale: 0.9 }}
@@ -114,13 +114,13 @@ const LandingPage: FC<LandingPageProps> = () => {
                 Say hello!
               </motion.div>
             </Link>
-            <Link href="resume.pdf" target="_blank">
-              <motion.div
+            <Link href="/resume.pdf">
+              <motion.button
                 whileTap={{ scale: 0.9 }}
                 className={`text-gray-400 border disabled:bg-gray-800 disabled:border-gray-800 disabled:cursor-not-allowed p-4 text-center text-sm min-w-[120px] rounded-lg cursor-pointer`}
               >
                 My Resume
-              </motion.div>
+              </motion.button>
             </Link>
           </div>
         </motion.div>

@@ -4,30 +4,20 @@ import { motion } from "framer-motion";
 import moment from "moment";
 import { database, ref, update } from "../../../lib/firebase";
 import Avatar from "../Avatar";
-import { nameByRace } from "fantasy-name-generator";
+import { FeedbackSchema } from "../../../lib/types/feedback";
 
-interface FeedbackProps {
-  body: string;
-  date: string;
-  id: string;
-  upVotes: number;
-  downVotes: number;
-}
-
-const Feedback: FC<FeedbackProps> = ({
+const Feedback: FC<FeedbackSchema> = ({
   body,
-  date,
+  createdAt,
   id,
   upVotes,
+  name,
   downVotes,
 }) => {
   const [upVoted, setUpVoted] = useState<boolean>(false);
   const [downVoted, setDownVoted] = useState<boolean>(false);
 
   const feedbackRef = ref(database, `feedbacks/${id}`);
-
-  const elfHero = nameByRace("angel", { gender: "male" });
-  const enemyDemon = nameByRace("demon");
 
   const variants = {
     flip: {
@@ -84,14 +74,14 @@ const Feedback: FC<FeedbackProps> = ({
     <motion.div
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
-      className="text-gray-400 text-sm flex flex-col gap-3 my-2"
+      className="text-gray-400 text-sm flex flex-col gap-3 my-2 w-full"
     >
       <div className="text-white leading-6 backdrop-blur-lg rounded-lg drop-shadow-lg bg-opacity-10 bg-white p-3 text-sm">
         <div className="text-secondary text-right text-xs mb-3 flex items-center justify-between">
           <div>
-            <Avatar name={elfHero} />
+            <Avatar name={name} />
           </div>
-          <div>{moment(date).fromNow()}</div>
+          <div>{moment(createdAt).fromNow()}</div>
         </div>
         <div className="mb-4">{body}</div>
         <div className="flex items-center gap-4 text-xs">

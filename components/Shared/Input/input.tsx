@@ -10,10 +10,10 @@ const Input: FC<InputProps> = ({ className, value, onChange }) => {
   return (
     <div>
       <input
-        placeholder='Type something ...'
+        placeholder="Type something ..."
         onChange={(e) => onChange(e)}
         value={value}
-        className={`text-gray-400  border placeholder:text-gray-600 border-gray-500 p-3 rounded-lg text-sm bg-transparent outline-none w-full ${className}`}
+        className={`text-gray-400  border-b placeholder:text-gray-600 border-gray-500 p-3  text-sm bg-transparent outline-none w-full ${className}`}
       />
     </div>
   );

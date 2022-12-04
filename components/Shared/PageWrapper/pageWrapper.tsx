@@ -8,9 +8,9 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div className='flex flex-col w-screen h-screen'>
+    <div className="flex flex-col h-screen">
       <NavigationBar />
-      <div className='flex-1 w-full flex items-center md:justify-center px-6'>
+      <div className="flex-1 w-full flex items-center md:justify-center px-6">
         {children}
       </div>
       <Footer />

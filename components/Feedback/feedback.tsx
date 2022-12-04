@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useState } from "react";
+import React, { FC, Fragment, useCallback, useEffect, useState } from "react";
 import Button from "../Shared/Button";
 import FeedbackWrapper from "../Shared/Feedback";
 import Input from "../Shared/Input";
@@ -10,6 +10,9 @@ import { GiEmptyHourglass } from "react-icons/gi";
 import FeebackSkeleton from "../Shared/Skeletons/feedback";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { FeedbackSchema } from "../../lib/types/feedback";
+import { nameByRace } from "fantasy-name-generator";
+import { query } from "firebase/database";
 
 interface FeedbackProps {}
 
@@ -21,15 +24,7 @@ const Feedback: FC<FeedbackProps> = () => {
     show: false,
     body: "",
   });
-  const [fbcks, setFbcks] = useState<
-    {
-      body: string;
-      id: string;
-      upVotes: number;
-      downVotes: number;
-      createdAt: string;
-    }[]
-  >();
+  const [fbcks, setFbcks] = useState<FeedbackSchema[]>();
 
   const [itemsPerPage, setItemsPerPage] = useState<number>(ITEMS_COUNT);
   const [totalItems, setTotalItems] = useState<number>();
@@ -40,8 +35,6 @@ const Feedback: FC<FeedbackProps> = () => {
     }
   };
 
-  const isNotNew = moment() > moment("2022-08-10");
-
   const showToast = (body: string) => {
     setToast({ show: true, body });
   };
@@ -51,6 +44,7 @@ const Feedback: FC<FeedbackProps> = () => {
   };
 
   const postFeedBack = () => {
+    const name = nameByRace("angel", { gender: "male" });
     const feedbackListRef = ref(database, "feedbacks");
     const date = moment(new Date()).format();
     const newFeedbackRef = push(feedbackListRef);
@@ -59,6 +53,7 @@ const Feedback: FC<FeedbackProps> = () => {
       createdAt: date,
       upVotes: 0,
       downVotes: 0,
+      name,
     })
       .then(() => {
         setInput("");
@@ -68,14 +63,18 @@ const Feedback: FC<FeedbackProps> = () => {
       });
   };
 
-  const onChangeHanlder = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setInput(value);
-  };
+  const onChangeHanlder = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
+      setInput(value);
+    },
+    []
+  );
 
   useEffect(() => {
-    const feedbackListRef = ref(database, "feedbacks");
-    onValue(feedbackListRef, (snapshot) => {
+    // const feedbackListRef = ref(database, "feedbacks");
+    const q = query(ref(database, "feedbacks/"));
+    onValue(q, (snapshot) => {
       const feedbacks = snapshot.val();
       const feedbackList = [];
       if (snapshot.exists()) {
@@ -119,19 +118,38 @@ const Feedback: FC<FeedbackProps> = () => {
               </div>
             </div>
           )}
+          {fbcks && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                postFeedBack();
+              }}
+              className="mb-10"
+            >
+              <div className="flex gap-3 mt-2">
+                <div className="w-full">
+                  <Input value={input} onChange={onChangeHanlder} />
+                </div>
+                <div>
+                  <Button disabled={!input} size="small">
+                    <RiSendPlaneFill className="text-lg" />
+                  </Button>
+                </div>
+              </div>
+            </form>
+          )}
+
           {fbcks &&
-            [...fbcks].slice(0, itemsPerPage).map((fb, index) => {
-              return (
-                <FeedbackWrapper
-                  key={index}
-                  id={fb.id}
-                  body={fb.body}
-                  upVotes={fb.upVotes}
-                  downVotes={fb.downVotes}
-                  date={fb.createdAt}
-                />
-              );
-            })}
+            [...fbcks]
+              .sort(
+                (a: any, b: any) =>
+                  new Date(b?.createdAt).getTime() -
+                  new Date(a?.createdAt).getTime()
+              )
+              ?.slice(0, itemsPerPage)
+              ?.map((fb, index) => {
+                return <FeedbackWrapper key={index} {...fb} />;
+              })}
           {totalItems && itemsPerPage < totalItems && (
             <div className="text-center text-secondary my-4">
               <motion.button
@@ -153,24 +171,6 @@ const Feedback: FC<FeedbackProps> = () => {
               </div>
             </div>
           )}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              postFeedBack();
-            }}
-            className="mb-16"
-          >
-            <div className="flex gap-3 mt-14">
-              <div className="w-full">
-                <Input value={input} onChange={onChangeHanlder} />
-              </div>
-              <div>
-                <Button disabled={!input} size="small">
-                  <RiSendPlaneFill className="text-lg" />
-                </Button>
-              </div>
-            </div>
-          </form>
         </Fragment>
       </div>
     </PageWrapper>

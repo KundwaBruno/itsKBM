@@ -76,12 +76,12 @@ const Feedback: FC<FeedbackSchema> = ({
       initial={{ opacity: 0 }}
       className="text-gray-400 text-sm flex flex-col gap-3 my-2 w-full"
     >
-      <div className="text-white leading-6 backdrop-blur-lg rounded-lg drop-shadow-lg bg-opacity-10 bg-white p-3 text-sm">
-        <div className="text-secondary text-right text-xs mb-3 flex items-center justify-between">
+      <div className="text-white leading-6 backdrop-blur-lg rounded-lg drop-shadow-lg bg-[#1E1E1E] p-3 text-sm">
+        <div className="text-white text-right mb-3 flex items-center justify-between">
           <div>
             <Avatar name={name} />
           </div>
-          <div>{moment(createdAt).fromNow()}</div>
+          <div className="text-xs">{moment(createdAt).fromNow()}</div>
         </div>
         <div className="mb-4">{body}</div>
         <div className="flex items-center gap-4 text-xs">

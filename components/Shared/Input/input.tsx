@@ -13,7 +13,7 @@ const Input: FC<InputProps> = ({ className, value, onChange }) => {
         placeholder="Type something ..."
         onChange={(e) => onChange(e)}
         value={value}
-        className={`text-gray-400  border-b placeholder:text-gray-600 border-gray-500 p-3  text-sm bg-transparent outline-none w-full ${className}`}
+        className={`text-gray-400  border-b placeholder:text-gray-600 border-gray-500 py-3  text-sm bg-transparent outline-none w-full ${className}`}
       />
     </div>
   );

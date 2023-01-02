@@ -8,6 +8,10 @@ module.exports = {
       colors: {
         secondary: "#A96637",
       },
+      fontFamily: {
+        cinzel: ["Cinzel", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],

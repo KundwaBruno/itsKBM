@@ -2,19 +2,19 @@ import { NavigationLink } from "../../../lib/types/nav";
 
 const NavigationLinks: NavigationLink[] = [
   {
-    name: "home",
-    label: "Home",
-    route: "/",
-  },
-  {
     name: "About",
-    label: "Biography",
-    route: "/me",
+    label: "About",
+    route: "/#about",
   },
   {
     name: "Experience",
     label: "Experience",
-    route: "/experience",
+    route: "/#experience",
+  },
+  {
+    name: "Contact",
+    label: "Contact",
+    route: "/#contact",
   },
   {
     name: "Feedback",

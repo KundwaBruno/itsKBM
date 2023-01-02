@@ -2,7 +2,7 @@ type PortfolioDta = {
   name__abbr: string;
   full__name: string;
   salutation: string;
-
+  homeDescription: string;
   passion: string;
   looking__into: string;
   status: string;
@@ -14,6 +14,7 @@ type PortfolioDta = {
   recent_technologies: string[];
   about: {
     bio: string;
+    contactDescription: string;
     contact: {
       name: string;
       data: string;

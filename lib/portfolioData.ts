@@ -3,10 +3,12 @@ import PortfolioData from "./types/portfolioData";
 const portfolioData: PortfolioData = {
   name__abbr: "KBM",
   full__name: "Kundwa Bruno",
-  salutation: "Hello there, I'm",
-  passion: "Software developer",
-  profile__image: "/assets/images/profile.png",
+  salutation: "Hello there ! , Name is",
+  passion: "Software engineer.",
+  profile__image: "/assets/images/profileLg.jpg",
   current__status: "Open to offers",
+  homeDescription:
+    "I am passionate software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity. ",
   looking__into:
     "Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.",
   status: "Open to offers",
@@ -24,61 +26,48 @@ const portfolioData: PortfolioData = {
   ],
   tech_stacks: [
     {
-      title: "Web developer",
-      icon: "fas fa-laptop",
-    },
-
-    {
-      title: "Applications Developer",
-      icon: "fas fa-code",
-    },
-    {
       title: "React Js",
-      icon: "fab fa-react",
+      icon: "/assets/icons/React.svg",
     },
     {
       title: "React Native",
-      icon: "fab fa-react",
+      icon: "/assets/icons/ReactNative.svg",
     },
     {
       title: "Next Js",
-      icon: "fab fa-react",
+      icon: "/assets/icons/NextJs.svg",
     },
-    {
-      title: "NodeJs",
-      icon: "fab fa-node",
-    },
-    {
-      title: "Express",
-      icon: "fab fa-mysql",
-    },
+
     {
       title: "Typescript",
-      icon: "fab fa-js",
+      icon: "/assets/icons/Typescript.svg",
     },
     {
       title: "Javascript",
-      icon: "fab fa-js",
+      icon: "/assets/icons/Javascript.svg",
     },
     {
       title: "Tailwind CSS",
-      icon: "fab fa-css3",
+      icon: "/assets/icons/TailwindCss.svg",
     },
     {
       title: "Ant Design",
-      icon: "fab fa-css3",
+      icon: "/assets/icons/AntDesign.svg",
+    },
+
+    {
+      title: "Apollo Client",
+      icon: "/assets/icons/ApolloClient.svg",
     },
     {
-      title: "Git/github",
-      icon: "fab fa-github",
-    },
-    {
-      title: "Firebase",
-      icon: "fab fa-google",
+      title: "GraphQl",
+      icon: "/assets/icons/GraphQl.svg",
     },
   ],
   about: {
     bio: `Hi again!, My name is <a href='https://www.linkedin.com/in/kundwabruno/' target='_blank'>Kundwa Bruno Materne</a>, I am a software engineer. I joined the carrer of web development back in 2019 after completing college in computer science, Where as i joined an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a> which populated me with the right skills, courage and love that i have right now for Web technologies.  <p>Up to today, I 've committed to this journey for over 3+ years now, Gaining <a href='/experience'>experience</a> and skills from great influencers like <a href='https://udemy.com/' target='_blank'>Udemy</a>, <a href='https://freecodecamp.org/' target='_blank'>FreeCodeCamp</a> and so many other sources from the internet.</p>`,
+    contactDescription:
+      "You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.",
     contact: [
       { name: "Email", data: "mailto:kundwabruno@gmail.com", icon: "email" },
       {
@@ -127,7 +116,7 @@ const portfolioData: PortfolioData = {
       company: "Awesomity Lab",
       companyLink: "https://awesomity.rw/",
       position: "Frontend developer",
-      timeFrame: "Sep 2021 - Present",
+      timeFrame: "Sep 2021 - Jan 2023",
       length: "6 months",
       location: "Germany",
       description: [

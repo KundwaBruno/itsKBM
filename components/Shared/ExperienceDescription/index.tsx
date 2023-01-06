@@ -55,10 +55,10 @@ const Experience: FC<ExperienceProps> = ({
           <span className="text-gray-300 text-sm">{role}</span>
           <span className="text-xs text-gray-500">{timeFrame}</span>
         </div>
-        <div className="md:w-[650px] mt-9 flex flex-col gap-2 text-gray-300">
+        <div className="md:w-[650px] mt-9 flex flex-col gap-2 text-gray-400">
           {description.map((dsc, index) => {
             return (
-              <div key={index} className="text-sm md:text-base">
+              <div key={index} className="text-sm">
                 - {dsc}
               </div>
             );

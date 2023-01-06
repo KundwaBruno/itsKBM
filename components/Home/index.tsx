@@ -9,17 +9,17 @@ import portfolioData from "../../lib/portfolioData";
 interface LandingPageProps {}
 
 const LandingPage: FC<LandingPageProps> = () => (
-  <div className="w-[84%] m-auto">
-    <div className="flex flex-col lg:flex-row mt-[12%] md:mt-[5%] h-auto md:h-[70vh] mb-16 md:mb-0">
-      <div className="w-full md:w-[68%] flex flex-col justify-center mb-10 md:mb-0">
+  <section className="w-[84%] m-auto max-w-screen-2xl">
+    <div className="flex flex-col md:flex-row gap-10 mt-10 md:my-20">
+      <div className="w-full lg:w-[65%] 2xl:w-[70%] flex flex-col justify-center mb-10 md:mb-0">
         <div className="text-[#B0B0B0] mb-2 text-sm">{PageData.salutation}</div>
-        <div className="text-4xl md:text-7xl font-extrabold tracking-tighter text-gray-300">
+        <div className="text-4xl lg:text-7xl font-extrabold tracking-tighter text-gray-300">
           {PageData.full__name}
         </div>
-        <h1 className="text-[2.3rem] md:text-[5rem] leading-[1.2] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter mb-5">
+        <div className="text-[2.3rem] lg:text-[5rem] leading-[1.2] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter mb-5">
           {PageData.passion}
-        </h1>
-        <div className="w-full md:w-4/6 mb-7 text-gray-300 text-sm md:text-base">
+        </div>
+        <div className="w-full lg:w-4/6 mb-7 text-gray-400 text-sm lg:text-base">
           {PageData.homeDescription}
         </div>
         <a
@@ -31,19 +31,20 @@ const LandingPage: FC<LandingPageProps> = () => (
           <Button className="py-[15px] px-[50px]">Say hello !</Button>
         </a>
       </div>
-      <div className="flex-1 h-[400px] md:h-[85%] bg-gradient-to-b from-[#1E1E1E] to-transparent rounded-[50px] relative">
-        <div className="relative h-full w-[80%] m-auto">
-          <Image
-            src={PageData.profile__image}
-            objectFit="contain"
-            layout="fill"
-            alt="Profile image"
-            className="rounded-[50px] mix-blend-overlay hover:mix-blend-normal cursor-pointer transition-all duration-500 hover:scale-110"
-          />
-        </div>
+      <div className="w-full rounded-2xl md:w-[400px] m-auto lg:flex-1  bg-gradient-to-b from-[#1E1E1E] to-transparent  p-10">
+        <Image
+          src={PageData.profile__image}
+          className="mix-blend-overlay hover:mix-blend-normal transition-all duration-500 rounded-2xl m-auto"
+          alt="Profile image"
+          width={400}
+          height={550}
+          blurDataURL="URL"
+          placeholder="blur"
+          priority={true}
+        />
       </div>
     </div>
-    <div className="text-center">
+    <div className="text-center mt-20">
       <Link href="#about">
         <ArrowNarrowDownIcon
           className="text-[#797979] inline cursor-pointer animate-bounce duration-200"
@@ -51,7 +52,7 @@ const LandingPage: FC<LandingPageProps> = () => (
         />
       </Link>
     </div>
-  </div>
+  </section>
 );
 
 export default LandingPage;

@@ -8,7 +8,6 @@ import { database, ref, set, push, onValue } from "../../lib/firebase";
 import { HiX } from "react-icons/hi";
 import { GiEmptyHourglass } from "react-icons/gi";
 import FeebackSkeleton from "../Shared/Skeletons/feedback";
-import { RiSendPlaneFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { FeedbackSchema } from "../../lib/types/feedback";
 import { nameByRace } from "fantasy-name-generator";
@@ -90,13 +89,13 @@ const Feedback: FC<FeedbackProps> = () => {
   return (
     <PageWrapper>
       <section className="flex justify-center items-center ">
-        <div className="w-11/12 m-auto md:w-[600px]">
+        <div className="w-11/12 m-auto md:w-[600px] md:mt-20">
           <div className="text-white font-bold text-4xl my-6 flex items-center justify-center gap-3">
             <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl">
               Feedback
             </h1>
           </div>
-          <div className="text-gray-400 mb-10 border-b pb-12 leading-6 text-center">
+          <div className="text-gray-400 mb-10  pb-12 leading-6 text-center">
             Welcome to my feedback section, Feel free to provide complete
             anonymous feedbacks, tips or anything that could help me improve my
             website or personal self. I would be very happy to hear or learn

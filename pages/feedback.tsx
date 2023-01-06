@@ -7,16 +7,23 @@ const Feedback: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <meta property='og:title' content='Feedback' />
         <meta
-          property='og:image'
-          content='https://res.cloudinary.com/dxyu6elli/image/upload/v1656868743/landing_mybpnj.png'
+          property="og:image"
+          content="https://res.cloudinary.com/dxyu6elli/image/upload/v1672685054/Screenshot_2023-01-02_at_20.43.14_ye0ihn.png"
+        />
+        <meta property="og:title" content="Feedback" />
+        <meta
+          property="og:description"
+          content="Welcome to my feedback section, Feel free to provide complete
+          anonymous feedbacks, tips or anything that could help me improve my
+          website or personal self. I would be very happy to hear or learn
+          from you."
         />
         <meta
-          property='og:description'
-          content='<b>Kundwa Bruno M.</b> is a software engineer who specializes in building digital experiences and solving problems on the web.'
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta property='og:url' content='https://itskbm.com/' />
+        <meta property="og:url" content="https://itskbm.com/feedback" />
         <title>Feeback</title>
       </Head>
       <FeedbackPage />

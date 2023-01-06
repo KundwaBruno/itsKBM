@@ -11,14 +11,18 @@ const Home: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <meta property="og:title" content="Kundwa Bruno" />
         <meta
           property="og:image"
           content="https://res.cloudinary.com/dxyu6elli/image/upload/v1672685054/Screenshot_2023-01-02_at_20.43.14_ye0ihn.png"
         />
+        <meta property="og:title" content="Portfolio" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
         <meta
           property="og:description"
-          content="<b>Kundwa Bruno Materne</b> is a passionate software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity."
+          content="<b>Kundwa Bruno</b> is a passionate software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity."
         />
         <meta property="og:url" content="https://itskbm.com/" />
         <title>Kundwa Bruno</title>

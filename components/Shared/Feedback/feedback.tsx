@@ -83,7 +83,7 @@ const Feedback: FC<FeedbackSchema> = ({
           </div>
           <div className="text-xs">{moment(createdAt).fromNow()}</div>
         </div>
-        <div className="mb-4">{body}</div>
+        <div className="mb-4 text-gray-400">{body}</div>
         <div className="flex items-center gap-4 text-xs">
           <div
             className="flex items-center cursor-pointer"

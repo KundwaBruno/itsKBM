@@ -74,8 +74,12 @@ const NavBar: FC<NavBarProps> = () => {
       <div className="hidden md:flex items-center gap-14">
         {NavLinks.map((link) => {
           return (
-            <div key={link.name} className="text-gray-300 text-sm">
-              <Link href={link.route}>{`${link.label}`}</Link>
+            <div
+              onClick={() => router.push(link.route)}
+              key={link.name}
+              className="text-gray-300 text-sm cursor-pointer"
+            >
+              {`${link.label}`}
             </div>
           );
         })}
@@ -92,19 +96,22 @@ const NavBar: FC<NavBarProps> = () => {
 
   return (
     <div
-      className={`z-50 sticky top-0 transition-all duration-500 w-full ${
+      className={`z-50 sticky top-0 transition-all duration-200 w-full ${
         isWebBarScrolled && "backdrop-blur-md border-b-[0.5px]"
       }`}
     >
-      <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] m-auto">
+      <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] max-w-screen-2xl m-auto">
         <div className="w-[80px] h-[70px] relative">
           <Image
             alt="website_logo"
             src={My_Logo}
             onClick={() => router.push("/")}
             className="cursor-pointer"
-            objectFit="contain"
-            layout="fill"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "contain",
+            }}
           />
         </div>
         <div className="md:hidden">

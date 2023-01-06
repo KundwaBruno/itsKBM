@@ -65,7 +65,7 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `Hi again!, My name is <a href='https://www.linkedin.com/in/kundwabruno/' target='_blank'>Kundwa Bruno Materne</a>, I am a software engineer. I joined the carrer of web development back in 2019 after completing college in computer science, Where as i joined an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a> which populated me with the right skills, courage and love that i have right now for Web technologies.  <p>Up to today, I 've committed to this journey for over 3+ years now, Gaining <a href='/experience'>experience</a> and skills from great influencers like <a href='https://udemy.com/' target='_blank'>Udemy</a>, <a href='https://freecodecamp.org/' target='_blank'>FreeCodeCamp</a> and so many other sources from the internet.</p>`,
+    bio: `Hi again!, My name is <a href='https://www.linkedin.com/in/kundwabruno/' target='_blank'>Kundwa Bruno Materne</a>, I am a software engineer. I joined the carrer of web development back in 2019 after completing college in computer science, Where as i joined an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a> which populated me with the right skills, courage and love that i have right now for Web technologies.  <p>Up to today, I 've committed to this journey for over 3+ years now, Gaining <a href='/#experience'>experience</a> and skills from great influencers like <a href='https://udemy.com/' target='_blank'>Udemy</a>, <a href='https://freecodecamp.org/' target='_blank'>FreeCodeCamp</a> and so many other sources from the internet.</p>`,
     contactDescription:
       "You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.",
     contact: [
@@ -107,9 +107,9 @@ const portfolioData: PortfolioData = {
       length: "6 months",
       location: "United States",
       description: [
-        "Built a crypto coins based wallet app that allowed users to transfer and receive XRPs using React native in collaboration with blockchain developers",
+        "Built crypto coins based wallet app that allowed users to transfer and receive XRPs using React native in collaboration with blockchain developers",
         "Worked on a platform that earns users real crypto tokens upon completing social public tasks using modern tech like metamask.",
-        "Build  a web platform that accepts payments and moves money globally for any scale business, device or channel.",
+        "Build a web platform that accepts payments and moves money globally for any scale business, device or channel.",
       ],
     },
     {

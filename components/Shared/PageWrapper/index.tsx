@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, Fragment, ReactNode } from "react";
 import NavigationBar from "../Nav";
 import Footer from "../Footer";
 
@@ -8,11 +8,11 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div className="h-fit">
+    <Fragment>
       <NavigationBar />
       {children}
       <Footer />
-    </div>
+    </Fragment>
   );
 };
 

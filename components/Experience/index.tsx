@@ -12,7 +12,14 @@ const Experience: FC<ExperienceProps> = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section id="experience" className="text-center mt-[10%] ">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      viewport={{ once: true }}
+      id="experience"
+      className="text-center mt-[10%] "
+    >
       <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl">
         Experience
       </h1>
@@ -70,7 +77,7 @@ const Experience: FC<ExperienceProps> = () => {
           />
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

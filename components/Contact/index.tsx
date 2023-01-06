@@ -1,13 +1,20 @@
-import Link from "next/link";
 import { FC } from "react";
 import portfolioData from "../../lib/portfolioData";
 import Data from "../../lib/portfolioData";
 import Button from "../Shared/Button";
+import { motion } from "framer-motion";
 
 interface ContactProps {}
 
 const Contact: FC<ContactProps> = () => (
-  <section id="contact" className="text-center my-[10%]">
+  <motion.section
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.5 }}
+    viewport={{ once: true }}
+    id="contact"
+    className="text-center my-[10%]"
+  >
     <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-10">
       Reach Me !
     </h1>
@@ -24,7 +31,7 @@ const Contact: FC<ContactProps> = () => (
         <Button className="py-[15px] px-[50px]">Say hello!</Button>
       </a>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default Contact;

@@ -5,6 +5,7 @@ import portfolioData from "../../lib/portfolioData";
 import Image from "next/image";
 import { ArrowNarrowDownIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface AboutProps {}
 
@@ -17,7 +18,14 @@ const About: FC<AboutProps> = () => {
   const [emblaRef] = useEmblaCarousel(carouselOptions);
 
   return (
-    <section id="about" className="text-center mt-[10%] ">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      viewport={{ once: true }}
+      id="about"
+      className="text-center mt-[10%] "
+    >
       <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-10">
         About Me
       </h1>
@@ -26,7 +34,7 @@ const About: FC<AboutProps> = () => {
         dangerouslySetInnerHTML={{ __html: Data.about.bio }}
       />
       <p className="normal-text text-gray-400 mb-10 mx-10 md:mx-0">
-        Swiper left or right through technologies that i am currently working
+        Drag left or right through technologies that i am currently working
         with:
       </p>
 
@@ -60,7 +68,7 @@ const About: FC<AboutProps> = () => {
           />
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

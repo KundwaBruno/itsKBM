@@ -33,7 +33,7 @@ const Experience: FC<ExperienceProps> = () => {
         />
       </div>
 
-      <div className="text-white bg-black lg:bg-transparent flex items-center justify-center w-full overflow-x-auto md:no-scrollbar mb-28 py-5">
+      <div className="text-white bg-black lg:bg-transparent flex items-center md:justify-center w-full overflow-x-auto md:no-scrollbar mb-28 py-5">
         {Data.experience.map((exp, index) => {
           const isActive = activeIndex === index;
           const isLast = index === Data.experience.length - 1;
@@ -44,7 +44,7 @@ const Experience: FC<ExperienceProps> = () => {
               whileTap={{ scale: 0.9 }}
               onClick={() => setActiveIndex(index)}
               className={`cursor-pointer text-xs transition-all duration-100 flex items-center justify-center gap-2 min-w-max ${
-                isLast || isFirst ? "mr-10 lg:mr-0" : ""
+                isLast || isFirst ? "mx-10 lg:mr-0" : ""
               }`}
             >
               <BriefcaseIcon

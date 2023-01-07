@@ -102,7 +102,7 @@ const portfolioData: PortfolioData = {
     {
       company: "Montech Studios",
       companyLink: "https://www.montech.io/",
-      position: "Frontend developer",
+      position: "Senior Frontend developer",
       timeFrame: "Jan 2022 - Present",
       length: "6 months",
       location: "United States",

@@ -33,39 +33,45 @@ const NavBar: FC<NavBarProps> = () => {
 
   const ToggleButton = () => {
     return (
-      <button onClick={toggleNavOpen} className="outline-none w-full relative">
-        {isNavOpen ? (
-          <HiX color="white" className="text-3xl" />
-        ) : (
-          <HiMenuAlt3 color="white" className="text-3xl" />
-        )}
-        {isNavOpen ? (
-          <motion.div
-            ref={navRef}
-            className="absolute right-0 top-10 rounded-2xl bg-gradient-to-b from-[#1E1E1E] to-black"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-          >
-            <div className="text-white p-10">
-              {NavLinks.map((link, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={`${index !== NavLinks.length - 1 && "mb-10"}`}
-                  >
+      <div className=" md:hidden">
+        <button
+          onClick={toggleNavOpen}
+          className="outline-none w-full relative"
+        >
+          {isNavOpen ? (
+            <HiX color="white" className="text-3xl" />
+          ) : (
+            <HiMenuAlt3 color="white" className="text-3xl" />
+          )}
+          {isNavOpen ? (
+            <motion.div
+              ref={navRef}
+              className="absolute right-0 top-10 rounded-2xl bg-gradient-to-b from-[#1E1E1E] to-black"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+            >
+              <div className="text-white p-10">
+                {NavLinks.map((link, index) => {
+                  return (
                     <div
-                      key={link.name}
-                      className="text-center text-sm font-bold"
+                      key={index}
+                      className={`${index !== NavLinks.length - 1 && "mb-10"}`}
                     >
-                      <Link href={link.route}>{`${link.label}`}</Link>
+                      <div
+                        key={link.name}
+                        className="text-center text-sm font-bold"
+                        onClick={() => router.push(link.route)}
+                      >
+                        {`${link.label}`}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
-        ) : null}
-      </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ) : null}
+        </button>
+      </div>
     );
   };
 
@@ -114,9 +120,7 @@ const NavBar: FC<NavBarProps> = () => {
             }}
           />
         </div>
-        <div className="md:hidden">
-          <ToggleButton />
-        </div>
+        <ToggleButton />
         <Web />
       </div>
     </div>

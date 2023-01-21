@@ -24,15 +24,30 @@ const About: FC<AboutProps> = () => {
       transition={{ delay: 0.4, duration: 0.5 }}
       viewport={{ once: true }}
       id="about"
-      className="text-center mt-[10%] "
+      className="text-center pt-[80px] "
     >
-      <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-10">
+      <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-20">
         About Me
       </h1>
-      <div
-        className="text-gray-400 w-[87%] lg:w-1/2 m-auto mb-16 text-sm md:text-base"
-        dangerouslySetInnerHTML={{ __html: Data.about.bio }}
-      />
+      <div className="flex flex-col-reverse md:flex-row w-[80%] md:w-[70%] lg:w-[55%] m-auto gap-8 max-w-screen-lg">
+        <div className="relative w-[150px] h-[210px] mx-auto mb-16 md:mb-0">
+          <Image
+            src={Data.profile__image}
+            alt="Profile image"
+            fill
+            style={{ objectFit: "cover" }}
+            blurDataURL="URL"
+            placeholder="blur"
+            priority={true}
+            className="rounded-2xl"
+          />
+        </div>
+        <div
+          className="text-gray-400 lg:w-1/2 m-auto md:mb-16 text-sm md:text-base flex-1 text-center md:text-left"
+          dangerouslySetInnerHTML={{ __html: Data.about.bio }}
+        />
+      </div>
+
       <p className="normal-text text-gray-400 mb-10 mx-10 md:mx-0">
         Drag left or right through technologies that i am currently working
         with:
@@ -42,7 +57,7 @@ const About: FC<AboutProps> = () => {
         ref={emblaRef}
         className="overflow-hidden py-4 bg-transparent stacks-gradient cursor-grab active:cursor-grabbing mb-28"
       >
-        <div className="embla__container flex items-center 2xl:justify-center">
+        <div className="flex items-center 2xl:justify-center">
           {portfolioData.tech_stacks.map((stack) => {
             return (
               <div key={stack.title} className="embla__slide relative h-[50px]">
@@ -59,14 +74,6 @@ const About: FC<AboutProps> = () => {
             );
           })}
         </div>
-      </div>
-      <div className="text-center">
-        <Link href="#experience">
-          <ArrowNarrowDownIcon
-            className="text-[#797979] inline cursor-pointer animate-bounce duration-200"
-            width={40}
-          />
-        </Link>
       </div>
     </motion.section>
   );

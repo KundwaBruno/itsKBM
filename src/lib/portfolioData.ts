@@ -122,7 +122,7 @@ const portfolioData: PortfolioData = {
       description: [
         "Worked with a netherland client in partnership with the New York Bank to develop a data collection system  using GraphQl.",
         "Introduced the usage of TailwindCSS framework that increased the team’s speed and performance  in building scalable user interfaces and experience.",
-        "Worked with the backend team to build a local goods transportation management system that is generating over USD 14K a month.Nextjs, Ant design, Tailwind Css, AWS and sockets.",
+        "Worked on a mobile payment feature generating over USD 14K a month. Nextjs, Ant design, Tailwind Css, AWS and sockets.",
       ],
     },
     {

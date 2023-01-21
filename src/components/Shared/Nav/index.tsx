@@ -9,6 +9,7 @@ import useScrollOffset from "../../../lib/hooks/useScrollOfset";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Button from "../Button";
+import { Pivot as Hamburger } from "hamburger-react";
 
 interface NavBarProps {}
 
@@ -34,19 +35,24 @@ const NavBar: FC<NavBarProps> = () => {
   const ToggleButton = () => {
     return (
       <div className=" md:hidden">
-        <button
-          onClick={toggleNavOpen}
-          className="outline-none w-full relative"
-        >
-          {isNavOpen ? (
-            <HiX color="white" className="text-3xl" />
-          ) : (
-            <HiMenuAlt3 color="white" className="text-3xl" />
-          )}
+        <div className="outline-none w-full relative">
+          <div className="flex items-center gap-4">
+            <a href="/resume.pdf" target="_blank">
+              <Button>Resume</Button>
+            </a>
+            <Hamburger
+              toggled={isNavOpen}
+              toggle={toggleNavOpen}
+              color="white"
+              size={22}
+              rounded
+            />
+          </div>
+
           {isNavOpen ? (
             <motion.div
               ref={navRef}
-              className="absolute right-0 top-10 rounded-2xl bg-gradient-to-b from-[#1E1E1E] to-black"
+              className="absolute right-0 top-16 rounded-2xl bg-gradient-to-b from-[#1E1E1E] to-black"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
@@ -70,7 +76,7 @@ const NavBar: FC<NavBarProps> = () => {
               </div>
             </motion.div>
           ) : null}
-        </button>
+        </div>
       </div>
     );
   };
@@ -102,7 +108,7 @@ const NavBar: FC<NavBarProps> = () => {
 
   return (
     <div
-      className={`z-50 sticky top-0 transition-all duration-200 w-full ${
+      className={`z-50 fixed top-0 transition-all duration-200 w-full ${
         isWebBarScrolled && "backdrop-blur-md border-b-[0.5px]"
       }`}
     >
@@ -120,7 +126,9 @@ const NavBar: FC<NavBarProps> = () => {
             }}
           />
         </div>
+
         <ToggleButton />
+
         <Web />
       </div>
     </div>

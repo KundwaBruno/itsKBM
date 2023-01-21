@@ -88,8 +88,8 @@ const Feedback: FC<FeedbackProps> = () => {
 
   return (
     <PageWrapper>
-      <section className="flex justify-center items-center ">
-        <div className="w-11/12 m-auto md:w-[600px] md:mt-20">
+      <section className="flex justify-center items-center">
+        <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
           <div className="text-white font-bold text-4xl my-6 flex items-center justify-center gap-3">
             <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl">
               Feedback
@@ -126,7 +126,13 @@ const Feedback: FC<FeedbackProps> = () => {
               >
                 <div className="flex gap-3 mt-2">
                   <div className="w-full">
-                    <Input value={input} onChange={onChangeHanlder} />
+                    <Input
+                      name="feedback"
+                      value={input}
+                      onChange={onChangeHanlder}
+                      required
+                      autoFocus
+                    />
                   </div>
                   <div>
                     <Button disabled={!input}>Post</Button>

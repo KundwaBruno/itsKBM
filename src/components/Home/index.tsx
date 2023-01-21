@@ -20,13 +20,13 @@ const animate = {
 };
 
 const LandingPage: FC<LandingPageProps> = () => (
-  <section className="w-[84%] m-auto max-w-screen-2xl">
-    <div className="flex flex-col md:flex-row gap-10 mt-10 md:my-20 overflow-x-hidden">
-      <div className="w-full lg:w-[65%] 2xl:w-[70%] flex flex-col justify-center mb-10 md:mb-0">
+  <section className="w-[84%] m-auto max-w-screen-2xl min-h-[800px] flex items-center justify-center relative">
+    <div className="flex flex-col md:flex-row gap-10 mt-10 md:my-20">
+      <div className="flex flex-col justify-center mb-10 md:mb-0">
         <motion.div
           initial={initial}
           animate={animate}
-          className="text-[#B0B0B0] mb-2 text-sm"
+          className="text-[#B0B0B0] mb-2 text-sm text-center"
         >
           {PageData.salutation}
         </motion.div>
@@ -34,7 +34,7 @@ const LandingPage: FC<LandingPageProps> = () => (
           initial={initial}
           animate={animate}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl lg:text-7xl font-extrabold tracking-tighter text-gray-300"
+          className="text-4xl lg:text-7xl font-extrabold tracking-tighter text-gray-300 text-center"
         >
           {PageData.full__name}
         </motion.div>
@@ -42,7 +42,7 @@ const LandingPage: FC<LandingPageProps> = () => (
           initial={initial}
           animate={animate}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-[2.3rem] lg:text-[5rem] leading-[1.2] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter mb-5"
+          className="text-[2.3rem] lg:text-[5rem] leading-[1.2] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter mb-5 text-center"
         >
           {PageData.passion}
         </motion.div>
@@ -50,7 +50,7 @@ const LandingPage: FC<LandingPageProps> = () => (
           initial={initial}
           animate={animate}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="w-full lg:w-4/6 mb-7 text-gray-400 text-sm lg:text-base"
+          className="w-full md:w-4/6 m-auto mb-7 text-gray-400 text-sm lg:text-base text-center"
         >
           {PageData.homeDescription}
         </motion.div>
@@ -61,37 +61,25 @@ const LandingPage: FC<LandingPageProps> = () => (
           href={portfolioData.about.contact[0].data}
           target="_blank"
           rel="noreferrer"
-          className="w-max"
+          className="w-max m-auto"
         >
           <Button className="py-[15px] px-[50px]">Say hello !</Button>
         </motion.a>
       </div>
-      <motion.div
-        initial={{ x: "100%", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.7, delay: 1, ease: "easeInOut" }}
-        className="w-full rounded-2xl md:w-[400px] m-auto lg:flex-1  bg-gradient-to-b from-[#1E1E1E] to-transparent  p-10"
-      >
-        <Image
-          src={PageData.profile__image}
-          className="mix-blend-overlay hover:mix-blend-normal transition-all duration-500 rounded-2xl m-auto"
-          alt="Profile image"
-          width={300}
-          height={300}
-          blurDataURL="URL"
-          placeholder="blur"
-          priority={true}
-        />
-      </motion.div>
     </div>
-    <div className="text-center mt-20">
+    <motion.div
+      initial={initial}
+      animate={animate}
+      transition={{ delay: 0.8, duration: 0.5 }}
+      className="text-center absolute bottom-16"
+    >
       <Link href="#about">
         <ArrowNarrowDownIcon
           className="text-[#797979] inline cursor-pointer animate-bounce duration-200"
           width={40}
         />
       </Link>
-    </div>
+    </motion.div>
   </section>
 );
 

@@ -15,6 +15,7 @@
     "fantasy-name-generator": "^2.0.0",
     "firebase": "^9.9.0",
     "framer-motion": "^6.3.16",
+    "hamburger-react": "^2.5.0",
     "moment": "^2.29.4",
     "next": "^13.1.1",
     "nprogress": "^0.2.0",

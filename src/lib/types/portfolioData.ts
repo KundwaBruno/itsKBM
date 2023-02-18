@@ -4,6 +4,7 @@ type PortfolioDta = {
   salutation: string;
   homeDescription: string;
   passion: string;
+  passions: string[];
   looking__into: string;
   status: string;
   profile__image: string;

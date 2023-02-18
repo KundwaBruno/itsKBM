@@ -5,6 +5,12 @@ const portfolioData: PortfolioData = {
   full__name: "Kundwa Bruno",
   salutation: "Hello there ! , Name is",
   passion: "Software engineer.",
+  passions: [
+    "Software Engineer",
+    "Frontend developer",
+    "Backend developer",
+    "UI/UX Designer",
+  ],
   profile__image: "/assets/images/profileLg.jpg",
   current__status: "Open to offers",
   homeDescription:

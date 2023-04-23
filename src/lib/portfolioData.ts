@@ -5,7 +5,14 @@ const portfolioData: PortfolioData = {
   full__name: "Kundwa Bruno",
   salutation: "Hello there ! , Name is",
   passion: "Software engineer.",
-  profile__image: "/assets/images/profileLg.jpg",
+  passions: [
+    "Software Engineer",
+    "Frontend developer",
+    "Backend developer",
+    "UI/UX Designer",
+  ],
+  profile__image:
+    "https://res.cloudinary.com/dxyu6elli/image/upload/v1682203668/1655309573260_gandfq.jpg",
   current__status: "Open to offers",
   homeDescription:
     "I am passionate software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity. ",
@@ -97,10 +104,68 @@ const portfolioData: PortfolioData = {
       },
     ],
   },
-
+  projects: {
+    title: "Projects",
+    description:
+      "Here are some cool projects that i have worked on sometime back!",
+    data: [
+      {
+        title: "OX Delivers",
+        description:
+          "A portal that manages transportation services carried out in Rwanda with daily active users.",
+        imageUrls: [
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.19.40_bjdqpr.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png",
+        ],
+        techs: [
+          "Typescript",
+          "React",
+          "NextJs",
+          "Tailwind CSS",
+          "Google Maps SDK",
+        ],
+        links: [{ url: "https://www.oxdelivers.com/", type: "link" }],
+      },
+      {
+        title: "BAAS Platform",
+        description:
+          "A data collection system that help visualize organisation process managements from lowscale to large firms",
+        imageUrls: [
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682210515/Screenshot_2023-04-23_at_02.39.44_kjj0dk.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682210619/Screenshot_2023-04-23_at_02.43.22_ngdazg.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.40.06_xw1tro.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png",
+        ],
+        techs: [
+          "Typescript",
+          "React",
+          "NextJs",
+          "GraphQL",
+          "Apollo Client",
+          "Tailwind CSS",
+        ],
+        links: [{ url: "https://www.oxdelivers.com/", type: "link" }],
+      },
+      {
+        title: "Trust seal platform",
+        description:
+          "A system that evaluates and sell online certificates for online websites",
+        imageUrls: [
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.09_juodpc.png",
+          "https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png",
+        ],
+        techs: ["Typescript", "React", "NextJs", "TailwindCSS"],
+        links: [{ url: "https://www.oxdelivers.com/", type: "link" }],
+      },
+    ],
+  },
   experience: [
     {
-      company: "Montech Studios",
+      company: "Montech Software Studios",
       companyLink: "https://www.montech.io/",
       position: "Senior Frontend developer",
       timeFrame: "Jan 2022 - Present",

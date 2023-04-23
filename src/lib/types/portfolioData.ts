@@ -4,6 +4,7 @@ type PortfolioDta = {
   salutation: string;
   homeDescription: string;
   passion: string;
+  passions: string[];
   looking__into: string;
   status: string;
   profile__image: string;
@@ -15,13 +16,24 @@ type PortfolioDta = {
   about: {
     bio: string;
     contactDescription: string;
+
     contact: {
       name: string;
       data: string;
       icon: any;
     }[];
   };
-
+  projects: {
+    title: string;
+    description: string;
+    data: {
+      title: string;
+      description: string;
+      imageUrls: string[];
+      links: { url: string; type: "github" | "link" | "learn more" }[];
+      techs: string[];
+    }[];
+  };
   experience: {
     company: string;
     position: string;

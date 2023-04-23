@@ -6,6 +6,7 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import PageWrapper from "../components/Shared/PageWrapper";
 import Contact from "../components/Contact";
+import Projects from "../components/Projects";
 
 const Home: NextPage = () => {
   return (
@@ -32,6 +33,7 @@ const Home: NextPage = () => {
         <HomePage />
         <About />
         <Experience />
+        <Projects />
         <Contact />
       </PageWrapper>
     </Fragment>

@@ -3,8 +3,6 @@ import ExperienceBox from "../Shared/ExperienceDescription";
 import { motion } from "framer-motion";
 import Data from "../../lib/portfolioData";
 import { BriefcaseIcon } from "@heroicons/react/solid";
-import { ArrowNarrowDownIcon } from "@heroicons/react/outline";
-import Link from "next/link";
 
 interface ExperienceProps {}
 
@@ -18,7 +16,7 @@ const Experience: FC<ExperienceProps> = () => {
       transition={{ delay: 0.4, duration: 0.5 }}
       viewport={{ once: true }}
       id="experience"
-      className="text-center pt-[100px] "
+      className="text-center md:pt-[100px] "
     >
       <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl">
         Experience

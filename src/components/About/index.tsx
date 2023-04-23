@@ -29,21 +29,20 @@ const About: FC<AboutProps> = () => {
       <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-20">
         About Me
       </h1>
-      <div className="flex flex-col-reverse md:flex-row w-[80%] md:w-[70%] lg:w-[55%] m-auto gap-8 max-w-screen-lg">
-        <div className="relative w-[150px] h-[210px] mx-auto mb-16 md:mb-0">
+      <div className="w-[80%] md:w-[70%] lg:w-[55%] m-auto gap-8 max-w-screen-lg">
+        <div className="relative w-[180px] h-[180px] mx-auto my-16 ">
           <Image
             src={Data.profile__image}
             alt="Profile image"
             fill
-            style={{ objectFit: "cover" }}
             blurDataURL="URL"
             placeholder="blur"
             priority={true}
-            className="rounded-2xl"
+            className="rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
           />
         </div>
         <div
-          className="text-gray-400 lg:w-1/2 m-auto md:mb-16 text-sm md:text-base flex-1 text-center md:text-left"
+          className="text-gray-400  m-auto md:mb-16 text-sm md:text-base flex-1 text-center"
           dangerouslySetInnerHTML={{ __html: Data.about.bio }}
         />
       </div>
@@ -55,12 +54,15 @@ const About: FC<AboutProps> = () => {
 
       <div
         ref={emblaRef}
-        className="overflow-hidden py-4 bg-transparent stacks-gradient cursor-grab active:cursor-grabbing mb-28"
+        className="overflow-hidden w-full py-4 bg-transparent stacks-gradient cursor-grab active:cursor-grabbing mb-28"
       >
-        <div className="flex items-center 2xl:justify-center">
+        <div className="flex">
           {portfolioData.tech_stacks.map((stack) => {
             return (
-              <div key={stack.title} className="embla__slide relative h-[50px]">
+              <div
+                key={stack.title}
+                className=" relative h-[50px] flex-0 flex-shrink-0 flex-grow-0 w-1/2 md:w-[14%]"
+              >
                 <Image
                   src={stack.icon}
                   alt={stack.title}

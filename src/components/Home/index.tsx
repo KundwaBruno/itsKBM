@@ -32,7 +32,7 @@ const LandingPage: FC<LandingPageProps> = () => {
   }, []);
 
   return (
-    <section className="w-[84%] m-auto max-w-screen-2xl min-h-[650px] md:min-h-[800px] flex items-center justify-center relative">
+    <section className="w-[84%] m-auto max-w-screen-2xl min-h-[650px] md:min-h-screen flex items-center justify-center relative">
       <div className="flex flex-col md:flex-row gap-10 mt-10 md:my-20">
         <div className="flex flex-col justify-center mb-10 md:mb-0">
           <motion.div

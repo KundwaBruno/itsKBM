@@ -168,6 +168,5 @@ p {
 }
 
 .embla__slide {
-  flex: 0 0 13rem;
-  width: fit-content;
+  flex: 0 0 14%;
 }

@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaArrowUp,
   FaArrowDown,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 
 interface IconProps {
@@ -36,6 +37,8 @@ const IconComponent: FC<IconProps> = ({ name, color }) => {
         return <FaArrowUp width={iconWidth} color={color} />;
       case "Down":
         return <FaArrowDown width={iconWidth} color={color} />;
+      case "Link":
+        return <FaExternalLinkAlt width={iconWidth} color={color} />;
       default:
         return null;
     }

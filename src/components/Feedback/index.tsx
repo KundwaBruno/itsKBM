@@ -87,7 +87,7 @@ const Feedback: FC<FeedbackProps> = () => {
   }, []);
 
   return (
-    <PageWrapper>
+    <PageWrapper title="Feedback">
       <section className="flex justify-center items-center">
         <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
           <div className="text-white font-bold text-4xl my-6 flex items-center justify-center gap-3">

@@ -1,5 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import { FC, useEffect, useState } from "react";
 import PageData from "../../lib/portfolioData";
 import Button from "../Shared/Button";
 import { ArrowNarrowDownIcon } from "@heroicons/react/outline";

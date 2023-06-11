@@ -1,8 +1,6 @@
 import React, { FC, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { My_Logo } from "../../../lib/images";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
 import NavLinks from "./links";
 import useOnClickOutside from "../../../lib/hooks/useOutsideClick";
 import useScrollOffset from "../../../lib/hooks/useScrollOfset";

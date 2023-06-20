@@ -11,7 +11,6 @@ interface LandingPageProps {}
 
 const initial = {
   opacity: 0,
-  y: -10,
 };
 
 const animate = {
@@ -22,13 +21,6 @@ const animate = {
 const LandingPage: FC<LandingPageProps> = () => {
   const { salutation, passions, passion, full__name, homeDescription } =
     PageData;
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
-    return () => clearTimeout(intervalId);
-  }, []);
 
   return (
     <section className="w-[84%] m-auto max-w-screen-2xl min-h-[650px] md:min-h-screen flex items-center justify-center relative">
@@ -50,20 +42,14 @@ const LandingPage: FC<LandingPageProps> = () => {
             {full__name}
           </motion.div>
 
-          <TextTransition
-            springConfig={presets.gentle}
-            className="text-center m-auto"
-            inline
+          <motion.div
+            initial={initial}
+            animate={animate}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-[2.3rem] lg:text-[5rem] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter text-center"
           >
-            <motion.div
-              initial={initial}
-              animate={animate}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-[2.3rem] lg:text-[5rem] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter text-center"
-            >
-              {passions[index % passions.length]}
-            </motion.div>
-          </TextTransition>
+            Software Engineer
+          </motion.div>
 
           <motion.div
             initial={initial}

@@ -87,7 +87,7 @@ const NavBar: FC<NavBarProps> = () => {
             <div
               onClick={() => router.push(link.route)}
               key={link.name}
-              className="text-gray-300 text-sm cursor-pointer"
+              className="text-gray-300 text-xs cursor-pointer"
             >
               {`${link.label}`}
             </div>

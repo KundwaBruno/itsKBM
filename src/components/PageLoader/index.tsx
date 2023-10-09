@@ -1,7 +1,7 @@
-import { FC } from "react";
-import Image from "next/image";
-import { My_Logo } from "../../lib/images";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { FC } from 'react';
+import { My_Logo } from '../../lib/images';
 
 const PageLoader: FC = () => {
   return (
@@ -10,8 +10,7 @@ const PageLoader: FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-screen h-screen flex items-center justify-center"
-    >
+      className="w-screen h-screen flex items-center justify-center dark:bg-black bg-white">
       <div className="w-[80px] h-[80px] relative animate-bounce">
         <Image
           alt="website_logo"
@@ -20,7 +19,7 @@ const PageLoader: FC = () => {
           fill
           sizes="100vw"
           style={{
-            objectFit: "contain",
+            objectFit: 'contain',
           }}
         />
       </div>

@@ -1,29 +1,22 @@
-import { motion } from "framer-motion";
-import { FC, ReactNode } from "react";
+import { motion } from 'framer-motion';
+import { FC, ReactNode } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
-  size?: "large" | "small";
+  size?: 'large' | 'small';
   disabled?: boolean;
   className?: string;
 }
 
-const Button: FC<ButtonProps> = ({
-  children,
-  onClick,
-  disabled,
-  size,
-  className,
-}) => {
+const Button: FC<ButtonProps> = ({ children, onClick, disabled, size, className }) => {
   return (
     <motion.button
       type="submit"
       whileTap={{ scale: !disabled ? 0.9 : 1 }}
       disabled={disabled}
       onClick={onClick}
-      className='bg-custom_black p-3 rounded-lg px-5 text-white disabled:opacity-90'
-    >
+      className={`dark:bg-custom_white bg-custom_black p-3 rounded-lg px-5 dark:text-black hover:opacity-90 text-white disabled:opacity-70 disabled:cursor-not-allowed ${className}`}>
       {children}
     </motion.button>
   );

@@ -1,14 +1,11 @@
-import React, { FC, useState, useRef } from "react";
-import Collapsable from "../Collapsable";
-import {
-  IdentificationIcon,
-  InformationCircleIcon,
-} from "@heroicons/react/solid";
-import { IoIosArrowBack } from "react-icons/io";
-import PersonalData from "../../../lib/portfolioData";
-import useOutSideClick from "../../../lib/hooks/useOutsideClick";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+import { IdentificationIcon, InformationCircleIcon } from '@heroicons/react/solid';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import React, { FC, useRef, useState } from 'react';
+import { IoIosArrowBack } from 'react-icons/io';
+import useOutSideClick from '../../../lib/hooks/useOutsideClick';
+import PersonalData from '../../../lib/portfolioData';
+import Collapsable from '../Collapsable';
 
 interface FooterProps {}
 
@@ -30,7 +27,7 @@ const Footer: FC<FooterProps> = () => {
   };
 
   const toggleShowHidden = () => {
-    if (path === "/") {
+    if (path === '/') {
       setShowHidden(!showHidden);
       setIsCollapsed(false);
     } else {
@@ -39,8 +36,8 @@ const Footer: FC<FooterProps> = () => {
   };
 
   return (
-    <div className="flex py-10 items-center justify-center w-11/12 md:w-[90%] m-auto relative">
-      <div className="text-gray-400 text-xs">
+    <div className="flex py-10 items-center justify-center w-11/12 md:w-[90%] m-auto relative dark:bg-black bg-white">
+      <div className="text-custom_gray text-xs">
         {PersonalData.copyright}
         <span className="ml-2">&#128170;&#127998;</span>
       </div>
@@ -48,8 +45,7 @@ const Footer: FC<FooterProps> = () => {
         <Collapsable
           isCollapsed={isCollapsed}
           onClose={handleUnCollapse}
-          items={PersonalData.about.contact}
-        >
+          items={PersonalData.about.contact}>
           <IdentificationIcon width={20} />
         </Collapsable>
       </div>

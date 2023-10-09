@@ -86,12 +86,12 @@ const Feedback: FC<FeedbackProps> = () => {
 
   return (
     <PageWrapper title="Feedback">
-      <section className="flex justify-center items-center">
+      <section className="flex justify-center items-center min-h-screen">
         <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
           <div className="dark:text-custom_white text-custom_black font-bold text-4xl my-6 flex items-center justify-center gap-3">
             <h1 className="leading-[5rem] font-extrabold  text-3xl md:text-5xl">Feedback</h1>
           </div>
-          <div className="dark:text-custom_white text-custom_black mb-10  pb-12 leading-6 text-center">
+          <div className="dark:text-custom_gray text-custom_black mb-10 font-light  pb-12 leading-6 text-center">
             Welcome to my feedback section, Feel free to provide complete anonymous feedbacks, tips
             or anything that could help me improve my website or personal self. I would be very
             happy to hear or learn from you.
@@ -147,7 +147,7 @@ const Feedback: FC<FeedbackProps> = () => {
               <div className="text-center text-secondary my-4">
                 <motion.button
                   whileTap={{ scale: 0.9 }}
-                  className="cursor-pointer text-xs underline underline-offset-4"
+                  className="cursor-pointer text-xs underline underline-offset-4 text-custom_black dark:text-custom_white"
                   onClick={incrementPagination}>
                   Load more
                 </motion.button>

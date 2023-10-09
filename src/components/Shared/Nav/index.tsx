@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { FC, useMemo, useRef, useState } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import useOnClickOutside from '../../../lib/hooks/useOutsideClick';
 import useScrollOffset from '../../../lib/hooks/useScrollOfset';
 import { My_Logo } from '../../../lib/images';
@@ -15,6 +17,8 @@ const NavBar: FC<NavBarProps> = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
   const navRef = useRef<any>();
+
+  const { systemTheme, theme, setTheme } = useTheme();
 
   const router = useRouter();
 
@@ -68,6 +72,17 @@ const NavBar: FC<NavBarProps> = () => {
     );
   };
 
+  const ToogleThemeButton = () => {
+    const { theme, setTheme } = useTheme();
+    return (
+      <button
+        className="text-custom_black dark:text-custom_white rounded-full p-3 hover:bg-gray-500 transition-all duration-100"
+        onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}>
+        {theme === 'light' ? <FaMoon /> : <FaSun />}
+      </button>
+    );
+  };
+
   const Web = () => {
     return (
       <div className="hidden md:flex items-center gap-14">
@@ -84,6 +99,7 @@ const NavBar: FC<NavBarProps> = () => {
         <a href="/resume.pdf" target="_blank">
           <Button>Resume</Button>
         </a>
+        <ToogleThemeButton />
       </div>
     );
   };
@@ -95,7 +111,7 @@ const NavBar: FC<NavBarProps> = () => {
   return (
     <div
       className={`z-50 fixed top-0 transition-all duration-200 w-full ${
-        isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px]'
+        isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px] border-b-custom_border_dark'
       }`}>
       <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] max-w-screen-2xl m-auto">
         <div className="w-[100px] h-[80px] relative">
@@ -113,7 +129,6 @@ const NavBar: FC<NavBarProps> = () => {
         </div>
 
         <ToggleButton />
-
         <Web />
       </div>
     </div>

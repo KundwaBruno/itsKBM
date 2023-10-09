@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import moment from 'moment';
 import { FC, useState } from 'react';
+import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import { database, ref, update } from '../../../lib/firebase';
 import avatarNameMaker from '../../../lib/functions/abbrName';
 import { FeedbackSchema } from '../../../lib/types/feedback';
-import Avatar from '../Avatar';
-import Icon from '../Icon';
 
 const Feedback: FC<FeedbackSchema> = ({ body, createdAt, id, upVotes, name, downVotes }) => {
   const [upVoted, setUpVoted] = useState<boolean>(false);
@@ -67,43 +66,45 @@ const Feedback: FC<FeedbackSchema> = ({ body, createdAt, id, upVotes, name, down
       initial={{ opacity: 0 }}
       className="text-sm flex flex-col gap-3 my-8 w-full">
       <div className="flex gap-2">
-        <div className="w-10 h-10 flex items-center justify-center text-custom_white rounded-full border border-black bg-background">
+        <div className="w-10 h-10 flex items-center justify-center text-custom_gray dark:text-custom_white rounded-full border-2 border-custom_gray dark:border-custom_border_dark bg-background_light dark:bg-background_dark">
           {avatarNameMaker(`Anonyous ${name}`)}
         </div>
         <div className="flex-1">
           <div className="flex gap-2 items-center">
             <div className="text-sm dark:text-custom_white text-custom_black">{`@Anonymous ${name}`}</div>
-            <div className="text-xs dark:text-custom_white text-custom_gray">
-              {moment(createdAt).fromNow()}
-            </div>
+            <div className="text-xs text-custom_gray">{moment(createdAt).fromNow()}</div>
           </div>
           <div>
             <div className="my-2 dark:text-custom_white text-custom_black text-base">{body}</div>
             <div className="flex items-center gap-4 text-xs">
-              <div className="flex items-center cursor-pointer" onClick={incrementUpVotes}>
+              <div
+                className="flex items-center cursor-pointer text-green-600 dark:text-green-400"
+                onClick={incrementUpVotes}>
                 <motion.span
                   key={upVotes}
                   variants={variants}
                   animate={'flip'}
                   initial="hide"
-                  className="mr-2 text-green-600">
-                  {upVotes} upvotes
+                  className="mr-2 ">
+                  {upVotes}
                 </motion.span>
                 <span>
-                  <Icon name="Up" color={upVoted ? '#87EEAB' : ''} />
+                  <FaArrowUp />
                 </span>
               </div>
-              <div className="flex items-center cursor-pointer" onClick={incrementDownVotes}>
+              <div
+                className="flex items-center cursor-pointer text-red-600 dark:text-red-400"
+                onClick={incrementDownVotes}>
                 <motion.span
                   key={downVotes}
                   variants={variants}
                   animate={'flip'}
                   initial="hide"
-                  className="mr-2 text-red-600">
+                  className="mr-2 ">
                   {downVotes}
                 </motion.span>
                 <span>
-                  <Icon name="Down" color={downVoted ? '#E79797' : ''} />
+                  <FaArrowDown />
                 </span>
               </div>
             </div>

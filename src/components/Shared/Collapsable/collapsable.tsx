@@ -1,7 +1,7 @@
-import { FC, ReactNode } from "react";
-import { motion } from "framer-motion";
-import Icon from "../Icon";
-import { useRouter } from "next/router";
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { FC, ReactNode } from 'react';
+import Icon from '../Icon';
 
 interface CollapsableProps {
   children: ReactNode;
@@ -10,20 +10,15 @@ interface CollapsableProps {
   onClose: () => void;
 }
 
-const Collapsable: FC<CollapsableProps> = ({
-  children,
-  items,
-  isCollapsed,
-  onClose,
-}) => {
+const Collapsable: FC<CollapsableProps> = ({ children, items, isCollapsed, onClose }) => {
   const router = useRouter();
 
   return (
-    <div role='button' className='relative' onClick={onClose}>
+    <div role="button" className="relative" onClick={onClose}>
       {isCollapsed && (
         <motion.ul
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
           variants={{
             hidden: { opacity: 1, scale: 0 },
             visible: {
@@ -35,8 +30,7 @@ const Collapsable: FC<CollapsableProps> = ({
               },
             },
           }}
-          className='absolute bottom-[50px] inset-x-0'
-        >
+          className="absolute bottom-[50px] inset-x-0">
           {items.map((item, index) => {
             return (
               <motion.li
@@ -49,15 +43,14 @@ const Collapsable: FC<CollapsableProps> = ({
                     opacity: 1,
                   },
                 }}
-                className='bg-white rounded-full w-9 h-9 flex justify-center items-center my-3'
-              >
+                className="bg-white rounded-full w-9 h-9 flex justify-center shadow-md items-center my-3">
                 <Icon name={item.icon} />
               </motion.li>
             );
           })}
         </motion.ul>
       )}
-      <div className='w-10 h-10 flex items-center justify-center rounded-full border text-gray-400 active:bg-[#393939]'>
+      <div className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-custom_black dark:border-custom_border_dark text-custom_gray active:bg-[#393939]">
         {children}
       </div>
     </div>

@@ -41,20 +41,20 @@ const Experience: FC<ExperienceProps> = ({
             href={companyLink}
             target="_blank"
             rel="noreferrer"
-            className="text-lg  font-semibold gap-5">
+            className="text-xl  font-semibold gap-5">
             {company}
           </a>
           <TbExternalLink className="text-2xl text-secondary " />
         </div>
-        <div className="dark:text-custom_white text-custom_black text-sm text-left mb-2">
-          {role}
+        <div className="dark:text-custom_gray text-custom_black text-sm text-left mb-2">
+          @{role}
         </div>
-        <div className="text-xs text-custom_gray text-left ">{timeFrame}</div>
+        <div className="text-xs text-custom_gray text-left uppercase ">{timeFrame}</div>
       </div>
-      <div className="md:w-[650px] flex flex-col gap-2 dark:text-custom_white text-custom_black">
+      <div className=" flex flex-col gap-2 dark:text-custom_gray text-custom_black">
         {description.map((dsc, index) => {
           return (
-            <div key={index} className="text-sm text-left">
+            <div key={index} className="font-light text-left">
               - {dsc}
             </div>
           );

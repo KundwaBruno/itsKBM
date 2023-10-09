@@ -42,60 +42,28 @@ const ProjectsCard: FC<Props> = (props) => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative flex flex-col md:flex-row gap-5 py-5">
-      <div className="relative">
-        {prevBtnEnabled && (
-          <button
-            onClick={scrollPrev}
-            className="bg-white rounded-full p-2 shadow-md border absolute z-10 -left-3 top-1/2  -translate-y-1/2">
-            <FaChevronLeft size={10} />
-          </button>
-        )}
-
-        <div ref={emblaRef} className="overflow-hidden cursor-pointer h-full w-[200px]">
-          <div className="flex h-full">
-            <PhotoProvider>
-              {imageUrls.map((img, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="h-full relative rounded-2xl"
-                    style={{ flex: '0 0 100%' }}>
-                    <PhotoView src={img}>
-                      <div className="relative w-full md:w-[200px] h-[150px]">
-                        <Image
-                          src={img}
-                          alt="Project_thumbnail"
-                          priority
-                          fill
-                          className="object-cover border-2 rounded-lg"
-                        />
-                      </div>
-                    </PhotoView>
-                  </div>
-                );
-              })}
-            </PhotoProvider>
-          </div>
-        </div>
-        {nextBtnEnabled && (
-          <button
-            onClick={scrollNext}
-            className="bg-white rounded-full p-2 shadow-md border absolute z-10 -right-3 top-1/2  -translate-y-1/2">
-            <FaChevronRight size={10} />
-          </button>
-        )}
+    <div className="relative rounded-lg border border-custom_border_dark">
+      <div className="relative w-full h-[160px]">
+        <Image
+          src={imageUrls[0]}
+          alt="Project_thumbnail"
+          priority
+          fill
+          className="object-cover dark:opacity-80 rounded-t-lg"
+        />
       </div>
 
-      <div>
-        <h1 className="text-xl text-left font-medium">{title}</h1>
-        <div className="dark:text-custom_gray text-custom_gray text-left my-2 text-sm">
+      <div className="p-4 bg-background_light dark:bg-black rounded-b-lg">
+        <h1 className="text-left text-custom_black  font-medium dark:text-custom_white">{title}</h1>
+        <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-2">
           {description}
         </div>
         <div className="flex flex-wrap gap-3 text-xs text-gray-500">
           {techs.map((tch, index) => {
             return (
-              <span key={index} className="bg-white shadow p-1 px-2 rounded-md">
+              <span
+                key={index}
+                className=" dark:bg-custom_black text-custom_gray border dark:border-custom_border_dark p-1 px-2 rounded-md">
                 {tch}
               </span>
             );

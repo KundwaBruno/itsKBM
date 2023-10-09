@@ -1,7 +1,7 @@
-import React, { FC, Fragment, ReactNode } from "react";
-import NavigationBar from "../Nav";
-import Footer from "../Footer";
-import Head from "next/head";
+import Head from 'next/head';
+import React, { FC, Fragment, ReactNode } from 'react';
+import Footer from '../Footer';
+import NavigationBar from '../Nav';
 
 interface PageWrapperProps {
   children: ReactNode;
@@ -10,14 +10,14 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children, title }) => {
   return (
-    <Fragment>
+    <div className="dark:bg-black bg-white">
       <Head>
         <title>{title}</title>
       </Head>
       <NavigationBar />
       {children}
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 

@@ -2,14 +2,14 @@ import PortfolioData from './types/portfolioData';
 
 const portfolioData: PortfolioData = {
   name__abbr: 'KBM',
-  full__name: 'Kundwa Bruno',
+  full__name: 'Kundwa Bruno Materne.',
   salutation: 'Hello there , My name is',
   passion: 'Software engineer.',
   passions: ['Software Engineer', 'Frontend developer', 'Backend developer', 'UI/UX Designer'],
   profile__image:
     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682203668/1655309573260_gandfq.jpg',
   current__status: 'Open to offers',
-  homeDescription: `I am a <b><u>software engineer!</u></b>, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity.`,
+  homeDescription: `I am a software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity.`,
   looking__into:
     'Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.',
   status: 'Open to offers',
@@ -101,44 +101,44 @@ const portfolioData: PortfolioData = {
   projects: {
     title: 'Projects',
     description:
-      'Below is some of the recent portfolios i have been working on, and ranked by most recent!',
+      'Below is some of the recent projects i have been working on, and ranked by most recent!',
     data: [
       {
-        title: 'System to record business rules and workflows',
+        title: 'Business Analytics',
         description:
-          'A data collection system that help visualize organisation process and managements.',
+          'Data collection system that enhances organizational process visualization and management.',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210515/Screenshot_2023-04-23_at_02.39.44_kjj0dk.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210619/Screenshot_2023-04-23_at_02.43.22_ngdazg.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.40.06_xw1tro.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png',
         ],
-        techs: ['Typescript', 'React', 'NextJs', 'GraphQL', 'Apollo Client', 'Tailwind CSS'],
+        techs: ['NextJs', 'Apollo Client', 'MapBox'],
         links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
       },
       {
-        title: 'Transportation management system',
-        description:
-          'A portal that manages transportation services carried out in Rwanda with daily active users.',
+        title: 'Transport System',
+        description: 'Transportation services in Rwanda with a substantial daily user base.',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.19.40_bjdqpr.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
         ],
-        techs: ['Typescript', 'React', 'NextJs', 'Tailwind CSS', 'Google Maps SDK'],
+        techs: ['NextJs', 'Typescript', 'Google Maps'],
         links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
       },
       {
-        title: 'Online verification seal platform',
-        description: 'A system that evaluates and sell online certificates for online websites',
+        title: 'Verification Seal',
+        description:
+          'A system that evaluates and sell online trust/reliability certificates for online websites',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.09_juodpc.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
         ],
-        techs: ['Typescript', 'React', 'NextJs', 'TailwindCSS'],
+        techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
         links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
       },
     ],

@@ -29,8 +29,11 @@ body {
   outline: 1px solid slategrey;
 }
 
-
-
+@layer base {
+  body {
+    @apply dark:bg-black bg-white;
+  }
+}
 
 @layer utilities {
   @variants responsive {
@@ -75,14 +78,14 @@ p {
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #a96637, 0 0 5px #a96637;
+  box-shadow:
+    0 0 10px #a96637,
+    0 0 5px #a96637;
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
   -ms-transform: rotate(3deg) translate(0px, -4px);
   transform: rotate(3deg) translate(0px, -4px);
 }
-
-
 
 .embla__slide {
   flex: 0 0 14%;

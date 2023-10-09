@@ -1,13 +1,13 @@
-import React, { FC, useMemo, useRef, useState } from "react";
-import Image from "next/image";
-import { My_Logo } from "../../../lib/images";
-import NavLinks from "./links";
-import useOnClickOutside from "../../../lib/hooks/useOutsideClick";
-import useScrollOffset from "../../../lib/hooks/useScrollOfset";
-import { useRouter } from "next/router";
-import { motion } from "framer-motion";
-import Button from "../Button";
-import { Pivot as Hamburger } from "hamburger-react";
+import { motion } from 'framer-motion';
+import { Pivot as Hamburger } from 'hamburger-react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React, { FC, useMemo, useRef, useState } from 'react';
+import useOnClickOutside from '../../../lib/hooks/useOutsideClick';
+import useScrollOffset from '../../../lib/hooks/useScrollOfset';
+import { My_Logo } from '../../../lib/images';
+import Button from '../Button';
+import NavLinks from './links';
 
 interface NavBarProps {}
 
@@ -38,34 +38,23 @@ const NavBar: FC<NavBarProps> = () => {
             <a href="/resume.pdf" target="_blank">
               <Button>Resume</Button>
             </a>
-            <Hamburger
-              toggled={isNavOpen}
-              toggle={toggleNavOpen}
-              color="white"
-              size={22}
-              rounded
-            />
+            <Hamburger toggled={isNavOpen} toggle={toggleNavOpen} color="black" size={22} rounded />
           </div>
 
           {isNavOpen ? (
             <motion.div
               ref={navRef}
-              className="absolute right-0 top-16 rounded-2xl bg-gradient-to-b from-[#1E1E1E] to-black"
+              className="absolute right-0 top-16 rounded-2xl bg-custom_white shadow-lg"
               initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-            >
+              animate={{ y: 0, opacity: 1 }}>
               <div className="text-white p-10">
                 {NavLinks.map((link, index) => {
                   return (
-                    <div
-                      key={index}
-                      className={`${index !== NavLinks.length - 1 && "mb-10"}`}
-                    >
+                    <div key={index} className={`${index !== NavLinks.length - 1 && 'mb-10'}`}>
                       <div
                         key={link.name}
-                        className="text-center text-sm font-bold"
-                        onClick={() => router.push(link.route)}
-                      >
+                        className="text-center text-sm font-bold dark:text-custom_white text-custom_black"
+                        onClick={() => router.push(link.route)}>
                         {`${link.label}`}
                       </div>
                     </div>
@@ -87,8 +76,7 @@ const NavBar: FC<NavBarProps> = () => {
             <div
               onClick={() => router.push(link.route)}
               key={link.name}
-              className="text-gray-300 text-xs cursor-pointer"
-            >
+              className="dark:text-gray-300 text-custom_black text-sm cursor-pointer">
               {`${link.label}`}
             </div>
           );
@@ -107,20 +95,19 @@ const NavBar: FC<NavBarProps> = () => {
   return (
     <div
       className={`z-50 fixed top-0 transition-all duration-200 w-full ${
-        isWebBarScrolled && "backdrop-blur-md border-b-[0.5px]"
-      }`}
-    >
+        isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px]'
+      }`}>
       <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] max-w-screen-2xl m-auto">
-        <div className="w-[80px] h-[70px] relative">
+        <div className="w-[100px] h-[80px] relative">
           <Image
             alt="website_logo"
             src={My_Logo}
-            onClick={() => router.push("/")}
+            onClick={() => router.push('/')}
             className="cursor-pointer"
             fill
             sizes="100vw"
             style={{
-              objectFit: "contain",
+              objectFit: 'contain',
             }}
           />
         </div>

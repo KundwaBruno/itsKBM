@@ -1,20 +1,23 @@
-import "../styles/globals.css";
+import { Inter } from "@next/font/google";
+import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import { Inter } from "@next/font/google";
+import { useEffect, useState } from "react";
 import PageLoader from "../components/PageLoader";
-import { AnimatePresence } from "framer-motion";
+import "../styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const [showSplash, setShowSplash] = useState<boolean>(true);
+
+
 
   useEffect(() => {
     const handleStart = () => {

@@ -1,27 +1,27 @@
-import React, { FC, Fragment, useCallback, useEffect, useState } from "react";
-import Button from "../Shared/Button";
-import FeedbackWrapper from "../Shared/Feedback";
-import Input from "../Shared/Input";
-import PageWrapper from "../Shared/PageWrapper";
-import moment from "moment";
-import { database, ref, set, push, onValue } from "../../lib/firebase";
-import { HiX } from "react-icons/hi";
-import { GiEmptyHourglass } from "react-icons/gi";
-import FeebackSkeleton from "../Shared/Skeletons/feedback";
-import { motion } from "framer-motion";
-import { FeedbackSchema } from "../../lib/types/feedback";
-import { nameByRace } from "fantasy-name-generator";
-import { query } from "firebase/database";
+import { nameByRace } from 'fantasy-name-generator';
+import { query } from 'firebase/database';
+import { motion } from 'framer-motion';
+import moment from 'moment';
+import React, { FC, Fragment, useCallback, useEffect, useState } from 'react';
+import { GiEmptyHourglass } from 'react-icons/gi';
+import { HiX } from 'react-icons/hi';
+import { database, onValue, push, ref, set } from '../../lib/firebase';
+import { FeedbackSchema } from '../../lib/types/feedback';
+import Button from '../Shared/Button';
+import FeedbackWrapper from '../Shared/Feedback';
+import Input from '../Shared/Input';
+import PageWrapper from '../Shared/PageWrapper';
+import FeebackSkeleton from '../Shared/Skeletons/feedback';
 
 interface FeedbackProps {}
 
 const ITEMS_COUNT = 3;
 
 const Feedback: FC<FeedbackProps> = () => {
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>('');
   const [toast, setToast] = useState<{ show: boolean; body: string }>({
     show: false,
-    body: "",
+    body: '',
   });
   const [fbcks, setFbcks] = useState<FeedbackSchema[]>();
 
@@ -39,12 +39,12 @@ const Feedback: FC<FeedbackProps> = () => {
   };
 
   const hideToast = () => {
-    setToast({ show: false, body: "" });
+    setToast({ show: false, body: '' });
   };
 
   const postFeedBack = () => {
-    const name = nameByRace("angel", { gender: "male" });
-    const feedbackListRef = ref(database, "feedbacks");
+    const name = nameByRace('angel', { gender: 'male' });
+    const feedbackListRef = ref(database, 'feedbacks');
     const date = moment(new Date()).format();
     const newFeedbackRef = push(feedbackListRef);
     set(newFeedbackRef, {
@@ -55,27 +55,25 @@ const Feedback: FC<FeedbackProps> = () => {
       name,
     })
       .then(() => {
-        setInput("");
+        setInput('');
       })
       .catch((e) => {
-        showToast(e || "Something went wrong please try again");
+        showToast(e || 'Something went wrong please try again');
       });
   };
 
-  const onChangeHanlder = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
-      setInput(value);
-    },
-    []
-  );
+  const onChangeHanlder = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInput(value);
+  }, []);
 
   useEffect(() => {
     // const feedbackListRef = ref(database, "feedbacks");
-    const q = query(ref(database, "feedbacks/"));
+    const q = query(ref(database, 'feedbacks/'));
     onValue(q, (snapshot) => {
       const feedbacks = snapshot.val();
       const feedbackList = [];
+      console.log(snapshot);
       if (snapshot.exists()) {
         for (let id in feedbacks) {
           feedbackList.push({ ...feedbacks[id], id });
@@ -90,16 +88,13 @@ const Feedback: FC<FeedbackProps> = () => {
     <PageWrapper title="Feedback">
       <section className="flex justify-center items-center">
         <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
-          <div className="text-white font-bold text-4xl my-6 flex items-center justify-center gap-3">
-            <h1 className="leading-[5rem] font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl">
-              Feedback
-            </h1>
+          <div className="dark:text-custom_white text-custom_black font-bold text-4xl my-6 flex items-center justify-center gap-3">
+            <h1 className="leading-[5rem] font-extrabold  text-3xl md:text-5xl">Feedback</h1>
           </div>
-          <div className="text-gray-400 mb-10  pb-12 leading-6 text-center">
-            Welcome to my feedback section, Feel free to provide complete
-            anonymous feedbacks, tips or anything that could help me improve my
-            website or personal self. I would be very happy to hear or learn
-            from you.
+          <div className="dark:text-custom_white text-custom_black mb-10  pb-12 leading-6 text-center">
+            Welcome to my feedback section, Feel free to provide complete anonymous feedbacks, tips
+            or anything that could help me improve my website or personal self. I would be very
+            happy to hear or learn from you.
           </div>
           <Fragment>
             {!fbcks && <FeebackSkeleton />}
@@ -110,8 +105,8 @@ const Feedback: FC<FeedbackProps> = () => {
                     <GiEmptyHourglass className="text-6xl" />
                   </div>
                   <div className="text-xs text-center text-gray-600">
-                    No feedbacks at the moment, <br /> Be the first to provide
-                    one by filling the input below 😉
+                    No feedbacks at the moment, <br /> Be the first to provide one by filling the
+                    input below 😉
                   </div>
                 </div>
               </div>
@@ -122,9 +117,8 @@ const Feedback: FC<FeedbackProps> = () => {
                   e.preventDefault();
                   postFeedBack();
                 }}
-                className="mb-10"
-              >
-                <div className="flex gap-3 mt-2">
+                className="mb-10">
+                <div className="flex items-center gap-3 mt-2">
                   <div className="w-full">
                     <Input
                       name="feedback"
@@ -134,9 +128,7 @@ const Feedback: FC<FeedbackProps> = () => {
                       autoFocus
                     />
                   </div>
-                  <div>
-                    <Button disabled={!input}>Post</Button>
-                  </div>
+                  <Button disabled={!input}>Post</Button>
                 </div>
               </form>
             )}
@@ -145,8 +137,7 @@ const Feedback: FC<FeedbackProps> = () => {
               [...fbcks]
                 .sort(
                   (a: any, b: any) =>
-                    new Date(b?.createdAt).getTime() -
-                    new Date(a?.createdAt).getTime()
+                    new Date(b?.createdAt).getTime() - new Date(a?.createdAt).getTime(),
                 )
                 ?.slice(0, itemsPerPage)
                 ?.map((fb, index) => {
@@ -157,8 +148,7 @@ const Feedback: FC<FeedbackProps> = () => {
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer text-xs underline underline-offset-4"
-                  onClick={incrementPagination}
-                >
+                  onClick={incrementPagination}>
                   Load more
                 </motion.button>
               </div>

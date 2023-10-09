@@ -12,7 +12,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #111010;
   scroll-behavior: smooth !important;
 }
 
@@ -30,59 +29,8 @@ body {
   outline: 1px solid slategrey;
 }
 
-a {
-  text-decoration-color: #a96637 !important;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  color: rgb(238, 236, 236);
-}
 
-a:hover {
-  color: #a96637;
-}
 
-@layer base {
-  html {
-    @apply font-inter;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-inter;
-  }
-}
-
-@layer components {
-  .normal-text {
-    @apply text-white text-base font-light;
-  }
-  .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#4B4A4A] to-white;
-  }
-  .icon {
-    @apply text-3xl;
-  }
-  .button {
-    @apply text-white py-3 shadow-sm text-center text-sm rounded-lg px-5 cursor-pointer bg-[#1E1E1E] font-light disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-400;
-  }
-
-  .icon {
-    @apply w-[24px] h-[24px];
-  }
-  .absolute-center {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-  }
-  .animate-transition {
-    @apply transition-all duration-300;
-  }
-  .box-selector {
-    @apply border rounded-lg border-border p-4;
-  }
-  .circled-icon {
-    @apply flex items-center justify-center w-[35px] h-[35px] md:w-[54px] md:h-[54px]  rounded-full bg-gray-100;
-  }
-}
 
 @layer utilities {
   @variants responsive {
@@ -134,38 +82,7 @@ p {
   transform: rotate(3deg) translate(0px, -4px);
 }
 
-.custom-text-gradient {
-  background: linear-gradient(
-    269.23deg,
-    #ffffff -25.8%,
-    rgba(255, 255, 255, 0) 148.73%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  fill: transparent;
-}
 
-.sub-title-gradient {
-  background: linear-gradient(
-    266.83deg,
-    #ffffff -22.9%,
-    rgba(255, 255, 255, 0) 129.94%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  fill: transparent;
-}
-
-.stacks-gradient {
-  background: linear-gradient(
-    89.98deg,
-    rgba(0, 0, 0, 0.8) 4.4%,
-    rgba(12, 11, 11, 0) 46.72%,
-    rgba(3, 3, 3, 0.88) 98.49%
-  );
-}
 
 .embla__slide {
   flex: 0 0 14%;

@@ -14,10 +14,7 @@ const Feedback: NextPage = () => {
         <meta property="og:title" content="Feedback" />
         <meta
           property="og:description"
-          content="Welcome to my feedback section, Feel free to provide complete
-          anonymous feedbacks, tips or anything that could help me improve my
-          website or personal self. I would be very happy to hear or learn
-          from you."
+          content="Contribute to the improvement of Kundwa Bruno's personal portfolio by providing insights."
         />
         <meta
           name="viewport"

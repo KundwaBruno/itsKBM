@@ -6,7 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        secondary: "#A96637",
+        primary: "#A96637",
+        background: "#111010",
+        background_light: "#FAFAFA",
+        custom_gray: "#929292",
+        custom_black: "black",
+        custom_white: "white"
+
       },
       fontFamily: {
         cinzel: ["Cinzel", "sans-serif"],

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface FeedbackProps {}
 
@@ -7,19 +7,17 @@ const FeedbackSkeleton: FC<FeedbackProps> = () => {
     <div>
       {new Array(3).fill(0).map((item, index) => {
         return (
-          <div key={index} className='my-8 animate-pulse'>
-            <div className='flex justify-end mb-3'>
-              <div className='w-[150px] h-[10px]  bg-gray-600 rounded-lg'></div>
-            </div>
-            <div>
-              <div className='w-full h-[13px] bg-gray-600 rounded-lg mb-2'></div>
-              <div className='w-[80%] h-[13px] bg-gray-600 rounded-lg mb-2'></div>
-              <div className='w-[50%] h-[13px] bg-gray-600 rounded-lg'></div>
-            </div>
-
-            <div className='flex items-center gap-3 mt-3'>
-              <div className='w-[15px] h-[15px] bg-gray-600 rounded-lg'></div>
-              <div className='w-[15px] h-[15px] bg-gray-600 rounded-lg'></div>
+          <div key={index} className="my-8 animate-pulse rounded-lg p-3">
+            <div className="flex flex-1 gap-3">
+              <div className="w-14 h-12 rounded-full bg-gray-300" />
+              <div className="w-full">
+                <div className="w-1/4 h-3 rounded-full bg-gray-300" />
+                <div className="w-1/2 h-3 rounded-full bg-gray-300 my-5" />
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-gray-300" />
+                  <div className="w-4 h-4 rounded-full bg-gray-300" />
+                </div>
+              </div>
             </div>
           </div>
         );

@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { TbExternalLink } from "react-icons/tb";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { FC } from 'react';
+import { TbExternalLink } from 'react-icons/tb';
 
 interface ExperienceProps {
   company: string;
@@ -24,7 +24,7 @@ const Experience: FC<ExperienceProps> = ({
         show: {
           opacity: 1,
           transition: {
-            ease: "easeInOut",
+            ease: 'easeInOut',
             duration: 0.3,
           },
         },
@@ -34,28 +34,27 @@ const Experience: FC<ExperienceProps> = ({
       }}
       animate="show"
       initial="hide"
-      className="w-[90%] m-auto md:w-auto"
-    >
-      <div className="flex flex-col gap-2 items-center">
-        <h2 className="text-gray-300 flex items-center justify-center md:justify-start gap-2">
-          <TbExternalLink className="text-2xl text-secondary" />
+      className="py-8">
+      <div className="flex flex-col mb-5">
+        <div className="dark:text-custom_white text-custom_black flex gap-2">
           <a
             href={companyLink}
             target="_blank"
             rel="noreferrer"
-            className=" text-lg  font-semibold flex items-center gap-5"
-          >
+            className="text-lg  font-semibold gap-5">
             {company}
-            <TbExternalLink className="text-2xl text-secondary md:hidden" />
           </a>
-        </h2>
-        <span className="text-gray-300 text-sm">{role}</span>
-        <span className="text-xs text-gray-500">{timeFrame}</span>
+          <TbExternalLink className="text-2xl text-secondary " />
+        </div>
+        <div className="dark:text-custom_white text-custom_black text-sm text-left mb-2">
+          {role}
+        </div>
+        <div className="text-xs text-custom_gray text-left ">{timeFrame}</div>
       </div>
-      <div className="md:w-[650px] mt-9 flex flex-col gap-2 text-gray-400">
+      <div className="md:w-[650px] flex flex-col gap-2 dark:text-custom_white text-custom_black">
         {description.map((dsc, index) => {
           return (
-            <div key={index} className="text-sm">
+            <div key={index} className="text-sm text-left">
               - {dsc}
             </div>
           );

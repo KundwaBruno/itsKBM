@@ -1,11 +1,10 @@
-import { FC, useEffect, useState } from "react";
-import PageData from "../../lib/portfolioData";
-import Button from "../Shared/Button";
-import { ArrowNarrowDownIcon } from "@heroicons/react/outline";
-import Link from "next/link";
-import portfolioData from "../../lib/portfolioData";
-import { motion } from "framer-motion";
-import TextTransition, { presets } from "react-text-transition";
+import { ArrowNarrowDownIcon } from '@heroicons/react/outline';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { FC, useEffect, useState } from 'react';
+import TextTransition, { presets } from 'react-text-transition';
+import { default as PageData, default as portfolioData } from '../../lib/portfolioData';
+import Button from '../Shared/Button';
 
 interface LandingPageProps {}
 
@@ -19,8 +18,7 @@ const animate = {
 };
 
 const LandingPage: FC<LandingPageProps> = () => {
-  const { salutation, passions, passion, full__name, homeDescription } =
-    PageData;
+  const { salutation, passions, passion, full__name, homeDescription } = PageData;
 
   return (
     <section className="w-[84%] m-auto max-w-screen-2xl min-h-[650px] md:min-h-screen flex items-center justify-center relative">
@@ -29,36 +27,32 @@ const LandingPage: FC<LandingPageProps> = () => {
           <motion.div
             initial={initial}
             animate={animate}
-            className="text-[#B0B0B0] mb-2 text-sm text-center"
-          >
+            className="dark:text-custom_white text-custom_black  mb-2 text-center">
             {salutation}
           </motion.div>
           <motion.div
             initial={initial}
             animate={animate}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-4xl lg:text-7xl font-extrabold tracking-tighter text-gray-300 text-center"
-          >
+            className="text-4xl lg:text-7xl font-extrabold  dark:text-custom_white text-custom_black text-center mb-5 tracking-tighter">
             {full__name}
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={initial}
             animate={animate}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-[2.3rem] lg:text-[5rem] text-transparent bg-clip-text  custom-text-gradient font-extrabold tracking-tighter text-center"
-          >
-            Software Engineer
-          </motion.div>
+            className="text-2xl lg:text-5xl font-extrabold text-center text-custom_black dark:text-custom_white my-5">
+            {passion}
+          </motion.div> */}
 
           <motion.div
             initial={initial}
             animate={animate}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="w-full md:w-4/6 m-auto mb-7 text-gray-400 text-sm lg:text-base text-center"
-          >
-            {homeDescription}
-          </motion.div>
+            className="w-full md:w-1/2 m-auto mb-7 dark:text-custom_white text-custom_black text-sm lg:text-base text-center"
+            dangerouslySetInnerHTML={{ __html: homeDescription }}
+          />
           <motion.a
             initial={initial}
             animate={animate}
@@ -66,8 +60,7 @@ const LandingPage: FC<LandingPageProps> = () => {
             href={portfolioData.about.contact[0].data}
             target="_blank"
             rel="noreferrer"
-            className="w-max m-auto"
-          >
+            className="w-max m-auto">
             <Button className="py-[15px] px-[50px]">Say hello !</Button>
           </motion.a>
         </div>
@@ -76,11 +69,10 @@ const LandingPage: FC<LandingPageProps> = () => {
         initial={initial}
         animate={animate}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="text-center absolute bottom-16"
-      >
+        className="text-center absolute bottom-16">
         <Link href="#about">
           <ArrowNarrowDownIcon
-            className="text-[#797979] inline cursor-pointer animate-bounce duration-200"
+            className="text-custom_black dark:text-custom_white inline cursor-pointer animate-bounce duration-200"
             width={40}
           />
         </Link>

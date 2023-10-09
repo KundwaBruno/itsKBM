@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
@@ -16,7 +16,8 @@ class MyDocument extends Document {
 
           <meta
             property="og:description"
-            content="<b>Kundwa Bruno</b> is a passionate software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity."
+            content="Experienced front-end software engineer focused on
+            building accessible products for the web and mobile"
           />
           <meta property="og:url" content="https://itskbm.com/" />
           <meta

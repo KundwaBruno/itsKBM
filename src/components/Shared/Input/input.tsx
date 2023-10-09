@@ -12,7 +12,7 @@ const Input: FC<InputProps & HTMLProps<HTMLInputElement>> = (props) => {
     <div>
       <input
         placeholder="Type something ..."
-        className={`text-gray-400  border-b placeholder:text-gray-600 border-gray-500 py-3  text-sm bg-transparent outline-none w-full ${className}`}
+        className={`dark:text-gray-400 text-custom_black border-2 border-custom_gray bg-background_light placeholder:text-custom_gray rounded-xl p-3 w-full ${className}`}
         {...props}
       />
     </div>

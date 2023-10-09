@@ -1,8 +1,7 @@
-import { FC } from "react";
-import portfolioData from "../../lib/portfolioData";
-import Data from "../../lib/portfolioData";
-import Button from "../Shared/Button";
 import { motion } from "framer-motion";
+import { FC } from "react";
+import { default as Data, default as portfolioData } from "../../lib/portfolioData";
+import Button from "../Shared/Button";
 
 interface ContactProps {}
 
@@ -19,7 +18,7 @@ const Contact: FC<ContactProps> = () => (
       Reach Me !
     </h1>
     <p
-      className="text-gray-400 w-11/12 md:w-1/2 m-auto mb-16 text-sm md:text-base"
+      className="dark:text-custom_white text-custom_black w-11/12 md:w-2/3 m-auto mb-16 text-sm md:text-base"
       dangerouslySetInnerHTML={{ __html: Data.about.contactDescription }}
     />
     <div>
@@ -28,7 +27,7 @@ const Contact: FC<ContactProps> = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <Button className="py-[15px] px-[50px]">Say hello!</Button>
+        <Button>Say hello!</Button>
       </a>
     </div>
   </motion.section>

@@ -27,14 +27,14 @@ const LandingPage: FC<LandingPageProps> = () => {
         <motion.div
           initial={initial}
           animate={animate}
-          className="dark:text-custom_gray text-custom_black font-light  mb-2">
+          className="dark:text-custom_gray text-custom_black   mb-2">
           {salutation}
         </motion.div>
         <motion.div
           initial={initial}
           animate={animate}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-8xl font-extrabold  dark:text-custom_white text-custom_black mb-5 tracking-tighter">
+          className="text-4xl md:text-7xl font-extrabold  dark:text-custom_white text-custom_black mb-5 tracking-tighter">
           {full__name}
         </motion.div>
 
@@ -50,7 +50,7 @@ const LandingPage: FC<LandingPageProps> = () => {
           initial={initial}
           animate={animate}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="w-11/12 lg:w-1/2 mx-auto mb-7 dark:text-custom_gray text-custom_black font-light"
+          className="w-11/12 lg:w-1/2 mx-auto mb-7 dark:text-custom_gray text-custom_black "
           dangerouslySetInnerHTML={{ __html: homeDescription }}
         />
         <motion.a

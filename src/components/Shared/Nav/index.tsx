@@ -18,7 +18,7 @@ const NavBar: FC<NavBarProps> = () => {
   const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
   const navRef = useRef<any>();
 
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const router = useRouter();
 
@@ -42,13 +42,20 @@ const NavBar: FC<NavBarProps> = () => {
             <a href="/resume.pdf" target="_blank">
               <Button>Resume</Button>
             </a>
-            <Hamburger toggled={isNavOpen} toggle={toggleNavOpen} color="black" size={22} rounded />
+            <ToogleThemeButton />
+            <Hamburger
+              toggled={isNavOpen}
+              toggle={toggleNavOpen}
+              color={theme === 'light' ? 'black' : 'white'}
+              size={22}
+              rounded
+            />
           </div>
 
           {isNavOpen ? (
             <motion.div
               ref={navRef}
-              className="absolute right-0 top-16 rounded-2xl bg-custom_white shadow-lg"
+              className="absolute right-0 top-16 rounded-2xl bg-custom_white dark:bg-background_dark shadow-lg"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}>
               <div className="text-white p-10">
@@ -73,10 +80,9 @@ const NavBar: FC<NavBarProps> = () => {
   };
 
   const ToogleThemeButton = () => {
-    const { theme, setTheme } = useTheme();
     return (
       <button
-        className="text-custom_black dark:text-custom_white rounded-full p-3 hover:bg-gray-500 transition-all duration-100"
+        className="text-custom_black dark:text-custom_white rounded-full p-3 hover:bg-gray-200 dark:hover:bg-primary/20 transition-all duration-100"
         onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}>
         {theme === 'light' ? <FaMoon /> : <FaSun />}
       </button>
@@ -114,7 +120,7 @@ const NavBar: FC<NavBarProps> = () => {
         isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px] border-b-custom_border_dark'
       }`}>
       <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] max-w-screen-2xl m-auto">
-        <div className="w-[100px] h-[80px] relative">
+        <div className="w-[100px] h-16 md:h-[80px] relative">
           <Image
             alt="website_logo"
             src={My_Logo}

@@ -23,12 +23,12 @@ const About: FC<AboutProps> = () => {
       transition={{ delay: 0.4, duration: 0.5 }}
       viewport={{ once: true }}
       id="about"
-      className="text-center pt-[80px] dark:bg-background_dark bg-background_light">
-      <h1 className="leading-[5rem] dark:text-custom_white text-custom_black font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-20">
-        Bio
-      </h1>
+      className="text-center pt-10 md:py-[80px] dark:bg-background_dark bg-background_light">
       <div className="w-[80%] md:w-[70%] lg:w-[55%] m-auto gap-8 max-w-screen-lg">
-        <div className="relative w-[180px] h-[180px] mx-auto my-16 ">
+        <div className="dark:text-custom_white text-custom_black font-extrabold mb-10 tracking-tighter text-3xl md:text-5xl">
+          Bio
+        </div>
+        <div className="relative w-[100px] h-[100px] md:w-[180px] md:h-[180px] mx-auto mb-12 ">
           <Image
             src={Data.profile__image}
             alt="Profile image"
@@ -40,15 +40,15 @@ const About: FC<AboutProps> = () => {
           />
         </div>
         <div
-          className="dark:text-custom_gray font-light text-lg text-custom_black  m-auto md:mb-16  flex-1 text-center"
+          className="dark:text-custom_gray md:text-lg text-custom_black  m-auto md:mb-16  flex-1 text-center"
           dangerouslySetInnerHTML={{ __html: Data.about.bio }}
         />
       </div>
 
-      <div className="flex flex-wrap gap-10 mt-10 md:mt-0 md:divide-x divide-custom_border_dark items-center justify-center mb-28 py-5 border-y border-custom_border_dark bg-white dark:bg-custom_black">
+      <div className="flex flex-wrap gap-10 mt-10 md:mt-0 md:divide-x divide-custom_border_dark items-center justify-center md:mb-28 py-5 border-y border-custom_border_dark bg-white dark:bg-custom_black">
         {portfolioData.tech_stacks.map((stack) => {
           return (
-            <div key={stack.title} className="relative h-[50px] flex-grow-0 w-60">
+            <div key={stack.title} className="relative h-[50px] flex-grow-0 w-32 md:w-60">
               <Image
                 src={stack.icon}
                 alt={stack.title}

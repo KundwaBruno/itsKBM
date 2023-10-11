@@ -14,8 +14,8 @@ const Projects = () => {
       transition={{ delay: 0.4, duration: 0.5 }}
       viewport={{ once: true }}
       id="projects"
-      className="md:py-[100px]  dark:bg-background_dark bg-background_light">
-      <h1 className="leading-[5rem] font-extrabold dark:text-custom_white text-custom_black text-3xl md:text-5xl mb-5 text-center">
+      className="py-10 md:py-[100px] dark:bg-background_dark bg-background_light">
+      <h1 className="font-extrabold dark:text-custom_white text-custom_black text-3xl md:text-5xl mb-5 text-center">
         {title}
       </h1>
       <p

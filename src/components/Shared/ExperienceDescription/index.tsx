@@ -8,6 +8,7 @@ interface ExperienceProps {
   timeFrame: string;
   companyLink: string;
   description: string[];
+  position: number;
 }
 
 const Experience: FC<ExperienceProps> = ({
@@ -16,6 +17,7 @@ const Experience: FC<ExperienceProps> = ({
   timeFrame,
   companyLink,
   description,
+  position,
 }) => {
   return (
     <motion.div
@@ -37,6 +39,7 @@ const Experience: FC<ExperienceProps> = ({
       className="py-8">
       <div className="flex flex-col mb-5">
         <div className="dark:text-custom_white text-custom_black flex gap-2">
+          {position}.
           <a
             href={companyLink}
             target="_blank"
@@ -46,15 +49,13 @@ const Experience: FC<ExperienceProps> = ({
           </a>
           <TbExternalLink className="text-2xl text-secondary " />
         </div>
-        <div className="dark:text-custom_gray text-custom_black text-sm text-left mb-2">
-          @{role}
-        </div>
+        <div className="dark:text-custom_gray text-custom_black text-left mb-2">@{role}</div>
         <div className="text-xs text-custom_gray text-left uppercase ">{timeFrame}</div>
       </div>
       <div className=" flex flex-col gap-2 dark:text-custom_gray text-custom_black">
         {description.map((dsc, index) => {
           return (
-            <div key={index} className="font-light text-left">
+            <div key={index} className=" text-left">
               - {dsc}
             </div>
           );

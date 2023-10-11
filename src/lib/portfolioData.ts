@@ -9,7 +9,8 @@ const portfolioData: PortfolioData = {
   profile__image:
     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682203668/1655309573260_gandfq.jpg',
   current__status: 'Open to offers',
-  homeDescription: `I am a software engineer, familiar with a wide range of programming languages and frameworks and specializes in developing and maintaining websites of all sizes and complexity.`,
+  homeDescription: `Experienced front-end software engineer focused on
+  building accessible products for the web and mobile.`,
   looking__into:
     'Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.',
   status: 'Open to offers',

@@ -10,20 +10,15 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/logo.svg" />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/dxyu6elli/image/upload/v1672685054/Screenshot_2023-01-02_at_20.43.14_ye0ihn.png"
+            content="https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png"
           />
           <meta property="og:title" content="Kundwa Bruno Materne" />
-
           <meta
             property="og:description"
             content="Experienced front-end software engineer focused on
             building accessible products for the web and mobile"
           />
           <meta property="og:url" content="https://itskbm.com/" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-          />
         </Head>
         <body>
           <Main />

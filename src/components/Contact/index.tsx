@@ -12,7 +12,7 @@ const Contact: FC<ContactProps> = () => (
     transition={{ delay: 0.4, duration: 0.5 }}
     viewport={{ once: true }}
     id="contact"
-    className="text-center py-[100px] max-w-screen-lg m-auto">
+    className="text-center py-10 md:py-[100px] max-w-screen-lg m-auto">
     <h1 className="leading-[5rem] text-custom_black dark:text-custom_white font-extrabold tracking-tighter gradient-text text-3xl md:text-5xl mb-10">
       Reach Me !
     </h1>

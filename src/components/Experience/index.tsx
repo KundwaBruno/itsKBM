@@ -31,6 +31,7 @@ const Experience: FC<ExperienceProps> = () => {
               role={ex.position}
               timeFrame={ex.timeFrame}
               description={ex.description}
+              position={index + 1}
             />
           );
         })}

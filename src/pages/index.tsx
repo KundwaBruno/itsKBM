@@ -1,20 +1,29 @@
-import type { NextPage } from "next";
-import HomePage from "../components/Home";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import PageWrapper from "../components/Shared/PageWrapper";
-import Contact from "../components/Contact";
-import Projects from "../components/Projects";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Experience from '../components/Experience';
+import HomePage from '../components/Home';
+import Projects from '../components/Projects';
+import PageWrapper from '../components/Shared/PageWrapper';
 
 const Home: NextPage = () => {
   return (
-    <PageWrapper title="Kundwa Bruno">
-      <HomePage />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
-    </PageWrapper>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+      </Head>
+      <PageWrapper title="Kundwa Bruno">
+        <HomePage />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+      </PageWrapper>
+    </>
   );
 };
 

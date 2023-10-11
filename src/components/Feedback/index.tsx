@@ -89,12 +89,11 @@ const Feedback: FC<FeedbackProps> = () => {
       <section className="flex justify-center items-center min-h-screen">
         <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
           <div className="dark:text-custom_white text-custom_black font-bold text-4xl my-6 flex items-center justify-center gap-3">
-            <h1 className="leading-[5rem] font-extrabold  text-3xl md:text-5xl">Feedback</h1>
+            <h1 className="font-extrabold  text-3xl md:text-5xl">Feedback</h1>
           </div>
-          <div className="dark:text-custom_gray text-custom_black mb-10 font-light  pb-12 leading-6 text-center">
-            Welcome to my feedback section, Feel free to provide complete anonymous feedbacks, tips
-            or anything that could help me improve my website or personal self. I would be very
-            happy to hear or learn from you.
+          <div className="dark:text-custom_gray text-sm md:text-base text-custom_black mb-10 text-center">
+            Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
+            to hear or learn from you.
           </div>
           <Fragment>
             {!fbcks && <FeebackSkeleton />}

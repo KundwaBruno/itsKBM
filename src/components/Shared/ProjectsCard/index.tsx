@@ -63,7 +63,7 @@ const ProjectsCard: FC<Props> = (props) => {
             return (
               <span
                 key={index}
-                className=" dark:bg-custom_black text-custom_gray border dark:border-custom_border_dark p-1 px-2 rounded-md">
+                className=" dark:bg-custom_black text-custom_black dark:text-custom_gray border dark:border-custom_border_dark p-1 px-2 rounded-md">
                 {tch}
               </span>
             );

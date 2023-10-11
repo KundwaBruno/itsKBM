@@ -75,7 +75,7 @@ const Feedback: FC<FeedbackSchema> = ({ body, createdAt, id, upVotes, name, down
             <div className="text-xs text-custom_gray">{moment(createdAt).fromNow()}</div>
           </div>
           <div>
-            <div className="my-2 dark:text-custom_white text-custom_black text-base">{body}</div>
+            <div className="my-2 dark:text-custom_white text-custom_black md:text-base">{body}</div>
             <div className="flex items-center gap-4 text-xs">
               <div
                 className="flex items-center cursor-pointer text-green-600 dark:text-green-400"

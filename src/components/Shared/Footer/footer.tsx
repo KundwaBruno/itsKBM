@@ -1,4 +1,4 @@
-import { IdentificationIcon, InformationCircleIcon } from '@heroicons/react/solid';
+import { IdentificationIcon, XCircleIcon, XIcon } from '@heroicons/react/solid';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import React, { FC, useRef, useState } from 'react';
@@ -41,12 +41,16 @@ const Footer: FC<FooterProps> = () => {
         {PersonalData.copyright}
         <span className="ml-2">&#128170;&#127998;</span>
       </div>
-      <div ref={mediasRef} className="absolute right-0">
+      <div ref={mediasRef} className="fixed bottom-10 right-20">
         <Collapsable
           isCollapsed={isCollapsed}
           onClose={handleUnCollapse}
           items={PersonalData.about.contact}>
-          <IdentificationIcon width={20} />
+          {isCollapsed ? (
+            <XIcon width={20} color="black" />
+          ) : (
+            <IdentificationIcon color="black" width={20} />
+          )}
         </Collapsable>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
 import Icon from '../Icon';
@@ -12,6 +13,8 @@ interface CollapsableProps {
 
 const Collapsable: FC<CollapsableProps> = ({ children, items, isCollapsed, onClose }) => {
   const router = useRouter();
+
+  const { theme } = useTheme();
 
   return (
     <div role="button" className="relative" onClick={onClose}>
@@ -44,13 +47,13 @@ const Collapsable: FC<CollapsableProps> = ({ children, items, isCollapsed, onClo
                   },
                 }}
                 className="bg-white rounded-full w-9 h-9 flex justify-center shadow-md items-center my-3">
-                <Icon name={item.icon} />
+                <Icon name={item.icon} color="black" />
               </motion.li>
             );
           })}
         </motion.ul>
       )}
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-custom_black dark:border-custom_border_dark text-custom_gray active:bg-[#393939]">
+      <div className="w-10 h-10 flex bg-white shadow-lg items-center justify-center rounded-full text-custom_gray active:bg-[#393939]">
         {children}
       </div>
     </div>

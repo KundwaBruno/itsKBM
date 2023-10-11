@@ -82,21 +82,21 @@ const portfolioData: PortfolioData = {
         data: 'https://github.com/KundwaBruno',
         icon: 'github',
       },
-      {
-        name: 'instagram',
-        data: 'https://www.instagram.com/bruno_kbm/',
-        icon: 'instagram',
-      },
-      {
-        name: 'twitter',
-        data: 'https://twitter.com/bruno_kbm',
-        icon: 'twitter',
-      },
-      {
-        name: 'facebook',
-        data: 'https://www.facebook.com/kundwa.bruno/',
-        icon: 'facebook',
-      },
+      // {
+      //   name: 'instagram',
+      //   data: 'https://www.instagram.com/bruno_kbm/',
+      //   icon: 'instagram',
+      // },
+      // {
+      //   name: 'twitter',
+      //   data: 'https://twitter.com/bruno_kbm',
+      //   icon: 'twitter',
+      // },
+      // {
+      //   name: 'facebook',
+      //   data: 'https://www.facebook.com/kundwa.bruno/',
+      //   icon: 'facebook',
+      // },
     ],
   },
   projects: {
@@ -149,7 +149,7 @@ const portfolioData: PortfolioData = {
       company: 'Awesomity Lab',
       companyLink: 'https://awesomity.rw/',
       position: 'Frontend engineer',
-      timeFrame: 'Sep 2021 - July 2022',
+      timeFrame: 'Sep 2021 - Sep 2023',
       length: '6 months',
       location: 'Germany',
       description: [
@@ -161,7 +161,7 @@ const portfolioData: PortfolioData = {
       company: 'Montech Software Studios',
       companyLink: 'https://www.montech.io/',
       position: 'Frontend engineer',
-      timeFrame: 'Jan 2022 - Present',
+      timeFrame: 'Jan 2022 - May 2023',
       length: '6 months',
       location: 'United States',
       description: [
@@ -177,7 +177,7 @@ const portfolioData: PortfolioData = {
       companyLink:
         'https://www.linkedin.com/company/tech-enfold/?trk=ppro_cprof&originalSubdomain=rw',
       position: 'Fullstack developer',
-      timeFrame: 'Jun 2021 - Jan 2022',
+      timeFrame: 'Jun 2020 - Jun 2021',
       length: '6 months',
       location: 'Germany',
       description: [
@@ -192,7 +192,7 @@ const portfolioData: PortfolioData = {
       company: 'Andela Rwanda',
       companyLink: 'https://andela.com/',
       position: 'Developer Apprentice',
-      timeFrame: 'Jan 2021 - Jan 2022',
+      timeFrame: 'Jan 2020 - Sep 2020',
       length: '1 Year 1 mo',
       location: 'Kigali-Rwanda',
       description: [

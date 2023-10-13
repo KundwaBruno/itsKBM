@@ -1,5 +1,6 @@
 import { ArrowNarrowDownIcon } from '@heroicons/react/outline';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
@@ -20,6 +21,8 @@ const animate = {
 
 const LandingPage: FC<LandingPageProps> = () => {
   const { salutation, passions, passion, full__name, homeDescription } = PageData;
+
+  const { theme } = useTheme();
 
   return (
     <section className="w-[84%] pt-20 md:pt-0 md:px-[100px] m-auto max-w-screen-2xl min-h-[650px] md:min-h-screen flex flex-col">
@@ -70,10 +73,10 @@ const LandingPage: FC<LandingPageProps> = () => {
         transition={{ delay: 0.7, duration: 0.5 }}
         className="relative flex-1 h-[300px]">
         <Image
-          src="/assets/svgs/hero.svg"
+          src={`/assets/svgs/${theme === 'light' ? 'heroLight.svg' : 'hero.svg'}`}
           alt="Home map"
           fill
-          className="object-contain absolute opacity-30 dark:opacity-100"
+          className="object-contain absolute"
         />
       </motion.div>
     </section>

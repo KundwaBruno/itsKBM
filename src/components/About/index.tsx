@@ -23,12 +23,12 @@ const About: FC<AboutProps> = () => {
       transition={{ delay: 0.4, duration: 0.5 }}
       viewport={{ once: true }}
       id="about"
-      className="text-center pt-10 md:py-[80px] dark:bg-background_dark bg-background_light">
+      className="text-center pt-10 md:pt-[80px] dark:bg-background_dark bg-background_light">
       <div className="w-[80%] md:w-[70%] lg:w-[55%] m-auto gap-8 max-w-screen-lg">
         <div className="dark:text-custom_white text-custom_black font-extrabold mb-10 tracking-tighter text-3xl md:text-5xl">
           Bio
         </div>
-        <div className="relative w-[100px] h-[100px] md:w-[180px] md:h-[180px] mx-auto mb-12 ">
+        {/* <div className="relative w-[100px] h-[100px] md:w-[180px] md:h-[180px] mx-auto mb-12 ">
           <Image
             src={Data.profile__image}
             alt="Profile image"
@@ -38,7 +38,7 @@ const About: FC<AboutProps> = () => {
             priority={true}
             className="rounded-full object-cover transition-all duration-300"
           />
-        </div>
+        </div> */}
         <div
           className="dark:text-custom_gray md:text-lg text-custom_black  m-auto md:mb-16  flex-1 text-center"
           dangerouslySetInnerHTML={{ __html: Data.about.bio }}

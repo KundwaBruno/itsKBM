@@ -39,7 +39,7 @@ const Experience: FC<ExperienceProps> = ({
       className="py-8">
       <div className="flex flex-col mb-5">
         <div className="dark:text-custom_white text-custom_black flex gap-2">
-          {position}.
+          {/* {position}. */}
           <a
             href={companyLink}
             target="_blank"

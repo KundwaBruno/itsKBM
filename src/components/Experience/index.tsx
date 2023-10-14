@@ -18,11 +18,11 @@ const Experience: FC<ExperienceProps> = () => {
       <h1 className="font-extrabold text-center text-3xl md:text-5xl dark:text-custom_white text-custom_black">
         Experience
       </h1>
-      <div className="dark:text-custom_gray font-light text-custom_black mb-20 mt-3 text-center">
+      <div className="dark:text-custom_gray text-custom_black mb-20 mt-3 text-center">
         Below is few of my recent relevant technical experience.
       </div>
       <div className="divide-y divide-custom_border_dark">
-        {Data.experience.slice(0, 2).map((ex, index) => {
+        {Data.experience.slice(0, 3).map((ex, index) => {
           return (
             <ExperienceBox
               key={index}

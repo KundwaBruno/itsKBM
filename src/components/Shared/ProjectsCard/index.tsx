@@ -55,7 +55,7 @@ const ProjectsCard: FC<Props> = (props) => {
 
       <div className="p-4 bg-background_light dark:bg-black rounded-b-lg">
         <h1 className="text-left text-custom_black  font-medium dark:text-custom_white">{title}</h1>
-        <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-2">
+        <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-3">
           {description}
         </div>
         <div className="flex flex-wrap gap-3 text-xs text-gray-500">

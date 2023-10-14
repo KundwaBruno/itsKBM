@@ -9,8 +9,7 @@ const portfolioData: PortfolioData = {
   profile__image:
     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682203668/1655309573260_gandfq.jpg',
   current__status: 'Open to offers',
-  homeDescription: `Experienced front-end software engineer focused on
-  building accessible products for the web and mobile.`,
+  homeDescription: `Experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions.`,
   looking__into:
     'Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.',
   status: 'Open to offers',
@@ -67,7 +66,9 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `Back in 2019, joined the carrer of web development after completing college in computer science, Where as i joined an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a> which populated me with the right skills, courage and love that i have right now for Web technologies.  <p>Up to today, I 've committed to this journey for over 3+ years now, Gaining <a href='/#experience'>experience</a> and skills from great influencers like <a href='https://udemy.com/' target='_blank'>Udemy</a>, <a href='https://freecodecamp.org/' target='_blank'>FreeCodeCamp</a> and so many other sources from the internet.</p>`,
+    bio: `In 2019, I embarked on a career in web development following the completion of my college degree in computer science. My journey began with an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a>, a pivotal experience that equipped me with the essential skills, determination, and genuine passion for web technologies that continue to drive me today.
+
+    <p>Fast forward to the present day, and I have committed over three years to this dynamic field, steadily amassing valuable experience and expertise. My knowledge has been enriched through learning resources such as <a href="https://udemy.com" target="_blank">Udemy</a>, <a href="https://freecodecamp.org" target="_blank">FreeCodeCamp</a>, and numerous other reputable sources available on the internet. These experiences have honed my abilities and fueled my passion for web development, making me a dedicated and proficient professional in the field.</p>`,
     contactDescription:
       'You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.',
     contact: [
@@ -140,6 +141,15 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
         ],
         techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
+        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+      },
+      {
+        title: 'Personal portfolio',
+        description: 'My my personal profile that talks about me and what i do.',
+        imageUrls: [
+          'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',
+        ],
+        techs: ['NextJs', 'TailwindCss', 'Framer motion'],
         links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
       },
     ],

@@ -17,7 +17,7 @@ const Contact: FC<ContactProps> = () => (
       Reach Me !
     </h1>
     <p
-      className="dark:text-custom_gray font-light text-custom_black w-11/12 md:w-2/3 m-auto mb-16 text-sm md:text-base"
+      className="dark:text-custom_gray text-custom_black w-11/12 md:w-2/3 m-auto mb-16 text-sm md:text-base"
       dangerouslySetInnerHTML={{ __html: Data.about.contactDescription }}
     />
     <div>

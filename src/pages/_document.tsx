@@ -15,8 +15,7 @@ class MyDocument extends Document {
           <meta property="og:title" content="Kundwa Bruno Materne" />
           <meta
             property="og:description"
-            content="Experienced front-end software engineer focused on
-            building accessible products for the web and mobile"
+            content="Experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions."
           />
           <meta property="og:url" content="https://itskbm.com/" />
         </Head>

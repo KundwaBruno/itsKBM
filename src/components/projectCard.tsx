@@ -1,9 +1,5 @@
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
 import Image from 'next/image';
-import { FC, useCallback, useEffect, useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
+import { FC } from 'react';
 
 interface Props {
   title: string;
@@ -13,36 +9,11 @@ interface Props {
   techs: string[];
 }
 
-const carouselOptions: EmblaOptionsType = {
-  dragFree: false,
-  containScroll: 'trimSnaps',
-};
-
 const ProjectsCard: FC<Props> = (props) => {
-  const { description, title, imageUrls, links, techs } = props;
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(carouselOptions);
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-  }, [emblaApi, onSelect]);
+  const { description, title, imageUrls, techs } = props;
 
   return (
-    <div className="relative rounded-lg border border-custom_border_dark">
+    <div className="relative rounded-lg border-2 dark:border-custom_border_dark bg-background_light dark:bg-black">
       <div className="relative w-full h-[160px]">
         <Image
           src={imageUrls[0]}
@@ -53,7 +24,7 @@ const ProjectsCard: FC<Props> = (props) => {
         />
       </div>
 
-      <div className="p-4 bg-background_light dark:bg-black rounded-b-lg">
+      <div className="p-4 rounded-b-lg">
         <h1 className="text-left text-custom_black  font-medium dark:text-custom_white">{title}</h1>
         <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-3">
           {description}

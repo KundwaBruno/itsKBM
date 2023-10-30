@@ -1,8 +1,8 @@
+import Icon from '@/components/icon';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
-import Icon from '../Icon';
 
 interface CollapsableProps {
   children: ReactNode;

@@ -1,11 +1,11 @@
+import Collapsable from '@/components/collapsable';
+import PersonalData from '@/lib/constants/data';
 import { IdentificationIcon, XCircleIcon, XIcon } from '@heroicons/react/solid';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import React, { FC, useRef, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
-import useOutSideClick from '../../../lib/hooks/useOutsideClick';
-import PersonalData from '../../../lib/portfolioData';
-import Collapsable from '../Collapsable';
+import useOutSideClick from '../lib/hooks/useOutsideClick';
 
 interface FooterProps {}
 
@@ -41,7 +41,7 @@ const Footer: FC<FooterProps> = () => {
         {PersonalData.copyright}
         <span className="ml-2">&#128170;&#127998;</span>
       </div>
-      <div ref={mediasRef} className="fixed bottom-10 right-20">
+      <div ref={mediasRef} className="fixed md:bottom-10 right-5 bottom-5 md:right-20">
         <Collapsable
           isCollapsed={isCollapsed}
           onClose={handleUnCollapse}

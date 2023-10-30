@@ -1,4 +1,4 @@
-import PortfolioData from './types/portfolioData';
+import PortfolioData from '../types/portfolioData';
 
 const portfolioData: PortfolioData = {
   name__abbr: 'KBM',
@@ -66,9 +66,9 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `In 2019, I embarked on a career in web development following the completion of my college degree in computer science. My journey began with an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a>, a pivotal experience that equipped me with the essential skills, determination, and genuine passion for web technologies that continue to drive me today.
+    bio: `In 2019, I embarked on a web development career after completing a computer science degree. My journey began with an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a>, igniting my passion for web technologies.
 
-    <p>Fast forward to the present day, and I have committed over three years to this dynamic field, steadily amassing valuable experience and expertise. My knowledge has been enriched through learning resources such as <a href="https://udemy.com" target="_blank">Udemy</a>, <a href="https://freecodecamp.org" target="_blank">FreeCodeCamp</a>, and numerous other reputable sources available on the internet. These experiences have honed my abilities and fueled my passion for web development, making me a dedicated and proficient professional in the field.</p>`,
+    Fast forward to today, I've dedicated over three years to this field, enhancing my knowledge through various reputable online sources. These experiences have honed my abilities, making me a dedicated and proficient professional.`,
     contactDescription:
       'You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.',
     contact: [

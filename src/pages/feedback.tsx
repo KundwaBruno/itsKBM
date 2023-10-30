@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { Fragment } from "react";
-import FeedbackPage from "../components/Feedback";
+import FeedbackPage from '@/components/Feedback/index';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 const Feedback: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const Feedback: NextPage = () => {
       <Head>
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dxyu6elli/image/upload/v1672685054/Screenshot_2023-01-02_at_20.43.14_ye0ihn.png"
+          content="https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png"
         />
         <meta property="og:title" content="Feedback" />
         <meta
@@ -21,7 +21,7 @@ const Feedback: NextPage = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
         <meta property="og:url" content="https://itskbm.com/feedback" />
-        <title>Feeback</title>
+        <title>KBM | Feed back</title>
       </Head>
       <FeedbackPage />
     </Fragment>

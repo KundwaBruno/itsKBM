@@ -5,11 +5,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { FC, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import useOnClickOutside from '../../../lib/hooks/useOutsideClick';
-import useScrollOffset from '../../../lib/hooks/useScrollOfset';
-import { My_Logo } from '../../../lib/images';
-import Button from '../Button';
-import NavLinks from './links';
+import NavLinks from '../lib/constants/links';
+import useOnClickOutside from '../lib/hooks/useOutsideClick';
+import useScrollOffset from '../lib/hooks/useScrollOfset';
+import { My_Logo } from '../lib/images';
+import Button from './button';
+import SectionWrapper from './sectionWrapper';
 
 interface NavBarProps {}
 
@@ -115,11 +116,11 @@ const NavBar: FC<NavBarProps> = () => {
   };
 
   return (
-    <div
-      className={`z-50 fixed top-0 transition-all duration-200 w-full ${
+    <SectionWrapper
+      className={`z-50 sticky top-0 transition-all duration-200 w-full !py-0 ${
         isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px] border-b-custom_border_dark'
       }`}>
-      <div className="flex justify-between items-center h-full w-11/12 md:w-[84%] max-w-screen-2xl m-auto">
+      <div className="flex justify-between items-center">
         <div className="w-[100px] h-16 md:h-[80px] relative">
           <Image
             alt="website_logo"
@@ -133,11 +134,10 @@ const NavBar: FC<NavBarProps> = () => {
             }}
           />
         </div>
-
         <ToggleButton />
         <Web />
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

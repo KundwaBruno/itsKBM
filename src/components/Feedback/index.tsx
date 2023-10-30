@@ -1,3 +1,7 @@
+import FeedbackWrapper from '@/components/feedback';
+import Input from '@/components/input';
+import { database, onValue, push, ref, set } from '@/lib/firebase';
+import { FeedbackSchema } from '@/lib/types/feedback';
 import { nameByRace } from 'fantasy-name-generator';
 import { query } from 'firebase/database';
 import { motion } from 'framer-motion';
@@ -5,13 +9,11 @@ import moment from 'moment';
 import React, { FC, Fragment, useCallback, useEffect, useState } from 'react';
 import { GiEmptyHourglass } from 'react-icons/gi';
 import { HiX } from 'react-icons/hi';
-import { database, onValue, push, ref, set } from '../../lib/firebase';
-import { FeedbackSchema } from '../../lib/types/feedback';
-import Button from '../Shared/Button';
-import FeedbackWrapper from '../Shared/Feedback';
-import Input from '../Shared/Input';
-import PageWrapper from '../Shared/PageWrapper';
-import FeebackSkeleton from '../Shared/Skeletons/feedback';
+import FeebackSkeleton from '../Skeletons/feedback';
+import Button from '../button';
+import PageWrapper from '../pageWrapper';
+import SectionHeader from '../sectionHeader';
+import SectionWrapper from '../sectionWrapper';
 
 interface FeedbackProps {}
 
@@ -85,16 +87,14 @@ const Feedback: FC<FeedbackProps> = () => {
   }, []);
 
   return (
-    <PageWrapper title="Feedback">
-      <section className="flex justify-center items-center min-h-screen">
-        <div className="w-11/12 m-auto md:w-[600px] mt-20 md:mt-40">
-          <div className="dark:text-custom_white text-custom_black font-bold text-4xl my-6 flex items-center justify-center gap-3">
-            <h1 className="font-extrabold  text-3xl md:text-5xl">Feedback</h1>
-          </div>
-          <div className="dark:text-custom_gray text-sm md:text-base text-custom_black mb-10 text-center">
-            Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
-            to hear or learn from you.
-          </div>
+    <PageWrapper>
+      <SectionWrapper>
+        <div className="w-11/12 m-auto md:w-[600px]">
+          <SectionHeader
+            title="Feedback"
+            description=" Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
+            to hear or learn from you."
+          />
           <Fragment>
             {!fbcks && <FeebackSkeleton />}
             {fbcks?.length === 0 && (
@@ -164,7 +164,7 @@ const Feedback: FC<FeedbackProps> = () => {
             )}
           </Fragment>
         </div>
-      </section>
+      </SectionWrapper>
     </PageWrapper>
   );
 };

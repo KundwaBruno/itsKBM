@@ -16,7 +16,7 @@ const Experience: FC<ExperienceProps> = () => {
         title="Experience"
         description="Below is few of my recent relevant technical experience."
       />
-      <div className="divide-y-2 dark:divide-custom_border_dark md:w-10/12 mx-auto">
+      <div className="divide-y-2 dark:divide-custom_border_dark mx-auto">
         {Data.experience.slice(0, 3).map((ex, index) => {
           return (
             <ExperienceBox

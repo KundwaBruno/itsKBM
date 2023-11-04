@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import IconComponent from './icon';
 
 interface Props {
   title: string;
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const ProjectsCard: FC<Props> = (props) => {
-  const { description, title, imageUrls, techs } = props;
+  const { description, title, imageUrls, techs, links } = props;
 
   return (
     <div className="relative rounded-lg border-2 dark:border-custom_border_dark bg-background_light dark:bg-black">
@@ -24,7 +25,7 @@ const ProjectsCard: FC<Props> = (props) => {
         />
       </div>
 
-      <div className="p-4 rounded-b-lg">
+      <div className="p-4 rounded-b-lg relative">
         <h1 className="text-left text-custom_black  font-medium dark:text-custom_white">{title}</h1>
         <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-3">
           {description}
@@ -40,23 +41,23 @@ const ProjectsCard: FC<Props> = (props) => {
             );
           })}
         </div>
-        {/* <div className="flex justify-center mb-4">
+        <div className="flex absolute top-5 right-3">
           {links.map((ln, index) => {
             const { type, url } = ln;
-            if (type === "link")
+            if (type === 'link')
               return (
                 <a key={index} href={url} target="_blank" rel="noreferrer">
-                  <Icon name="Link" />
+                  <IconComponent name="Link" />
                 </a>
               );
-            if (type === "github")
+            if (type === 'github')
               return (
                 <a key={index} href={url} target="_blank" rel="noreferrer">
-                  <Icon name="github" />
+                  <IconComponent name="github" />
                 </a>
               );
           })}
-        </div> */}
+        </div>
       </div>
     </div>
   );

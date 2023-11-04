@@ -19,7 +19,7 @@ const NavBar: FC<NavBarProps> = () => {
   const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
   const navRef = useRef<any>();
 
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
 
   const router = useRouter();
 
@@ -47,7 +47,13 @@ const NavBar: FC<NavBarProps> = () => {
             <Hamburger
               toggled={isNavOpen}
               toggle={toggleNavOpen}
-              color={theme === 'light' ? 'black' : 'white'}
+              color={
+                theme === 'system' && systemTheme === 'light'
+                  ? 'black'
+                  : theme === 'light'
+                  ? 'black'
+                  : 'white'
+              }
               size={22}
               rounded
             />
@@ -84,8 +90,20 @@ const NavBar: FC<NavBarProps> = () => {
     return (
       <button
         className="text-custom_black dark:text-custom_white rounded-full p-3 hover:bg-gray-200 dark:hover:bg-primary/20 transition-all duration-100"
-        onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}>
-        {theme === 'light' ? <FaMoon /> : <FaSun />}
+        onClick={() =>
+          theme === 'system' && systemTheme === 'light'
+            ? setTheme('dark')
+            : theme === 'light'
+            ? setTheme('dark')
+            : setTheme('light')
+        }>
+        {theme === 'system' && systemTheme === 'light' ? (
+          <FaMoon />
+        ) : theme === 'light' ? (
+          <FaMoon />
+        ) : (
+          <FaSun />
+        )}
       </button>
     );
   };

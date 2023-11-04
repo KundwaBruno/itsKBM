@@ -20,10 +20,12 @@ const animate = {
 const HeroSection: FC<LandingPageProps> = () => {
   const { salutation, full__name, homeDescription, about } = PageData;
 
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+
+  console.log(systemTheme);
 
   return (
-    <SectionWrapper className="min-h-[650px] md:min-h-screen flex flex-col">
+    <SectionWrapper className="min-h-[650px] xl:min-h-screen flex flex-col">
       <div className="flex-1 text-center flex flex-col justify-center">
         <motion.div
           initial={initial}
@@ -62,7 +64,13 @@ const HeroSection: FC<LandingPageProps> = () => {
         transition={{ delay: 0.7, duration: 0.5 }}
         className="relative flex-1 mt-0 md:mt-20 h-[300px]">
         <Image
-          src={`/assets/svgs/${theme === 'light' ? 'heroLight.svg' : 'hero.svg'}`}
+          src={`/assets/svgs/${
+            theme === 'system' && systemTheme === 'light'
+              ? 'heroLight.svg'
+              : theme === 'light'
+              ? 'heroLight.svg'
+              : 'hero.svg'
+          }`}
           alt="Home map"
           fill
           className="object-contain absolute"

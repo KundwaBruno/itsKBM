@@ -116,7 +116,7 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png',
         ],
         techs: ['NextJs', 'Apollo Client', 'MapBox'],
-        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+        links: [],
       },
       {
         title: 'Transport System',
@@ -128,7 +128,7 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
         ],
         techs: ['NextJs', 'Typescript', 'Google Maps'],
-        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+        links: [],
       },
       {
         title: 'Verification Seal',
@@ -141,16 +141,25 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
         ],
         techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
-        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+        links: [],
       },
       {
-        title: 'Personal portfolio',
+        title: 'Alaafia Solutions',
+        description: 'A professional landing page for a consultancy firm.',
+        imageUrls: [
+          'https://res.cloudinary.com/dxyu6elli/image/upload/v1699088766/Screenshot_2023-11-04_at_11.05.58_njswpm.png',
+        ],
+        techs: ['NextJs', 'TailwindCss', 'Framer motion'],
+        links: [{ url: 'https://www.alaafiasolutions.com/', type: 'link' }],
+      },
+      {
+        title: 'My personal portfolio',
         description: 'My my personal profile that talks about me and what i do.',
         imageUrls: [
           'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',
         ],
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
-        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+        links: [{ url: 'https://www.itskbm.com/', type: 'link' }],
       },
     ],
   },
@@ -158,7 +167,7 @@ const portfolioData: PortfolioData = {
     {
       company: 'Awesomity Lab',
       companyLink: 'https://awesomity.rw/',
-      position: 'Frontend engineer',
+      position: 'Senior Frontend engineer',
       timeFrame: 'Sep 2021 - Sep 2023',
       length: '6 months',
       location: 'Germany',

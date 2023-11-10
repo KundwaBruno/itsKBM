@@ -70,12 +70,10 @@ const Feedback: FC<FeedbackProps> = () => {
   }, []);
 
   useEffect(() => {
-    // const feedbackListRef = ref(database, "feedbacks");
     const q = query(ref(database, 'feedbacks/'));
     onValue(q, (snapshot) => {
       const feedbacks = snapshot.val();
       const feedbackList = [];
-      console.log(snapshot);
       if (snapshot.exists()) {
         for (let id in feedbacks) {
           feedbackList.push({ ...feedbacks[id], id });
@@ -89,12 +87,12 @@ const Feedback: FC<FeedbackProps> = () => {
   return (
     <PageWrapper>
       <SectionWrapper>
-        <div className="w-11/12 m-auto md:w-[600px]">
-          <SectionHeader
-            title="Feedback"
-            description=" Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
+        <SectionHeader
+          title="Feedback"
+          description=" Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
             to hear or learn from you."
-          />
+        />
+        <div className="w-11/12 m-auto md:w-[600px]">
           <Fragment>
             {!fbcks && <FeebackSkeleton />}
             {fbcks?.length === 0 && (

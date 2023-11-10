@@ -8,9 +8,9 @@ interface Props {
 
 const SectionWrapper: FC<Props> = ({ children, className, id }) => {
   return (
-    <div id={id} className={`py-16 ${className}`}>
+    <section id={id} className={`py-16 ${className}`}>
       <div className="w-11/12  xl:w-[84%] max-w-screen-2xl m-auto xl:px-36">{children}</div>
-    </div>
+    </section>
   );
 };
 

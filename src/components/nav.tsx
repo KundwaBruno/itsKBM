@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -40,9 +41,9 @@ const NavBar: FC<NavBarProps> = () => {
       <div className=" md:hidden">
         <div className="outline-none w-full relative">
           <div className="flex items-center gap-4">
-            <a href="/resume.pdf" target="_blank">
+            <Link href="/resume.pdf" target="_blank">
               <Button>Resume</Button>
-            </a>
+            </Link>
             <ToogleThemeButton />
             <Hamburger
               toggled={isNavOpen}
@@ -69,12 +70,12 @@ const NavBar: FC<NavBarProps> = () => {
                 {NavLinks.map((link, index) => {
                   return (
                     <div key={index} className={`${index !== NavLinks.length - 1 && 'mb-10'}`}>
-                      <div
+                      <Link
+                        href={link.route}
                         key={link.name}
-                        className="text-center text-sm font-bold dark:text-custom_white text-custom_black"
-                        onClick={() => router.push(link.route)}>
+                        className="text-center text-sm font-bold dark:text-custom_white text-custom_black">
                         {`${link.label}`}
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}
@@ -113,17 +114,17 @@ const NavBar: FC<NavBarProps> = () => {
       <div className="hidden md:flex items-center gap-14">
         {NavLinks.map((link) => {
           return (
-            <div
-              onClick={() => router.push(link.route)}
+            <Link
+              href={link.route}
               key={link.name}
               className="dark:text-gray-300 text-custom_black text-sm cursor-pointer">
               {`${link.label}`}
-            </div>
+            </Link>
           );
         })}
-        <a href="/resume.pdf" target="_blank">
+        <Link href="/resume.pdf" target="_blank">
           <Button>Resume</Button>
-        </a>
+        </Link>
         <ToogleThemeButton />
       </div>
     );
@@ -147,6 +148,7 @@ const NavBar: FC<NavBarProps> = () => {
             className="cursor-pointer"
             fill
             sizes="100vw"
+            priority
             style={{
               objectFit: 'contain',
             }}

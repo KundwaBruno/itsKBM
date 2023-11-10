@@ -7,6 +7,11 @@ const NavigationLinks: NavigationLink[] = [
     route: '/#experience',
   },
   {
+    name: 'Projects',
+    label: 'Projects',
+    route: '/#projects',
+  },
+  {
     name: 'Contact',
     label: 'Contact',
     route: '/#contact',

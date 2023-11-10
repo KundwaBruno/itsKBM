@@ -102,8 +102,7 @@ const portfolioData: PortfolioData = {
   },
   projects: {
     title: 'Projects',
-    description:
-      'Below is some of the recent projects i have been working on, and ranked by most recent!',
+    description: 'Below is some of the recent projects i have worked on.',
     data: [
       {
         title: 'Business Analytics',
@@ -119,8 +118,9 @@ const portfolioData: PortfolioData = {
         links: [],
       },
       {
-        title: 'Transport System',
-        description: 'Transportation services in Rwanda with a substantial daily user base.',
+        title: 'OX Delivers',
+        description:
+          'A dashboard that manages transportation services in Rwanda with a substantial daily user base.',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png',
@@ -128,12 +128,12 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
         ],
         techs: ['NextJs', 'Typescript', 'Google Maps'],
-        links: [],
+        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
       },
       {
-        title: 'Verification Seal',
+        title: 'Trust seal',
         description:
-          'A system that evaluates and sell online trust/reliability certificates for online websites',
+          'A platform that evaluates and sell online trust/reliability certificates for online websites',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png',
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png',
@@ -142,6 +142,15 @@ const portfolioData: PortfolioData = {
         ],
         techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
         links: [],
+      },
+      {
+        title: 'Sinc',
+        description: 'A professional landing page for a sinc today platform.',
+        imageUrls: [
+          'https://res.cloudinary.com/dxyu6elli/image/upload/v1699611668/Screenshot_2023-11-10_at_12.19.36_rt3i3b.png',
+        ],
+        techs: ['NextJs', 'TailwindCss', 'Framer motion'],
+        links: [{ url: 'https://sinc.today/', type: 'link' }],
       },
       {
         title: 'Alaafia Solutions',
@@ -153,7 +162,7 @@ const portfolioData: PortfolioData = {
         links: [{ url: 'https://alaafia-solutions.vercel.app/', type: 'link' }],
       },
       {
-        title: 'My personal portfolio',
+        title: 'Its KBM',
         description: 'My my personal profile that talks about me and what i do.',
         imageUrls: [
           'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',

@@ -1,6 +1,7 @@
 import Footer from '@/components/footer';
 import NavigationBar from '@/components/nav';
-import React, { FC, ReactNode } from 'react';
+import React, { FC, Fragment, ReactNode } from 'react';
+import SectionWrapper from './sectionWrapper';
 
 interface PageWrapperProps {
   children: ReactNode;
@@ -8,11 +9,13 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div className="dark:bg-black bg-white">
-      <NavigationBar />
-      {children}
-      <Footer />
-    </div>
+    <Fragment>
+      <div className="dark:bg-black bg-white">
+        <NavigationBar />
+        {children}
+        <Footer />
+      </div>
+    </Fragment>
   );
 };
 

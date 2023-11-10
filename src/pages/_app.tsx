@@ -1,11 +1,10 @@
 import { Inter } from '@next/font/google';
-import { AnimatePresence } from 'framer-motion';
+import { DefaultSeo, NextSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import { useEffect, useState } from 'react';
-import PageLoader from '../components/PageLoader';
 import '../styles/globals.css';
 
 const inter = Inter({
@@ -45,9 +44,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <main className={inter.className}>
-        <AnimatePresence>
-          {showSplash ? <PageLoader /> : <Component {...pageProps} />}
-        </AnimatePresence>
+        <Component {...pageProps} />
+        <DefaultSeo
+          title="Kundwa Bruno"
+          description="Experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions."
+        />
       </main>
     </ThemeProvider>
   );

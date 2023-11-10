@@ -150,7 +150,7 @@ const portfolioData: PortfolioData = {
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1699088766/Screenshot_2023-11-04_at_11.05.58_njswpm.png',
         ],
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
-        links: [{ url: 'https://www.alaafiasolutions.com/', type: 'link' }],
+        links: [{ url: 'https://alaafia-solutions.vercel.app/', type: 'link' }],
       },
       {
         title: 'My personal portfolio',

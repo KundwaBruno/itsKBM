@@ -62,6 +62,7 @@ const HeroSection: FC<LandingPageProps> = () => {
         transition={{ delay: 0.7, duration: 0.5 }}
         className="relative flex-1 mt-0 md:mt-20 h-[300px]">
         <Image
+          priority
           src={`/assets/svgs/${
             theme === 'system' && systemTheme === 'light'
               ? 'heroLight.svg'

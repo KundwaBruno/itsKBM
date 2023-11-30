@@ -2,8 +2,7 @@ import { FC, HTMLProps } from 'react';
 
 interface InputProps {
   className?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  regex?: string;
 }
 
 const Input: FC<InputProps & HTMLProps<HTMLInputElement>> = (props) => {

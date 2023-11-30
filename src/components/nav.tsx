@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FC, useMemo, useRef, useState } from 'react';
+import React, { FC, Fragment, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import NavLinks from '../lib/constants/links';
 import useOnClickOutside from '../lib/hooks/useOutsideClick';
@@ -111,22 +111,26 @@ const NavBar: FC<NavBarProps> = () => {
 
   const Web = () => {
     return (
-      <div className="hidden md:flex items-center gap-14">
-        {NavLinks.map((link) => {
-          return (
-            <Link
-              href={link.route}
-              key={link.name}
-              className="dark:text-gray-300 text-custom_black text-sm cursor-pointer">
-              {`${link.label}`}
-            </Link>
-          );
-        })}
-        <Link href="/resume.pdf" target="_blank">
-          <Button>Resume</Button>
-        </Link>
-        <ToogleThemeButton />
-      </div>
+      <Fragment>
+        <div className="hidden md:flex items-center gap-14">
+          {NavLinks.map((link) => {
+            return (
+              <Link
+                href={link.route}
+                key={link.name}
+                className="dark:text-gray-300 text-custom_black text-sm cursor-pointer">
+                {`${link.label}`}
+              </Link>
+            );
+          })}
+        </div>
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/resume.pdf" target="_blank">
+            <Button>Resume</Button>
+          </Link>
+          <ToogleThemeButton />
+        </div>
+      </Fragment>
     );
   };
 
@@ -136,12 +140,15 @@ const NavBar: FC<NavBarProps> = () => {
 
   return (
     <SectionWrapper
-      className={`z-50 sticky top-0 transition-all duration-200 w-full !py-0 ${
+      className={`z-50 sticky top-0 transition-all duration-200 w-full py-3 ${
         isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px] border-b-custom_border_dark'
       }`}>
       <div className="flex justify-between items-center">
-        <div className="w-[100px] h-16 md:h-[80px] relative">
-          <Image
+        <div className="relative font-bold text-lg">
+          <span onClick={() => router.push('/')} className="cursor-pointer">
+            KBM
+          </span>
+          {/* <Image
             alt="website_logo"
             src={My_Logo}
             onClick={() => router.push('/')}
@@ -152,7 +159,7 @@ const NavBar: FC<NavBarProps> = () => {
             style={{
               objectFit: 'contain',
             }}
-          />
+          /> */}
         </div>
         <ToggleButton />
         <Web />

@@ -174,21 +174,21 @@ const portfolioData: PortfolioData = {
   },
   experience: [
     {
-      company: 'Awesomity Lab',
-      companyLink: 'https://awesomity.rw/',
-      position: 'Senior Frontend engineer',
-      timeFrame: 'Sep 2021 - Sep 2023',
+      company: 'Awesomity Global',
+      companyLink: 'https://awesomity.nl/',
+      position: 'Frontend Engineer',
+      timeFrame: 'Jan 2022 - Oct 2023',
       length: '6 months',
-      location: 'Germany',
+      location: 'Delft, Zuid-Holland - Full Time',
       description: [
         'Authored comprehensive technical documentation, providing step by step walkthroughs.',
-        'Initiated the implementation of tailwindCSS framework resulting in a substantial enhancement of our team’s efficiency in constructing scalable user interfaces and delivering superior user experiences.',
+        'Developed a Data collection system capturing business workflows and regulation compliance, enhancing companies’ decision making capabilities',
       ],
     },
     {
       company: 'Montech Software Studios',
       companyLink: 'https://www.montech.io/',
-      position: 'Frontend engineer',
+      position: 'Frontend Engineer',
       timeFrame: 'Jan 2022 - May 2023',
       length: '6 months',
       location: 'United States',
@@ -196,22 +196,19 @@ const portfolioData: PortfolioData = {
         'Contributed to the improvement of existing internal UI components.',
         'Conducted professional briefing sessions with clients, outlining the latest developments in projects',
         'Conducted code reviews and weekly technical presentations to the rest of the team.',
-        `Built a variety of client's  landing pages and websites.`,
       ],
     },
 
     {
-      company: 'Techenfold',
-      companyLink:
-        'https://www.linkedin.com/company/tech-enfold/?trk=ppro_cprof&originalSubdomain=rw',
-      position: 'Fullstack developer',
-      timeFrame: 'Jun 2020 - Jun 2021',
+      company: 'Awesomity Lab',
+      companyLink: 'https://awesomity.rw/',
+      position: 'Frontend Engineer',
+      timeFrame: 'Sept 2021 - Sept 2022',
       length: '6 months',
-      location: 'Germany',
+      location: 'Rwanda,Kigali',
       description: [
         `Converted an early stage client’s website into NextJs framework that increased client’s website performance and speed  by 40%`,
         `Emphasized  the usage of wireframing and prototyping using Figma.`,
-        `Engineered a set of API endpoints to facilitate data communication.`,
         `Conducted performance enhancements by optimizing the efficiency of existing database queries.
         `,
       ],

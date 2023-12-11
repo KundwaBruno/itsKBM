@@ -1,6 +1,5 @@
 import Footer from '@/components/footer';
 import NavigationBar from '@/components/nav';
-import { Analytics } from '@vercel/analytics/react';
 import React, { FC, Fragment, ReactNode } from 'react';
 
 interface PageWrapperProps {
@@ -13,7 +12,6 @@ const PageWrapper: FC<PageWrapperProps> = ({ children }) => {
       <div className="dark:bg-black bg-white">
         <NavigationBar />
         {children}
-        <Analytics />
         <Footer />
       </div>
     </Fragment>

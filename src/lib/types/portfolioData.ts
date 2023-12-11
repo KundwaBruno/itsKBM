@@ -1,15 +1,12 @@
 type PortfolioDta = {
   name__abbr: string;
+  prodUrl: string;
   full__name: string;
   salutation: string;
   homeDescription: string;
+  meta__img: string;
   passion: string;
-  passions: string[];
-  looking__into: string;
-  status: string;
-  profile__image: string;
   copyright: string;
-  current__status: string;
   resume__link: string;
   tech_stacks: { title: string; icon: string }[];
   recent_technologies: string[];
@@ -30,7 +27,7 @@ type PortfolioDta = {
       title: string;
       description: string;
       imageUrls: string[];
-      links: { url: string; type: "github" | "link" | "learn more" }[];
+      links: { url: string; type: 'github' | 'link' | 'learn more' }[];
       techs: string[];
     }[];
   };

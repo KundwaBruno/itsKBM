@@ -1,26 +1,23 @@
+import Button from '@/components/button';
+import SectionWrapper from '@/components/sectionWrapper';
+import NavLinks from '@/lib/constants/links';
+import useOnClickOutside from '@/lib/hooks/useOutsideClick';
+import useScrollOffset from '@/lib/hooks/useScrollOfset';
 import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FC, Fragment, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import NavLinks from '../lib/constants/links';
-import useOnClickOutside from '../lib/hooks/useOutsideClick';
-import useScrollOffset from '../lib/hooks/useScrollOfset';
-import { My_Logo } from '../lib/images';
-import Button from './button';
-import SectionWrapper from './sectionWrapper';
 
-interface NavBarProps {}
-
-const NavBar: FC<NavBarProps> = () => {
+const NavBar = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [isWebBarScrolled, setIsWebBarScrolled] = useState<boolean>(false);
-  const navRef = useRef<any>();
 
-  const { theme, setTheme, systemTheme } = useTheme();
+  const navRef = useRef<HTMLDivElement>(null);
+
+  const { setTheme, resolvedTheme } = useTheme();
 
   const router = useRouter();
 
@@ -48,13 +45,7 @@ const NavBar: FC<NavBarProps> = () => {
             <Hamburger
               toggled={isNavOpen}
               toggle={toggleNavOpen}
-              color={
-                theme === 'system' && systemTheme === 'light'
-                  ? 'black'
-                  : theme === 'light'
-                  ? 'black'
-                  : 'white'
-              }
+              color={resolvedTheme === 'light' ? 'black' : 'white'}
               size={22}
               rounded
             />
@@ -91,20 +82,8 @@ const NavBar: FC<NavBarProps> = () => {
     return (
       <button
         className="text-custom_black dark:text-custom_white rounded-full p-3 hover:bg-gray-200 dark:hover:bg-primary/20 transition-all duration-100"
-        onClick={() =>
-          theme === 'system' && systemTheme === 'light'
-            ? setTheme('dark')
-            : theme === 'light'
-            ? setTheme('dark')
-            : setTheme('light')
-        }>
-        {theme === 'system' && systemTheme === 'light' ? (
-          <FaMoon />
-        ) : theme === 'light' ? (
-          <FaMoon />
-        ) : (
-          <FaSun />
-        )}
+        onClick={() => (resolvedTheme === 'light' ? setTheme('dark') : setTheme('light'))}>
+        {resolvedTheme === 'light' ? <FaMoon /> : <FaSun />}
       </button>
     );
   };
@@ -148,18 +127,6 @@ const NavBar: FC<NavBarProps> = () => {
           <span onClick={() => router.push('/')} className="cursor-pointer">
             KBM
           </span>
-          {/* <Image
-            alt="website_logo"
-            src={My_Logo}
-            onClick={() => router.push('/')}
-            className="cursor-pointer"
-            fill
-            sizes="100vw"
-            priority
-            style={{
-              objectFit: 'contain',
-            }}
-          /> */}
         </div>
         <ToggleButton />
         <Web />

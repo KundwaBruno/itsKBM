@@ -2,19 +2,14 @@ import PortfolioData from '../types/portfolioData';
 
 const portfolioData: PortfolioData = {
   name__abbr: 'KBM',
-  full__name: 'Kundwa Bruno Materne.',
+  full__name: 'Kundwa Bruno Materne',
   salutation: 'Hello there , My name is',
   passion: 'Software engineer.',
-  passions: ['Software Engineer', 'Frontend developer', 'Backend developer', 'UI/UX Designer'],
-  profile__image:
-    'https://res.cloudinary.com/dxyu6elli/image/upload/v1682203668/1655309573260_gandfq.jpg',
-  current__status: 'Open to offers',
   homeDescription: `Experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions.`,
-  looking__into:
-    'Now that Web3 > is already here, I am currently looking forward to add blockchain development with solidity to my tech stacks.',
-  status: 'Open to offers',
+  prodUrl: 'https://itskbm.com/',
   resume__link: 'https://itskbm.com/resume.pdf',
-  copyright: 'Built with courage by KBM',
+  meta__img: 'https://res.cloudinary.com/dxyu6elli/image/upload/v1702290838/meta_ab07nt.png',
+  copyright: 'Built with courage by Bruno',
   recent_technologies: [
     'Javascript',
     'GraphQl',
@@ -83,21 +78,6 @@ const portfolioData: PortfolioData = {
         data: 'https://github.com/KundwaBruno',
         icon: 'github',
       },
-      // {
-      //   name: 'instagram',
-      //   data: 'https://www.instagram.com/bruno_kbm/',
-      //   icon: 'instagram',
-      // },
-      // {
-      //   name: 'twitter',
-      //   data: 'https://twitter.com/bruno_kbm',
-      //   icon: 'twitter',
-      // },
-      // {
-      //   name: 'facebook',
-      //   data: 'https://www.facebook.com/kundwa.bruno/',
-      //   icon: 'facebook',
-      // },
     ],
   },
   projects: {

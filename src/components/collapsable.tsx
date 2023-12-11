@@ -1,6 +1,5 @@
 import Icon from '@/components/icon';
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
 
@@ -13,8 +12,6 @@ interface CollapsableProps {
 
 const Collapsable: FC<CollapsableProps> = ({ children, items, isCollapsed, onClose }) => {
   const router = useRouter();
-
-  const { theme } = useTheme();
 
   return (
     <div role="button" className="relative" onClick={onClose}>

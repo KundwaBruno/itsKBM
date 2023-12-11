@@ -21,7 +21,7 @@ const animate = {
 const HeroSection: FC<LandingPageProps> = () => {
   const { salutation, full__name, homeDescription, about } = PageData;
 
-  const { theme, systemTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper className="min-h-[650px] lg:min-h-screen flex flex-col">
@@ -63,13 +63,7 @@ const HeroSection: FC<LandingPageProps> = () => {
         className="relative flex-1 mt-0 md:mt-20 h-[300px]">
         <Image
           priority
-          src={`/assets/svgs/${
-            theme === 'system' && systemTheme === 'light'
-              ? 'heroLight.svg'
-              : theme === 'light'
-              ? 'heroLight.svg'
-              : 'hero.svg'
-          }`}
+          src={`/assets/svgs/${resolvedTheme === 'light' ? 'heroLight.svg' : 'hero.svg'}`}
           alt="Home map"
           fill
           className="object-contain absolute"

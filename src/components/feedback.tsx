@@ -1,12 +1,13 @@
+import { database } from '@/lib/firebase';
+import avatarNameMaker from '@/lib/functions/abbrName';
+import { IFeedbackSchema } from '@/lib/types/feedback';
+import { ref, update } from 'firebase/database';
 import { motion } from 'framer-motion';
 import moment from 'moment';
 import { FC, useState } from 'react';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
-import { database, ref, update } from '../lib/firebase';
-import avatarNameMaker from '../lib/functions/abbrName';
-import { FeedbackSchema } from '../lib/types/feedback';
 
-const Feedback: FC<FeedbackSchema> = ({ body, createdAt, id, upVotes, name, downVotes }) => {
+const Feedback: FC<IFeedbackSchema> = ({ body, createdAt, id, upVotes, name, downVotes }) => {
   const [upVoted, setUpVoted] = useState<boolean>(false);
   const [downVoted, setDownVoted] = useState<boolean>(false);
 

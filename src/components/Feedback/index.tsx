@@ -1,31 +1,29 @@
+import FeebackSkeleton from '@/components/Skeletons/feedback';
+import Button from '@/components/button';
 import FeedbackWrapper from '@/components/feedback';
 import Input from '@/components/input';
-import { database, onValue, push, ref, set } from '@/lib/firebase';
-import { FeedbackSchema } from '@/lib/types/feedback';
+import PageWrapper from '@/components/pageWrapper';
+import SectionHeader from '@/components/sectionHeader';
+import SectionWrapper from '@/components/sectionWrapper';
+import { database } from '@/lib/firebase';
+import { IFeedbackSchema } from '@/lib/types/feedback';
 import { nameByRace } from 'fantasy-name-generator';
-import { query } from 'firebase/database';
+import { onValue, push, query, ref, set } from 'firebase/database';
 import { motion } from 'framer-motion';
 import moment from 'moment';
-import React, { FC, Fragment, useCallback, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import { GiEmptyHourglass } from 'react-icons/gi';
 import { HiX } from 'react-icons/hi';
-import FeebackSkeleton from '../Skeletons/feedback';
-import Button from '../button';
-import PageWrapper from '../pageWrapper';
-import SectionHeader from '../sectionHeader';
-import SectionWrapper from '../sectionWrapper';
-
-interface FeedbackProps {}
 
 const ITEMS_COUNT = 3;
 
-const Feedback: FC<FeedbackProps> = () => {
+const Feedback = () => {
   const [input, setInput] = useState<string>('');
   const [toast, setToast] = useState<{ show: boolean; body: string }>({
     show: false,
     body: '',
   });
-  const [fbcks, setFbcks] = useState<FeedbackSchema[]>();
+  const [fbcks, setFbcks] = useState<IFeedbackSchema[]>();
 
   const [itemsPerPage, setItemsPerPage] = useState<number>(ITEMS_COUNT);
   const [totalItems, setTotalItems] = useState<number>();
@@ -79,6 +77,8 @@ const Feedback: FC<FeedbackProps> = () => {
           feedbackList.push({ ...feedbacks[id], id });
         }
       }
+      feedbackList.reverse();
+
       setFbcks(feedbackList);
       setTotalItems(feedbackList.length);
     });
@@ -115,6 +115,9 @@ const Feedback: FC<FeedbackProps> = () => {
                   postFeedBack();
                 }}
                 className="mb-10">
+                <div className="dark:text-custom_gray text-custom_black mt-2 text-sm italic">
+                  Information below is updated realtime 🚀
+                </div>
                 <div className="flex items-center gap-3 mt-2">
                   <div className="w-full">
                     <Input
@@ -131,15 +134,9 @@ const Feedback: FC<FeedbackProps> = () => {
             )}
 
             {fbcks &&
-              [...fbcks]
-                .sort(
-                  (a: any, b: any) =>
-                    new Date(b?.createdAt).getTime() - new Date(a?.createdAt).getTime(),
-                )
-                ?.slice(0, itemsPerPage)
-                ?.map((fb, index) => {
-                  return <FeedbackWrapper key={index} {...fb} />;
-                })}
+              [...fbcks]?.slice(0, itemsPerPage)?.map((fb, index) => {
+                return <FeedbackWrapper key={index} {...fb} />;
+              })}
             {totalItems && itemsPerPage < totalItems && (
               <div className="text-center text-secondary my-4">
                 <motion.button

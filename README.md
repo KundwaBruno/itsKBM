@@ -12,7 +12,6 @@
 - [Setup](#setup)
 - [Usage](#usage)
 - [Scripts](#Scripts)
-- [Contributors](#contributors)
 
 ## Read
 

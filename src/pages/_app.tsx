@@ -12,6 +12,13 @@ const inter = Inter({
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const consoleStyle =
+    'background-color: black; color: white; font-style: italic; border: 2px solid white; border-radius: 10px; padding: 10px; font-size: 1.3em;';
+  console.log(
+    '%cIf you are impressed please say Hi, Otherwise nothing much to see here :)',
+    consoleStyle,
+  );
+
   return (
     <ThemeProvider attribute="class">
       <main className={inter.className}>

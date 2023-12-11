@@ -20,7 +20,7 @@ const ProjectsCard: FC<Props> = (props) => {
           src={imageUrls[0]}
           alt="Project_thumbnail"
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
           className="object-cover dark:opacity-80 rounded-t-lg"
         />

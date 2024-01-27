@@ -31,7 +31,7 @@ const ProjectsCard: FC<Props> = (props) => {
         <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-3">
           {description}
         </div>
-        <div className="flex flex-wrap gap-3 text-xs text-gray-500">
+        <div className="flex flex-wrap gap-2 text-xs text-gray-500">
           {techs.map((tch, index) => {
             return (
               <span

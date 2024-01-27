@@ -61,9 +61,7 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `In 2019, I embarked on a web development career after completing a computer science degree. My journey began with an Engineering apprenticeship at <a href="https://andela.com" target="_blank">Andela Rwanda</a>, igniting my passion for web technologies.
-
-    Fast forward to today, I've dedicated over three years to this field, enhancing my knowledge through various reputable online sources. These experiences have honed my abilities, making me a dedicated and proficient professional.`,
+    bio: `Welcome! I'm a web development enthusiast who started my journey in 2018. My passion for web technologies was sparked during an Engineering apprenticeship at Andela Rwanda. With over three years in the field, I've continuously expanded my expertise through various online platforms, shaping me into a dedicated and skilled web professional.`,
     contactDescription:
       'You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.',
     contact: [
@@ -85,53 +83,64 @@ const portfolioData: PortfolioData = {
     description: 'Below is some of the recent projects i have worked on.',
     data: [
       {
-        title: 'Business Analytics',
+        title: 'Sinc - Dashboard',
         description:
-          'Data collection system that enhances organizational process visualization and management.',
+          'A startup that i co-founded that provided event management and ticket selling solutions.',
         imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210515/Screenshot_2023-04-23_at_02.39.44_kjj0dk.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210619/Screenshot_2023-04-23_at_02.43.22_ngdazg.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.40.06_xw1tro.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png',
+          'https://res.cloudinary.com/dxyu6elli/image/upload/v1706351180/Screenshot_2024-01-27_at_12.26.09_ub9xrz.png',
         ],
-        techs: ['NextJs', 'Apollo Client', 'MapBox'],
-        links: [],
+        techs: ['ReactJs', 'NextJs', 'TailwindCss', 'Ant Design', 'MapBoxGL', 'Framer motion'],
+        links: [{ url: 'https://organizer.sinc.today/', type: 'link' }],
       },
       {
-        title: 'OX Delivers',
+        title: 'Sinc - Home page',
         description:
-          'A dashboard that manages transportation services in Rwanda with a substantial daily user base.',
+          'A startup that i co-founded that provided event management and ticket selling solutions.',
         imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.19.40_bjdqpr.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
-        ],
-        techs: ['NextJs', 'Typescript', 'Google Maps'],
-        links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
-      },
-      {
-        title: 'Trust seal',
-        description:
-          'A platform that evaluates and sell online trust/reliability certificates for online websites',
-        imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.09_juodpc.png',
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
-        ],
-        techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
-        links: [],
-      },
-      {
-        title: 'Sinc',
-        description: 'A professional landing page for a sinc today platform.',
-        imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1699611668/Screenshot_2023-11-10_at_12.19.36_rt3i3b.png',
+          'https://res.cloudinary.com/dxyu6elli/image/upload/v1706350940/Screenshot_2024-01-27_at_12.22.11_e7dzg7.png',
         ],
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
         links: [{ url: 'https://sinc.today/', type: 'link' }],
       },
+      // {
+      //   title: 'Business Analytics',
+      //   description:
+      //     'Data collection system that enhances organizational process visualization and management.',
+      //   imageUrls: [
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210515/Screenshot_2023-04-23_at_02.39.44_kjj0dk.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210619/Screenshot_2023-04-23_at_02.43.22_ngdazg.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.40.06_xw1tro.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png',
+      //   ],
+      //   techs: ['NextJs', 'Apollo Client', 'MapBox'],
+      //   links: [],
+      // },
+      // {
+      //   title: 'OX Delivers',
+      //   description:
+      //     'A dashboard that manages transportation services in Rwanda with a substantial daily user base.',
+      //   imageUrls: [
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.19.40_bjdqpr.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
+      //   ],
+      //   techs: ['NextJs', 'Typescript', 'Google Maps'],
+      //   links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
+      // },
+      // {
+      //   title: 'Trust seal',
+      //   description:
+      //     'A platform that evaluates and sell online trust/reliability certificates for online websites',
+      //   imageUrls: [
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.09_juodpc.png',
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
+      //   ],
+      //   techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
+      //   links: [],
+      // },
       {
         title: 'Alaafia Solutions',
         description: 'A professional landing page for a consultancy firm.',
@@ -157,7 +166,7 @@ const portfolioData: PortfolioData = {
       company: 'Awesomity Global',
       companyLink: 'https://awesomity.nl/',
       position: 'Frontend Engineer',
-      timeFrame: 'Jan 2022 - Oct 2023',
+      timeFrame: 'Sept 2022 - Dec 2023',
       length: '6 months',
       location: 'Delft, Zuid-Holland - Full Time',
       description: [

@@ -8,7 +8,7 @@ interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
   return (
-    <SectionWrapper className="dark:bg-background_dark bg-background_light border-t border-b dark:border-custom_border_dark">
+    <SectionWrapper className="dark:bg-background_dark bg-background_light border-y dark:border-custom_border_dark">
       <SectionHeader title="About" description={data.about.bio} />
       <div className="flex flex-wrap gap-10 m divide-custom_border_dark items-center justify-center">
         {data.tech_stacks.map((stack) => {

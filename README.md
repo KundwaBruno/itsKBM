@@ -4,7 +4,7 @@
 
 # itskbm.com
 
-> Welcome to my personal website portfolio. I am an experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions.
+> Welcome to my personal website portfolio. I am an experienced Front-End Software Engineer from Rwanda, Kigali dedicated to crafting accessible web and mobile solutions.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 
 ## Read
 
-Some people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually yes, with attribution.
+A few people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually yes, with attribution.
 
 I value keeping my site open source, but as you all know, plagiarism is bad. So All I ask is to not claim this effort as your own.
 
@@ -32,7 +32,7 @@ Please also note that I did not build this site with the intention of it being a
 git clone https://github.com/KundwaBruno/portfolioV4
 ```
 
-2. For the feedback section you will need to create a <a href='https://console.firebase.google.com/' target="_blank">firebase</a> firestore instance add the necessary below environment keys. Check `/env.example` file.
+2. For the feedback section you will need to create a <a href='https://console.firebase.google.com/' target="_blank">firebase</a> real-time firestore instance to get the environment keys and add it to your `.env` file. Check `/env.example` for the shape of the env file.
 
 3. Install dependencies
 

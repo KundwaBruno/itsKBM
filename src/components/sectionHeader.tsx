@@ -12,7 +12,7 @@ const SectionHeader: FC<Props> = ({ title, description }) => {
         {title}
       </h2>
       <p
-        className="dark:text-custom_gray text-custom_black m-auto mb-16  flex-1 text-center max-w-[800px]"
+        className="dark:text-custom_gray text-custom_black m-auto mb-16  flex-1 text-center max-w-[600px]"
         dangerouslySetInnerHTML={{ __html: description }}
       />
     </div>

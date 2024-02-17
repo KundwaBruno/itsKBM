@@ -31,12 +31,12 @@ const ProjectsCard: FC<Props> = (props) => {
         <div className=" text-custom_black dark:text-custom_gray text-left text-sm my-2 font-light line-clamp-3">
           {description}
         </div>
-        <div className="flex flex-wrap gap-2 text-xs text-gray-500">
+        <div className="flex overflow-x-auto gap-2 text-xs text-gray-500">
           {techs.map((tch, index) => {
             return (
               <span
                 key={index}
-                className=" dark:bg-custom_black text-custom_black dark:text-custom_gray border dark:border-custom_border_dark p-1 px-2 rounded-md">
+                className=" dark:bg-custom_black whitespace-nowrap text-custom_black dark:text-custom_gray border dark:border-custom_border_dark p-1 px-2 rounded-md">
                 {tch}
               </span>
             );

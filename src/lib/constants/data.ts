@@ -92,45 +92,6 @@ const portfolioData: PortfolioData = {
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
         links: [{ url: 'https://sinc.today/', type: 'link' }],
       },
-      // {
-      //   title: 'Business Analytics',
-      //   description:
-      //     'Data collection system that enhances organizational process visualization and management.',
-      //   imageUrls: [
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210515/Screenshot_2023-04-23_at_02.39.44_kjj0dk.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210619/Screenshot_2023-04-23_at_02.43.22_ngdazg.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.40.06_xw1tro.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682210516/Screenshot_2023-04-23_at_02.41.33_sjdhlh.png',
-      //   ],
-      //   techs: ['NextJs', 'Apollo Client', 'MapBox'],
-      //   links: [],
-      // },
-      // {
-      //   title: 'OX Delivers',
-      //   description:
-      //     'A dashboard that manages transportation services in Rwanda with a substantial daily user base.',
-      //   imageUrls: [
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.22.02_oabfh8.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205794/Screenshot_2023-04-23_at_01.19.01_mzoqfr.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205795/Screenshot_2023-04-23_at_01.19.40_bjdqpr.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682205864/Screenshot_2023-04-23_at_01.24.08_sgbglo.png',
-      //   ],
-      //   techs: ['NextJs', 'Typescript', 'Google Maps'],
-      //   links: [{ url: 'https://www.oxdelivers.com/', type: 'link' }],
-      // },
-      // {
-      //   title: 'Trust seal',
-      //   description:
-      //     'A platform that evaluates and sell online trust/reliability certificates for online websites',
-      //   imageUrls: [
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.29_l80kkb.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.51.19_ueehfu.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211174/Screenshot_2023-04-23_at_02.52.09_juodpc.png',
-      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1682211175/Screenshot_2023-04-23_at_02.51.03_qvvtk3.png',
-      //   ],
-      //   techs: ['Javascript', 'NextJs', 'ReduxToolkit'],
-      //   links: [],
-      // },
       {
         title: 'Alaafia Solutions',
         description: 'A professional landing page for a consultancy firm.',

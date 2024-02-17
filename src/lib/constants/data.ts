@@ -83,19 +83,9 @@ const portfolioData: PortfolioData = {
     description: 'Below is some of the recent projects i have worked on.',
     data: [
       {
-        title: 'Sinc - Dashboard',
+        title: 'Sinc',
         description:
-          'A startup that i co-founded that provided event management and ticket selling solutions.',
-        imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1706351180/Screenshot_2024-01-27_at_12.26.09_ub9xrz.png',
-        ],
-        techs: ['ReactJs', 'NextJs', 'TailwindCss', 'Ant Design', 'MapBoxGL', 'Framer motion'],
-        links: [{ url: 'https://organizer.sinc.today/', type: 'link' }],
-      },
-      {
-        title: 'Sinc - Home page',
-        description:
-          'A startup that i co-founded that provided event management and ticket selling solutions.',
+          'Event & Ticketing Platform. Are you a Rwandan organizer? Start hosting events :)',
         imageUrls: [
           'https://res.cloudinary.com/dxyu6elli/image/upload/v1706350940/Screenshot_2024-01-27_at_12.22.11_e7dzg7.png',
         ],

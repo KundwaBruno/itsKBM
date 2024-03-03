@@ -42,7 +42,7 @@ const ProjectsCard: FC<Props> = (props) => {
             );
           })}
         </div>
-        <div className="flex absolute top-5 right-3">
+        <div className="flex absolute top-5 right-3 gap-4">
           {links.map((ln, index) => {
             const { type, url } = ln;
             if (type === 'link')

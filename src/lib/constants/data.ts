@@ -102,13 +102,28 @@ const portfolioData: PortfolioData = {
         links: [{ url: 'https://alaafia-solutions.vercel.app/', type: 'link' }],
       },
       {
+        title: 'TestValley Clone',
+        description: 'A clone of https://www.testvalley.kr/  E-commerce website.',
+        imageUrls: [
+          'https://res.cloudinary.com/dxyu6elli/image/upload/v1709474325/Screenshot_2024-03-03_at_15.58.38_oue9rh.png',
+        ],
+        techs: ['NextJs', 'TailwindCss', 'Redux Tookit'],
+        links: [
+          { url: 'https://test-valley-tau.vercel.app/', type: 'link' },
+          { url: 'https://github.com/KundwaBruno/Test-Valley/', type: 'github' },
+        ],
+      },
+      {
         title: 'Its KBM',
-        description: 'My my personal profile that talks about me and what i do.',
+        description: `My my personal website portfolio, it's public :)`,
         imageUrls: [
           'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',
         ],
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
-        links: [{ url: 'https://www.itskbm.com/', type: 'link' }],
+        links: [
+          { url: 'https://www.itskbm.com/', type: 'link' },
+          { url: 'https://github.com/KundwaBruno/itsKBM', type: 'github' },
+        ],
       },
     ],
   },

@@ -1,15 +1,15 @@
-import { FC } from "react";
+import { FC } from 'react';
 import {
-  FaEnvelope,
-  FaTwitter,
-  FaLinkedinIn,
-  FaGithub,
-  FaFacebookF,
-  FaInstagram,
-  FaArrowUp,
   FaArrowDown,
+  FaArrowUp,
+  FaEnvelope,
   FaExternalLinkAlt,
-} from "react-icons/fa";
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from 'react-icons/fa';
 
 interface IconProps {
   name: string;
@@ -21,23 +21,23 @@ const IconComponent: FC<IconProps> = ({ name, color }) => {
 
   const chooseIcon = () => {
     switch (name) {
-      case "email":
+      case 'email':
         return <FaEnvelope width={iconWidth} color={color} />;
-      case "twitter":
+      case 'twitter':
         return <FaTwitter width={iconWidth} color={color} />;
-      case "linkedin":
+      case 'linkedin':
         return <FaLinkedinIn width={iconWidth} color={color} />;
-      case "github":
+      case 'github':
         return <FaGithub width={iconWidth} color={color} />;
-      case "facebook":
+      case 'facebook':
         return <FaFacebookF width={iconWidth} color={color} />;
-      case "instagram":
+      case 'instagram':
         return <FaInstagram width={iconWidth} color={color} />;
-      case "Up":
+      case 'Up':
         return <FaArrowUp width={iconWidth} color={color} />;
-      case "Down":
+      case 'Down':
         return <FaArrowDown width={iconWidth} color={color} />;
-      case "Link":
+      case 'Link':
         return <FaExternalLinkAlt width={iconWidth} color={color} />;
       default:
         return null;

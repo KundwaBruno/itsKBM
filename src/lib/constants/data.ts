@@ -3,9 +3,9 @@ import PortfolioData from '../types/portfolioData';
 const portfolioData: PortfolioData = {
   name__abbr: 'KBM',
   full__name: 'Kundwa Bruno Materne',
-  salutation: 'Hello there , My name is',
+  salutation: 'Fontend Engineer 🧑‍💻',
   passion: 'Software engineer.',
-  homeDescription: `Experienced Front-End Software Engineer from Rwanda 🇷🇼, dedicated to crafting accessible web and mobile solutions.`,
+  homeDescription: `Dedicated to crafting accessible Web and Mobile solutions, Based in Kigali - Rwanda 🇷🇼 the heart of Africa.`,
   prodUrl: 'https://itskbm.com/',
   resume__link: 'https://itskbm.com/resume.pdf',
   meta__img: 'https://res.cloudinary.com/dxyu6elli/image/upload/v1702290838/meta_ab07nt.png',
@@ -61,7 +61,7 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `Welcome! I'm a web development enthusiast who started my journey in 2018. My passion for web technologies was sparked during an Engineering apprenticeship at Andela Rwanda. With over three years in the field, I've continuously expanded my expertise through various online platforms, shaping me into a dedicated and skilled web professional.`,
+    bio: `Hi 👋 I'm a Front-End Engineer with over 4 years in the field, I've continuously expanded my expertise working with one of the World-Class Front-End technologies listed below;`,
     contactDescription:
       'You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.',
     contact: [
@@ -79,8 +79,8 @@ const portfolioData: PortfolioData = {
     ],
   },
   projects: {
-    title: 'Projects',
-    description: 'Below is some of the recent projects i have worked on.',
+    title: 'My Projects',
+    description: '',
     data: [
       {
         title: 'Sinc',
@@ -92,14 +92,27 @@ const portfolioData: PortfolioData = {
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
         links: [{ url: 'https://sinc.today/', type: 'link' }],
       },
+      // {
+      //   title: 'Alaafia Solutions',
+      //   description: 'A professional landing page for a consultancy firm.',
+      //   imageUrls: [
+      //     'https://res.cloudinary.com/dxyu6elli/image/upload/v1699088766/Screenshot_2023-11-04_at_11.05.58_njswpm.png',
+      //   ],
+      //   techs: ['NextJs', 'TailwindCss', 'Framer motion'],
+      //   links: [{ url: 'https://alaafia-solutions.vercel.app/', type: 'link' }],
+      // },
+
       {
-        title: 'Alaafia Solutions',
-        description: 'A professional landing page for a consultancy firm.',
+        title: 'Its KBM',
+        description: `My my personal website portfolio, it's public :)`,
         imageUrls: [
-          'https://res.cloudinary.com/dxyu6elli/image/upload/v1699088766/Screenshot_2023-11-04_at_11.05.58_njswpm.png',
+          'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',
         ],
         techs: ['NextJs', 'TailwindCss', 'Framer motion'],
-        links: [{ url: 'https://alaafia-solutions.vercel.app/', type: 'link' }],
+        links: [
+          { url: 'https://www.itskbm.com/', type: 'link' },
+          { url: 'https://github.com/KundwaBruno/itsKBM', type: 'github' },
+        ],
       },
       {
         title: 'TestValley Clone',
@@ -111,18 +124,6 @@ const portfolioData: PortfolioData = {
         links: [
           { url: 'https://test-valley-tau.vercel.app/', type: 'link' },
           { url: 'https://github.com/KundwaBruno/Test-Valley/', type: 'github' },
-        ],
-      },
-      {
-        title: 'Its KBM',
-        description: `My my personal website portfolio, it's public :)`,
-        imageUrls: [
-          'https://res.cloudinary.com/drqtk4af2/image/upload/v1697038327/meta_kismhm.png',
-        ],
-        techs: ['NextJs', 'TailwindCss', 'Framer motion'],
-        links: [
-          { url: 'https://www.itskbm.com/', type: 'link' },
-          { url: 'https://github.com/KundwaBruno/itsKBM', type: 'github' },
         ],
       },
     ],

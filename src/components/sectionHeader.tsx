@@ -8,7 +8,7 @@ interface Props {
 const SectionHeader: FC<Props> = ({ title, description }) => {
   return (
     <div className="m-auto text-center">
-      <h2 className="dark:text-custom_white text-custom_black font-extrabold mb-8 tracking-tighter text-3xl md:text-5xl">
+      <h2 className="dark:text-custom_white text-custom_black font-extrabold mb-4 tracking-tighter text-3xl">
         {title}
       </h2>
       <p

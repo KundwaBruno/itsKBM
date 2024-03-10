@@ -38,19 +38,19 @@ const Experience: FC<ExperienceProps> = ({
       initial="hide"
       className="py-8">
       <div className="flex flex-col mb-5">
-        <div className="dark:text-custom_white text-custom_black flex gap-2">
-          {/* {position}. */}
-          <a
-            href={companyLink}
-            target="_blank"
-            rel="noreferrer"
-            className="text-xl  font-semibold gap-5">
-            {company}
-          </a>
-          <TbExternalLink className="text-2xl text-secondary " />
+        <a
+          href={companyLink}
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold gap-5 w-max">
+          <div className="flex gap-2 hover:text-primary">
+            <span>{company}</span>
+            <TbExternalLink className="text-2xl text-secondary " />
+          </div>
+        </a>
+        <div className="dark:text-custom_gray text-custom_black text-left mt-1 text-sm">
+          @{role}
         </div>
-        <div className="dark:text-custom_gray text-custom_black text-left mb-2">@{role}</div>
-        <div className="text-xs text-custom_gray text-left uppercase ">{timeFrame}</div>
       </div>
       <div className=" flex flex-col gap-2 dark:text-custom_gray text-custom_black">
         {description.map((dsc, index) => {

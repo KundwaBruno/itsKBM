@@ -30,13 +30,13 @@ const Experience: FC<ExperienceProps> = () => {
             />
           );
         })}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          className="underline font-bold underline-offset-4 flex items-center gap-3 pt-9">
-          View full resume <FaArrowRight />
-        </a>
       </div>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        className="underline font-bold underline-offset-4 flex items-center gap-3 hover:text-primary w-max">
+        View Full resume <FaArrowRight />
+      </a>
     </SectionWrapper>
   );
 };

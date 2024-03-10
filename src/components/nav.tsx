@@ -124,7 +124,7 @@ const NavBar = () => {
       }`}>
       <div className="flex justify-between items-center">
         <div className="relative font-bold text-lg">
-          <span onClick={() => router.push('/')} className="cursor-pointer">
+          <span onClick={() => router.push('/')} className="cursor-pointer text-primary">
             KBM
           </span>
         </div>

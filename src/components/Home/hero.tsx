@@ -24,26 +24,26 @@ const HeroSection: FC<LandingPageProps> = () => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <SectionWrapper className="min-h-[650px] lg:min-h-screen flex flex-col">
+    <SectionWrapper className="lg:h-[550px] flex flex-col">
       <div className="flex-1 text-center flex flex-col justify-center">
         <motion.div
           initial={initial}
           animate={animate}
-          className="dark:text-custom_gray text-custom_black  mb-2">
+          className="dark:text-custom_gray text-custom_black  mb-2 md:text-lg">
           {salutation}
         </motion.div>
         <motion.h1
           initial={initial}
           animate={animate}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-6xl xl:text-7xl font-extrabold  dark:text-custom_white text-custom_black mb-5 tracking-tighter">
+          className="text-4xl md:text-6xl xl:text-7xl font-extrabold  dark:text-custom_white text-custom_black mb-2 tracking-tighter">
           {full__name}
         </motion.h1>
         <motion.p
           initial={initial}
           animate={animate}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="w-11/12 lg:w-1/2 mx-auto mb-7 dark:text-custom_gray text-custom_black "
+          className="w-11/12 lg:w-1/2 mx-auto mb-7 dark:text-custom_gray text-custom_black  md:text-lg"
           dangerouslySetInnerHTML={{ __html: homeDescription }}
         />
         <motion.div
@@ -56,7 +56,7 @@ const HeroSection: FC<LandingPageProps> = () => {
           </Link>
         </motion.div>
       </div>
-      <motion.div
+      {/* <motion.div
         initial={initial}
         animate={animate}
         transition={{ delay: 0.7, duration: 0.5 }}
@@ -68,7 +68,7 @@ const HeroSection: FC<LandingPageProps> = () => {
           fill
           className="object-contain absolute"
         />
-      </motion.div>
+      </motion.div> */}
     </SectionWrapper>
   );
 };

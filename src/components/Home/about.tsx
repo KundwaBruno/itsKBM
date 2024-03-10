@@ -13,17 +13,17 @@ const About: FC<AboutProps> = () => {
       <div className="flex flex-wrap gap-10 m divide-custom_border_dark items-center justify-center">
         {data.tech_stacks.map((stack) => {
           return (
-            <div key={stack.title} className="relative h-[50px] flex-grow-0 w-32 md:w-60">
-              <Image
-                src={stack.icon}
-                alt={stack.title}
-                fill
-                className="object-contain"
-                blurDataURL="URL"
-                placeholder="blur"
-                priority={true}
-              />
-            </div>
+            <Image
+              key={stack.title}
+              width={130}
+              height={40}
+              src={stack.icon}
+              alt={stack.title}
+              className="object-contain"
+              blurDataURL="URL"
+              placeholder="blur"
+              priority={true}
+            />
           );
         })}
       </div>

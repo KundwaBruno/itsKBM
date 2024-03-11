@@ -1,6 +1,4 @@
-import { ArrowRightIcon, BriefcaseIcon } from '@heroicons/react/solid';
-import { motion } from 'framer-motion';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import Data from '../../lib/constants/data';
 import ExperienceBox from '../ExperienceDescription';
@@ -12,10 +10,7 @@ interface ExperienceProps {}
 const Experience: FC<ExperienceProps> = () => {
   return (
     <SectionWrapper id="experience">
-      <SectionHeader
-        title="Experience"
-        description="Below is few of my recent relevant technical experience."
-      />
+      <SectionHeader title="Experience" />
       <div className="divide-y-2 dark:divide-custom_border_dark mx-auto">
         {Data.experience.slice(0, 3).map((ex, index) => {
           return (

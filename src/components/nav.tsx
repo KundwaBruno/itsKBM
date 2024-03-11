@@ -3,12 +3,11 @@ import SectionWrapper from '@/components/sectionWrapper';
 import NavLinks from '@/lib/constants/links';
 import useOnClickOutside from '@/lib/hooks/useOutsideClick';
 import useScrollOffset from '@/lib/hooks/useScrollOfset';
-import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { Fragment, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -25,6 +24,18 @@ const NavBar = () => {
 
   const scrollOffSet = useScrollOffset();
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isNavOpen]);
+
   useMemo(() => {
     if (scrollOffSet > 70) {
       setIsWebBarScrolled(true);
@@ -35,7 +46,7 @@ const NavBar = () => {
 
   const ToggleButton = () => {
     return (
-      <div className=" md:hidden">
+      <div className="md:hidden">
         <div className="outline-none w-full relative">
           <div className="flex items-center gap-4">
             <Link href="/resume.pdf" target="_blank">
@@ -50,30 +61,29 @@ const NavBar = () => {
               rounded
             />
           </div>
-
-          {isNavOpen ? (
-            <motion.div
-              ref={navRef}
-              className="absolute right-0 top-16 rounded-2xl bg-custom_white dark:bg-background_dark shadow-lg"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}>
-              <div className="text-white p-10">
-                {NavLinks.map((link, index) => {
-                  return (
-                    <div key={index} className={`${index !== NavLinks.length - 1 && 'mb-10'}`}>
-                      <Link
-                        href={link.route}
-                        key={link.name}
-                        className="text-center text-sm font-bold dark:text-custom_white text-custom_black">
-                        {`${link.label}`}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.div>
-          ) : null}
         </div>
+      </div>
+    );
+  };
+
+  const MobileNav = () => {
+    return (
+      <div
+        className="fixed h-screen w-screen top-16 backdrop-blur-lg pt-16 overflow-hidden transition-all z-[999999]"
+        style={{
+          right: isNavOpen ? 0 : '-100%',
+        }}>
+        {NavLinks.map((link, index) => {
+          return (
+            <Link
+              key={index}
+              href={link.route}
+              onClick={() => setIsNavOpen(false)}
+              className="text-xl dark:text-custom_white text-custom_black py-5 text-center block">
+              {`${link.label}`}
+            </Link>
+          );
+        })}
       </div>
     );
   };
@@ -119,8 +129,8 @@ const NavBar = () => {
 
   return (
     <SectionWrapper
-      className={`z-50 sticky top-0 transition-all duration-200 w-full py-3 ${
-        isWebBarScrolled && 'backdrop-blur-md border-b-[0.5px] border-b-custom_border_dark'
+      className={`z-50 sticky top-0 transition-all duration-200w-full py-3 ${
+        isWebBarScrolled && 'backdrop-blur-md '
       }`}>
       <div className="flex justify-between items-center">
         <div className="relative font-bold text-lg">
@@ -131,6 +141,7 @@ const NavBar = () => {
         <ToggleButton />
         <Web />
       </div>
+      <MobileNav />
     </SectionWrapper>
   );
 };

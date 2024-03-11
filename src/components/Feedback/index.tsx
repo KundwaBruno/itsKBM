@@ -115,9 +115,6 @@ const Feedback = () => {
                   postFeedBack();
                 }}
                 className="mb-10">
-                <div className="dark:text-custom_gray text-custom_black mt-2 text-sm italic">
-                  Information below is updated realtime 🚀
-                </div>
                 <div className="flex items-center gap-3 mt-2">
                   <div className="w-full">
                     <Input

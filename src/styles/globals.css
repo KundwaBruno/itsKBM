@@ -90,3 +90,10 @@ p {
 .embla__slide {
   flex: 0 0 14%;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}

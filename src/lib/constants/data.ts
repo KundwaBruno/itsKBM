@@ -61,7 +61,7 @@ const portfolioData: PortfolioData = {
     },
   ],
   about: {
-    bio: `Hi 👋 I'm a Front-End Engineer with over 4 years in the field, I've continuously expanded my expertise working with one of the World-Class Front-End technologies listed below;`,
+    bio: `Hi 👋 I'm a Front-End Engineer with over 4 years in the field, I've continuously expanded my expertise working with couple of Front-End technologies such as the following -`,
     contactDescription:
       'You can reach out to me anytime by clicking on bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.',
     contact: [
@@ -79,7 +79,7 @@ const portfolioData: PortfolioData = {
     ],
   },
   projects: {
-    title: 'My Projects',
+    title: 'Projects',
     description: '',
     data: [
       {

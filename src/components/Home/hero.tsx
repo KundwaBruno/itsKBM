@@ -1,60 +1,27 @@
 import PageData from '@/lib/constants/data';
-import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
 import Button from '../button';
 import SectionWrapper from '../sectionWrapper';
 
-interface LandingPageProps {}
-
-const initial = {
-  opacity: 0,
-};
-
-const animate = {
-  opacity: 1,
-  y: 0,
-};
-
-const HeroSection: FC<LandingPageProps> = () => {
+const HeroSection = () => {
   const { salutation, full__name, homeDescription, about } = PageData;
-
-  const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper className="lg:h-[550px] flex flex-col">
       <div className="flex-1 text-center flex flex-col justify-center">
-        <motion.div
-          initial={initial}
-          animate={animate}
-          className="dark:text-custom_gray text-custom_black  mb-2 md:text-lg">
-          {salutation}
-        </motion.div>
-        <motion.h1
-          initial={initial}
-          animate={animate}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-6xl xl:text-7xl font-extrabold  dark:text-custom_white text-custom_black mb-2 tracking-tighter">
+        <div className="dark:text-custom_gray text-custom_black  mb-2 md:text-lg">{salutation}</div>
+        <h1 className="text-4xl md:text-6xl xl:text-7xl font-extrabold  dark:text-custom_white text-custom_black mb-2 tracking-tighter">
           {full__name}
-        </motion.h1>
-        <motion.p
-          initial={initial}
-          animate={animate}
-          transition={{ delay: 0.5, duration: 0.5 }}
+        </h1>
+        <p
           className="w-11/12 lg:w-1/2 mx-auto mb-7 dark:text-custom_gray text-custom_black  md:text-lg"
           dangerouslySetInnerHTML={{ __html: homeDescription }}
         />
-        <motion.div
-          initial={initial}
-          animate={animate}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="w-max mx-auto">
+        <div className="w-max mx-auto">
           <Link href={about.contact[0].data} target="_blank" rel="noreferrer">
             <Button className="px-[20px]">Say hello !</Button>
           </Link>
-        </motion.div>
+        </div>
       </div>
       {/* <motion.div
         initial={initial}

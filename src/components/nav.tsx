@@ -5,6 +5,7 @@ import useOnClickOutside from '@/lib/hooks/useOutsideClick';
 import useScrollOffset from '@/lib/hooks/useScrollOfset';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
@@ -133,11 +134,11 @@ const NavBar = () => {
         isWebBarScrolled && 'backdrop-blur-md '
       }`}>
       <div className="flex justify-between items-center">
-        <div className="relative font-bold text-lg">
-          <span onClick={() => router.push('/')} className="cursor-pointer text-primary">
-            KBM
-          </span>
-        </div>
+        <Link href="/">
+          <div className="relative w-10 h-10">
+            <Image src="/assets/images/logo.png" alt="KBM Logo" fill className="object-contain" />
+          </div>
+        </Link>
         <ToggleButton />
         <Web />
       </div>

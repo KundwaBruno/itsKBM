@@ -7,7 +7,7 @@ interface Props {
 
 const SectionHeader: FC<Props> = ({ title, description }) => {
   return (
-    <div className="m-auto text-center mb-16">
+    <div className={`m-auto text-center ${description ? 'mb-16' : 'mb-10'}`}>
       <h2 className="dark:text-custom_white text-custom_black font-extrabold mb-4 tracking-tighter text-2xl md:text-3xl">
         {title}
       </h2>

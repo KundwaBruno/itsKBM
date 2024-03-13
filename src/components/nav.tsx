@@ -7,7 +7,6 @@ import { Pivot as Hamburger } from 'hamburger-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
@@ -18,8 +17,6 @@ const NavBar = () => {
   const navRef = useRef<HTMLDivElement>(null);
 
   const { setTheme, resolvedTheme } = useTheme();
-
-  const router = useRouter();
 
   useOnClickOutside(navRef, () => setIsNavOpen(false));
 
@@ -130,7 +127,7 @@ const NavBar = () => {
 
   return (
     <SectionWrapper
-      className={`z-50 sticky top-0 transition-all duration-200w-full py-3 ${
+      className={`z-50 sticky top-0 transition-all duration-200  w-full py-3 overflow-x-hidden ${
         isWebBarScrolled && 'backdrop-blur-md '
       }`}>
       <div className="flex justify-between items-center">

@@ -17,10 +17,9 @@ const NavigationLinks: NavigationLink[] = [
     route: '/#contact',
   },
   {
-    name: 'Feedback',
-    label: 'Feedback',
-    isNew: false,
-    route: '/feedback',
+    name: 'comment',
+    label: 'Comment',
+    route: '/comment',
   },
 ];
 

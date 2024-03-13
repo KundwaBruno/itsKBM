@@ -29,7 +29,7 @@ const Experience: FC<ExperienceProps> = () => {
       <a
         href="/resume.pdf"
         target="_blank"
-        className="underline font-bold underline-offset-4 flex items-center gap-3 hover:text-primary w-max">
+        className="underline font-bold underline-offset-4 flex items-center justify-center mx-auto md:m-0 gap-3 hover:text-primary w-max">
         View Full resume <FaArrowRight />
       </a>
     </SectionWrapper>

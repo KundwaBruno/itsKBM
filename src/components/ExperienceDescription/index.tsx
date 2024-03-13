@@ -42,13 +42,13 @@ const Experience: FC<ExperienceProps> = ({
           href={companyLink}
           target="_blank"
           rel="noreferrer"
-          className="font-semibold gap-5 w-max">
+          className="font-semibold gap-5 w-max mx-auto md:mx-0">
           <div className="flex gap-2 hover:text-primary text-lg">
             <span>{company}</span>
             <TbExternalLink className="text-2xl text-secondary " />
           </div>
         </a>
-        <div className="dark:text-custom_gray text-custom_black text-left mt-1 text-sm">
+        <div className="dark:text-custom_gray text-custom_black text-center md:text-left mt-1 text-sm">
           @{role}
         </div>
       </div>

@@ -86,11 +86,11 @@ const Feedback = () => {
 
   return (
     <PageWrapper>
-      <SectionWrapper>
+      <SectionWrapper className="pt-10 md:pt-16">
         <SectionHeader
-          title="Feedback"
-          description=" Welcome to my feedback page, provide complete anonymous feedbacks, I would be very happy
-            to hear or learn from you."
+          title="Leave a comment 💬"
+          description=" Welcome to my comments page, Leave an anonymous comment, Could be anything 🙂. I would be very happy
+            to hear from you."
         />
         <div className="w-11/12 m-auto md:w-[600px]">
           <Fragment>
@@ -138,7 +138,7 @@ const Feedback = () => {
               <div className="text-center text-secondary my-4">
                 <motion.button
                   whileTap={{ scale: 0.9 }}
-                  className="cursor-pointer text-xs underline underline-offset-4 text-custom_black dark:text-custom_white"
+                  className="cursor-pointer text-xs underline underline-offset-4 text-primary"
                   onClick={incrementPagination}>
                   Load more
                 </motion.button>

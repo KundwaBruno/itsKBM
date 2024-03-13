@@ -13,7 +13,7 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth !important;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 *::-webkit-scrollbar {
